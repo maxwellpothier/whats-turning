@@ -1,16 +1,17 @@
- import axios from "axios";
-import {login} from "../utils/identityApi";
+import { authenticateExistingUser } from "../utils/authUtils";
+import Posts from "../components/posts";
 
 const Home = () => {
-	const handleDummyRequest = async () => {
-		const {data} = await login("max", "asdfasdf");
-		console.log("Here's the token", data?.token);
-	};
-
+	const authenticate = async () => {
+		await authenticateExistingUser("max", "asdfasdf");
+	}
+	
 	return (
 		<>
 			<div>Home Page</div>
-			<button onClick={handleDummyRequest}>Click here to login</button>
+			<button onClick={authenticate}>Click here to login</button>
+
+			<Posts/>
 		</>
 	);
 };
