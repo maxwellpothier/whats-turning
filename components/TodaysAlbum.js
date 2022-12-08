@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Container from "./Container";
+import SectionTitle from "./SectionTitle";
 import styles from "./todaysAlbum.module.scss";
 
 const fakeData = {
@@ -10,8 +12,8 @@ const fakeData = {
 
 const TodaysAlbum = () => {
 	return (
-		<div className={styles.container}>
-			<span className={styles.todaysAlbumHeader}>Today&apos;s Album</span>
+		<Container>
+			<SectionTitle>Today&apos;s Album</SectionTitle>
 			<div className={styles.albumCardContainer}>
 				<div>
 					<Image
@@ -28,7 +30,7 @@ const TodaysAlbum = () => {
 					<button>Create a Post</button>
 				</div>
 			</div>
-		</div>
+		</Container>
 	);
 };
 
