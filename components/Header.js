@@ -1,25 +1,32 @@
-import { useEffect, useState } from "react";
-import { getUser } from "../utils/authUtils";
+import styles from "./header.module.scss"
+
+import Link from 'next/link';
+import WTLogo from "./WTLogo";
 
 const Header = () => {
-	// const [currUsername, setCurrUsername] = useState("");
-
-	// useEffect(() => {
-	// 	(async () => {
-	// 		const tempUser = await getUser();
-	// 		setCurrUsername(tempUser.username);
-	// 	})();
-	// });
-	
 	return (
-		<div>
-			<a href={"/"}>Home</a>
-			<a href={"/profile"}>Profile</a>
-			<a href={"/login"}>Login</a>
-			<a href={"/signup"}>Signup</a>
-
-		</div>
-	);
+        <div className={styles.headerContainer}>
+			<Link href={"/"} passHref>
+				<div className={styles.headerLogo}>
+					<WTLogo/>
+				</div>
+			</Link>
+            <Link href={"/"} passHref>
+                <span className={styles.headerLogoMobile}>WT?</span>
+            </Link>
+            {/* <ul className={styles.headerSocialIcons}>
+                <a href="https://open.spotify.com/user/bg8527p8wb1nrpb6r8xf662r2?si=a32cb6c1e3214d3a" target={"_blank"} rel={"noreferrer"}>
+                    <FaSpotify className={styles.headerIcon}/>
+                </a>
+                <a href="https://github.com/maxwellpothier" target={"_blank"} rel={"noreferrer"}>
+                    <FaGithub className={styles.headerIcon}/>
+                </a>
+                <a href="https://twitter.com/MaxPothier" target={"_blank"} rel={"noreferrer"}>
+                    <FaTwitter className={styles.headerIcon}/>
+                </a>
+            </ul> */}
+        </div>
+    );
 };
 
 export default Header;
