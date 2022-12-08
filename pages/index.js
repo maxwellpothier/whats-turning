@@ -9,8 +9,7 @@ const Home = () => {
 	return (
 		<>
 			<div>Home Page</div>
-			<button onClick={authenticate}>Click here to login</button>
-
+			
 			<Posts/>
 		</>
 	);

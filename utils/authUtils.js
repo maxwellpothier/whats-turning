@@ -1,8 +1,16 @@
 import { login } from "./endpoints/identityApi";
 
-export const authenticateExistingUser = async (username, password) => {
-	const {data} = await login("max", "asdfasdf");
-
-	localStorage.setItem("WT_ACCESS_TOKEN", data.token);
+const handleAuthErrors = (err) => {
+	console.log("There's been an error", err);
 };
 
+export const authenticateExistingUser = async (formData) => {
+	try {
+		const {data} = await login(formData);
+		localStorage.setItem("WT_ACCESS_TOKEN", data.token);
+		window.location.replace("/");
+	} catch (err) {
+		handleAuthErrors(err);
+	}
+
+};

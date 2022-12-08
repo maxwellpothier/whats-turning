@@ -1,23 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import {getAllPosts} from "../utils/endpoints/postApi";
 
 const Posts = () => {
 	const [posts, setPosts] = useState([]);
 
-	const getAllPosts = async () => {
-		const {data} = await axios.get("https://wt-backend.onrender.com/api/posts", {
-			headers: {
-				Authorization: `Bearer ${localStorage.getItem("WT_ACCESS_TOKEN")}`,
-			},
-		});
-		const gotPosts = data.data;
-		setPosts(gotPosts)
+	const getPosts = async () => {
+		const {data} = await getAllPosts();
+		setPosts(data.data);
 	};
 
 	return (
 		<div>
 			<span>Posts</span>
-			<button onClick={() => getAllPosts()}>Get Posts</button>
+			<button onClick={() => getPosts()}>Get Posts</button>
 			<div>
 				{posts.map((post, i) => (
 					<div key={i}>{post.album.title}{i}</div>
