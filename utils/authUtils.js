@@ -1,4 +1,4 @@
-import { login } from "./endpoints/identityApi";
+import { getLoggedInUser, login } from "./endpoints/identityApi";
 
 const handleAuthErrors = (err) => {
 	console.log("There's been an error", err);
@@ -12,5 +12,9 @@ export const authenticateExistingUser = async (formData) => {
 	} catch (err) {
 		handleAuthErrors(err);
 	}
+};
 
+export const getUser = async () => {
+	const {data} = await getLoggedInUser();
+	return data.data;
 };
