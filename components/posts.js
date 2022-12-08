@@ -1,4 +1,5 @@
 import axios from "axios";
+import Post from "./Post";
 import { useEffect, useState } from "react";
 import {getAllPosts} from "../utils/endpoints/postApi";
 import Container from "./Container";
@@ -21,7 +22,10 @@ const Posts = () => {
 			<SectionTitle>Posts</SectionTitle>
 			<div>
 				{posts.map((post, i) => (
-					<div key={i}>{post.album.title}{i}</div>
+					<Post
+						key={i}
+						post={post}
+					/>
 				))}
 			</div>
 		</Container>
