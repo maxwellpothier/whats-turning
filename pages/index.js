@@ -11,7 +11,6 @@ const Home = () => {
 			<div>Home Page</div>
 			<TodaysAlbum/>
 			<Posts/>
-			<button onClick={getUser}>Who am i?</button>
 		</>
 	);
 };
