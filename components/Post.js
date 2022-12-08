@@ -1,15 +1,16 @@
+import styles from "./post.module.scss";
+
+import Container from "./Container";
+
 const Post = ({post}) => {
-	const {album, belongsToId, content, id, rating} = post;
+	const {belongsTo, album, content, rating} = post;
 
 	return (
-		<div>
-			Post
-			{album.title}
-			{belongsToId}
-			{content}
-			{id}
-			{rating}
-		</div>
+		<Container className={styles.postCard}>
+			<div>{belongsTo.username} - {album.title}</div>
+			<div>{content}</div>
+			<div>{rating}</div>
+		</Container>
 	);
 };
 
