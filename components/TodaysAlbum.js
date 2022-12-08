@@ -1,7 +1,9 @@
+import styles from "./todaysAlbum.module.scss";
+
 const TodaysAlbum = () => {
 	return (
-		<div>
-			Todays Album Here
+		<div className={styles.container}>
+			<span className={styles.todaysAlbumHeader}>Today&apos;s Album</span>
 		</div>
 	);
 };
