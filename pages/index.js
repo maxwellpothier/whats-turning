@@ -7,7 +7,7 @@ import Theme from "../components/Theme";
 const Home = () => {
 	return (
 		<Theme>
-			
+			<TodaysAlbum/>
 		</Theme>
 	);
 };
