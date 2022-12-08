@@ -1,16 +1,14 @@
 import Posts from "../components/Posts";
 import TodaysAlbum from "../components/TodaysAlbum";
 import Header from "../components/Header";
+import Theme from "../components/Theme";
 
 
 const Home = () => {
 	return (
-		<>
-			<Header/>
-			<div>Home Page</div>
-			<TodaysAlbum/>
-			<Posts/>
-		</>
+		<Theme>
+			
+		</Theme>
 	);
 };
 
