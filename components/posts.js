@@ -1,5 +1,5 @@
 import axios from "axios";
-import Post from "./Post";
+import PostCard from "./PostCard";
 import { useEffect, useState } from "react";
 import {getAllPosts} from "../utils/endpoints/postApi";
 import Container from "./Container";
@@ -22,7 +22,7 @@ const Posts = () => {
 			<SectionTitle>Posts</SectionTitle>
 			<div>
 				{posts.map((post, i) => (
-					<Post
+					<PostCard
 						key={i}
 						post={post}
 					/>
