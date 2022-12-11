@@ -4,13 +4,15 @@ import Container from "./Container";
 import Link from "next/link";
 
 const PostCard = ({post}) => {
-	const {belongsTo, album, content, rating} = post;
+	const {id, belongsTo, album, content, rating} = post;
 
 	return (
 		<Container className={styles.postCard}>
-			<Link href={"/post"}>{belongsTo.username} - {album.title}</Link>
-			<Link href={"/post"}>{content}</Link>
-			<Link href={"/post"}>{rating}</Link>
+			<Link href={`${belongsTo.id}/${id}`}>
+				{belongsTo.username} - {album.title}
+				{content}
+				{rating}
+			</Link>
 		</Container>
 	);
 };
