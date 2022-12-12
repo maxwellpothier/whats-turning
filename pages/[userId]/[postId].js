@@ -1,21 +1,28 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { getPost } from "../../utils/endpoints/postApi";
 
 const PostPage = () => {
 	const router = useRouter();
-	const [postId, setPostId] = useState("");
-	const [userId, setUserId] = useState("");
+	const [post, setPost] = useState({});
+
+	const getPagePost = async () => {
+		const {data} = await getPost(router.query.userId, router.query.postId);
+		setPost(data.data);
+	}
 
 	useEffect(() => {
-		setPostId(router.query.postId);
-		setUserId(router.query.userId);
-	}, [router]);
+		if (post?.id) return;
+		getPagePost();
+	});
 
 	return (
 		<div>
 			Post Page Here!
-			{postId}
-			Belongs to {userId}
+			{post?.album?.title}
+			<Link href={`/${post.belongsToId}`}>{post?.belongsToId}</Link>
+			{post?.content}
 		</div>
 	);
 };

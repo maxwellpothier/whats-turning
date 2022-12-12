@@ -17,5 +17,9 @@ export const getLoggedInUser = () => {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem("WT_ACCESS_TOKEN")}`,
 		},
-	})
+	});
+};
+
+export const getUser = (userId) => {
+	return axios.get(`${baseUrl}/${userId}`);
 };

@@ -17,3 +17,11 @@ export const getUserPosts = (userId) => {
 		},
 	})
 };
+
+export const getPost = (userId, postId) => {
+	return axios.get(`${baseUrl}/posts/${userId}/${postId}`, {
+		headers: {
+			Authorization: `Bearer ${localStorage.getItem("WT_ACCESS_TOKEN")}`,
+		},
+	});
+};
