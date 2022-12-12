@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { getUser } from "../../utils/endpoints/identityApi";
 import { useEffect, useState } from "react";
+import Theme from "../../components/Theme";
 
 const UserPage = () => {
 	const router = useRouter();
@@ -17,7 +18,7 @@ const UserPage = () => {
 	});
 
 	return (
-		<div>
+		<Theme>
 			User Page Here!
 			{user?.id}
 			{user?.username}
@@ -26,7 +27,7 @@ const UserPage = () => {
 					{post.content}
 				</div>
 			))}
-		</div>
+		</Theme>
 	);
 };
 

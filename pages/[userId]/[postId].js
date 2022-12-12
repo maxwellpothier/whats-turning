@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Theme from "../../components/Theme";
 import { getPost } from "../../utils/endpoints/postApi";
 
 const PostPage = () => {
@@ -18,12 +19,12 @@ const PostPage = () => {
 	});
 
 	return (
-		<div>
+		<Theme>
 			Post Page Here!
 			{post?.album?.title}
 			<Link href={`/${post.belongsToId}`}>{post?.belongsToId}</Link>
 			{post?.content}
-		</div>
+		</Theme>
 	);
 };
 
