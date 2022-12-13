@@ -1,8 +1,5 @@
 import { getLoggedInUser, login } from "./endpoints/identityApi";
-
-const handleAuthErrors = (err) => {
-	console.log("There's been an error", err);
-};
+import { toastError } from "./toastUtils";
 
 export const authenticateExistingUser = async (formData) => {
 	try {
@@ -10,7 +7,7 @@ export const authenticateExistingUser = async (formData) => {
 		localStorage.setItem("WT_ACCESS_TOKEN", data.token);
 		window.location.replace("/");
 	} catch (err) {
-		handleAuthErrors(err);
+		toastError(err?.response?.data?.message);
 	}
 };
 
