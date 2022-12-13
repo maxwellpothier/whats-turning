@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import AuthForm from "../components/AuthForm";
 import WTInput from "../components/WTInput";
 import { authenticateExistingUser } from "../utils/authUtils";
-
+import { toastError } from "../utils/toastUtils";
 
 const Login = () => {
 	const hookForm = useForm();
@@ -13,9 +13,8 @@ const Login = () => {
 		try {
 			await authenticateExistingUser(userData);
 			console.log("Authenticated", response);
-			// router.push("/");
 		} catch (err) {
-			console.error(err);
+			toastError(err?.response?.data?.message);
 		}
 	};
 
