@@ -12,7 +12,7 @@ const Header = () => {
 					<WTLogo/>
 				</div>
 			</Link>
-			<button className={styles.getNotifiedButton}>Get Notified</button>
+			{/* <button className={styles.getNotifiedButton}>Get Notified</button> */}
 			{/* <div className={styles.headerLinksContainer}>
 				<Link href={"/profile"}>Profile</Link>
 				<Link href={"/login"}>Login</Link>
