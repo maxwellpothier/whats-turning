@@ -1,14 +1,19 @@
-import Posts from "../components/Posts";
-import TodaysAlbum from "../components/TodaysAlbum";
-import Header from "../components/Header";
 import Theme from "../components/Theme";
+import SectionTitle from "../components/SectionTitle";
+import Container from "../components/Container";
 
 
 const Home = () => {
 	return (
 		<Theme>
-			<TodaysAlbum/>
-			<Posts/>
+			<Container>
+				<SectionTitle>
+					Explore new music. Everyday.
+				</SectionTitle>
+
+				Stop waiting for a new album from your favorite artist to discover new music.
+				The code behind Whats Turning will select a new album everyday, anything and everything from Otis Redding to Eminem.
+			</Container>
 		</Theme>
 	);
 };

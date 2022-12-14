@@ -15,6 +15,20 @@
 	gap: 40px;
 }
 
+.getNotifiedButton {
+	width: 150px;
+	height: 30px;
+	background-color: $anakiwa;
+	border: none;
+	box-shadow: 5px 5px $oysterPink;
+	border-radius: 3px;
+	color: $indigo;
+	font-family: "Alfa Slab";
+	font-size: 17px;
+    letter-spacing: 1px;
+	cursor: pointer;
+}
+
 // .headerLogoMobile {
 //     font-family: "Liquido";
 //     font-size: 48px;

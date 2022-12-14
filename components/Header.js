@@ -2,6 +2,7 @@ import styles from "./header.module.scss"
 
 import Link from 'next/link';
 import WTLogo from "./WTLogo";
+import { Button } from "@chakra-ui/react";
 
 const Header = () => {
 	return (
@@ -11,11 +12,12 @@ const Header = () => {
 					<WTLogo/>
 				</div>
 			</Link>
-			<div className={styles.headerLinksContainer}>
+			<button className={styles.getNotifiedButton}>Get Notified</button>
+			{/* <div className={styles.headerLinksContainer}>
 				<Link href={"/profile"}>Profile</Link>
 				<Link href={"/login"}>Login</Link>
 				<Link href={"/signup"}>Signup</Link>
-			</div>
+			</div> */}
             {/* <Link href={"/"} passHref>
                 <span className={styles.headerLogoMobile}>WT?</span>
             </Link> */}
