@@ -7,8 +7,9 @@ import Theme from "../components/Theme";
 const Home = () => {
 	return (
 		<Theme>
-			<TodaysAlbum/>
-			<Posts/>
+			Fish
+			{/* <TodaysAlbum/>
+			<Posts/> */}
 		</Theme>
 	);
 };

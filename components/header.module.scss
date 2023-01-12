@@ -1,8 +1,8 @@
 @import "styles/colors";
 
 .headerContainer {
-    background-color: $indigo;
-    height: 80px;
+    background-color: $liberty;
+    height: 70px;
     display: flex;
     justify-content: space-between;
 	align-items: center;
@@ -10,51 +10,29 @@
 	margin-bottom: 50px;
 }
 
-.headerLinksContainer {
+.hamburgerMenu {
 	display: flex;
-	gap: 40px;
+	flex-direction: column;
+	gap: 8px;
 }
 
-// .headerLogoMobile {
-//     font-family: "Liquido";
-//     font-size: 48px;
-//     letter-spacing: 5px;
-//     color: $anakiwa;
-//     align-self: center;
-// }
+.menuLink {
+	width: 35px;
+	height: 5px;
+	background-color: $celeste;
+	border-radius: 20px;
+}
 
-// .headerLogo {
-//     display: none;
-// }
+.headerLinks {
+	display: none;
+}
 
-// .headerSocialIcons {
-//     display: grid;
-//     grid-template-columns: repeat(3, 30px);
-//     gap: 8px;
-//     align-items: center;
-// }
+@media only screen and (min-width: 768px) {
+	.hamburgerMenu {
+		display: none;
+	}
 
-// .headerIcon {
-//     font-size: 24px;
-//     color: $anakiwa;
-
-//     &:hover {
-//         cursor: pointer;
-//     }
-// }
-
-// @media only screen and (min-width: 469px) {
-//     .headerLogoMobile {
-//         display: none;
-//     }
-
-//     .headerLogo {
-//         display: flex;
-//         font-family: "Liquido";
-//         font-size: 48px;
-//         letter-spacing: 5px;
-//         color: $anakiwa;
-//         align-self: center;
-// 		cursor: pointer;
-//     }
-// }
+	.headerLinks {
+		display: flex;
+	}
+}
