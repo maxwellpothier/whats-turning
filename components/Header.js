@@ -2,6 +2,7 @@ import styles from "./header.module.scss"
 
 import Link from 'next/link';
 import WTLogo from "./WTLogo";
+import WTButton from "./WTButton";
 
 const Header = () => {
 	return (
@@ -15,8 +16,7 @@ const Header = () => {
 				<div className={styles.menuLink}/>
 			</div>
 			<div className={styles.headerLinks}>
-				<span>Profile</span>
-				<span>Logout</span>
+				<WTButton content={"Join the Waitlist"}/>
 			</div>
         </div>
     );

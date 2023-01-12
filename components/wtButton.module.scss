@@ -1,0 +1,13 @@
+@import "styles/colors";
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $maxYellowRed;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 2px solid $blackCoffee;
+	font-family: "Manrope";
+	font-size: 20px;
+}

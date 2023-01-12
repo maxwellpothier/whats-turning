@@ -1,6 +1,6 @@
 @import "styles/colors";
 
-.fullLogo {
+.logo {
 	display: flex;
 	font-family: "Liquido";
 	font-size: 48px;
@@ -9,4 +9,18 @@
 	align-self: center;
 	cursor: pointer;
 	margin-bottom: 5px;
+}
+
+.fullLogo {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	.smallLogo {
+		display: none;
+	}
+
+	.fullLogo {
+		display: flex;
+	}
 }
