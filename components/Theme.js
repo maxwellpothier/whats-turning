@@ -2,6 +2,7 @@ import styles from "./theme.module.scss";
 
 import Header from "./Header";
 import Container from "./Container";
+import Footer from "./Footer";
 
 const Theme = ({children}) => {
 	return (
@@ -12,6 +13,7 @@ const Theme = ({children}) => {
 					{children}
 				</div>
 			</Container>
+			<Footer/>
 			{/* Footer will go here eventually */}
 		</div>
 	);
