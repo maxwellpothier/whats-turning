@@ -5,11 +5,13 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Script from "next/script";
 
+const GA_MEASUREMENT_ID = "G-DZE177VCFL";
+
 const MyApp = ({Component, pageProps}) => {
 	return (
 		<>
 			<Component {...pageProps}/>
-			<Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
+			<Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}/>
 			<Script
 				id={'google-analytics'}
 				strategy={"afterInteractive"}
@@ -18,7 +20,7 @@ const MyApp = ({Component, pageProps}) => {
 						window.dataLayer = window.dataLayer || [];
 						function gtag(){dataLayer.push(arguments);}
 						gtag('js', new Date());
-						gtag('config', '${process.env.GA_MEASUREMENT_ID}');
+						gtag('config', '${GA_MEASUREMENT_ID}');
 					`,
 				}}
 			/>
