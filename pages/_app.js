@@ -8,9 +8,8 @@ import Script from "next/script";
 const MyApp = ({Component, pageProps}) => {
 	return (
 		<>
-
 			<Component {...pageProps}/>
-			<Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
+			<Script strategy={"afterInteractive"} src={"https://www.googletagmanager.com/gtag/js?id=G-DZE177VCFL"}/>
 			<Script
 				id={'google-analytics'}
 				strategy={"afterInteractive"}
@@ -19,9 +18,7 @@ const MyApp = ({Component, pageProps}) => {
 						window.dataLayer = window.dataLayer || [];
 						function gtag(){dataLayer.push(arguments);}
 						gtag('js', new Date());
-						gtag('config', '${process.env.GA_MEASUREMENT_ID}', {
-						page_path: window.location.pathname,
-						});
+						gtag('config', 'G-DZE177VCFL');
 					`,
 				}}
 			/>
