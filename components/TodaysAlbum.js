@@ -12,6 +12,7 @@ const fakeData = {
 const TodaysAlbum = () => {
 	return (
 		<div className={styles.aotdContainer}>
+			<div className={styles.aotd}>Album of the Day</div>
 			<Image
 				className={styles.aotdArt}
 				height={"600"}
@@ -19,6 +20,9 @@ const TodaysAlbum = () => {
 				src={fakeData.url}
 				alt={fakeData.title}
 			/>
+			<div>Interpol</div>
+			<div>Turn on the Bright Lights</div>
+			<div>2001</div>
 		</div>
 	);
 };
