@@ -3,4 +3,46 @@
 .footerContainer {
 	background-color: $liberty;
 	height: 300px;
+	padding: 0 15px;
+	color: $celeste;
+	font-family: "Manrope";
+	display: flex;
+	flex-direction: column;
+}
+
+.contactSection {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	margin-bottom: 50px;
+}
+
+.footerLogo {
+	font-size: 40px;
+}
+
+.contactText {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+.emailLink {
+	text-decoration: underline;
+}
+
+.socialLinks {
+	display: flex;
+	gap: 15px;
+}
+
+.footerIcon {
+	font-size: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+	.footerContainer {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
