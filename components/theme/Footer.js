@@ -1,5 +1,5 @@
 import styles from "./footer.module.scss";
-import WTMobileLogo from "./WTMobileLogo";
+import WTMobileLogo from "../WTMobileLogo";
 import {FaSpotify, FaGithub, FaTwitter} from "react-icons/fa";
 
 const Footer = () => {

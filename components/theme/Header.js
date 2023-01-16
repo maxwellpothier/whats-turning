@@ -1,8 +1,8 @@
 import styles from "./header.module.scss"
 
 import Link from 'next/link';
-import WTLogo from "./WTLogo";
-import WTButton from "./WTButton";
+import WTLogo from "../WTLogo";
+import WTButton from "../WTButton";
 
 const Header = () => {
 	return (

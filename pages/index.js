@@ -1,12 +1,10 @@
-import Theme from "../components/Theme";
-
+import Theme from "../components/theme/Theme";
+import TodaysAlbum from "../components/TodaysAlbum";
 
 const Home = () => {
 	return (
 		<Theme>
-			Fish
-			{/* <TodaysAlbum/>
-			<Posts/> */}
+			<TodaysAlbum/>
 		</Theme>
 	);
 };
