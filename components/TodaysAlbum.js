@@ -31,10 +31,10 @@ const TodaysAlbum = () => {
 					<span className={styles.albumYear}>{fakeData.yearReleased}</span>
 
 					<div className={styles.streamLinks}>
-						<a href="https://open.spotify.com/user/bg8527p8wb1nrpb6r8xf662r2?si=a32cb6c1e3214d3a" target={"_blank"} rel={"noreferrer"}>
+						<a href="https://open.spotify.com/album/4sW8Eql2e2kdRP1A1R1clG?si=PniMuJaSS9qV5kNXtJ5Z0A" target={"_blank"} rel={"noreferrer"}>
 							<FaSpotify className={styles.streamIcon}/>
 						</a>
-						<a href="https://github.com/maxwellpothier/whats-turning/tree/main" target={"_blank"} rel={"noreferrer"}>
+						<a href="https://music.apple.com/us/album/turn-on-the-bright-lights/1589272584" target={"_blank"} rel={"noreferrer"}>
 							<SiApplemusic className={styles.streamIcon}/>
 						</a>
 					</div>
