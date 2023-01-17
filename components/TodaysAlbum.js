@@ -16,27 +16,31 @@ const TodaysAlbum = () => {
 	return (
 		<div className={styles.aotdContainer}>
 			<div className={styles.aotd}>Album of the Day</div>
-			<Image
-				className={styles.aotdArt}
-				height={"600"}
-				width={"600"}
-				src={fakeData.url}
-				alt={fakeData.title}
-			/>
-			<span className={styles.artistName}>{fakeData.artist}</span>
-			<span className={styles.albumName}>{fakeData.title}</span>
-			<span className={styles.albumYear}>{fakeData.yearReleased}</span>
+			<div className={styles.variableInformation}>
+				<Image
+					className={styles.aotdArt}
+					height={"600"}
+					width={"600"}
+					src={fakeData.url}
+					alt={fakeData.title}
+				/>
+				<div className={styles.albumInfoContainer}>
+					<span className={styles.artistName}>{fakeData.artist}</span>
+					<span className={styles.albumName}>{fakeData.title}</span>
+					<span className={styles.albumYear}>{fakeData.yearReleased}</span>
 
-			<div className={styles.streamLinks}>
-				<a href="https://open.spotify.com/user/bg8527p8wb1nrpb6r8xf662r2?si=a32cb6c1e3214d3a" target={"_blank"} rel={"noreferrer"}>
-					<FaSpotify className={styles.streamIcon}/>
-				</a>
-				<a href="https://github.com/maxwellpothier/whats-turning/tree/main" target={"_blank"} rel={"noreferrer"}>
-					<SiApplemusic className={styles.streamIcon}/>
-				</a>
+					<div className={styles.streamLinks}>
+						<a href="https://open.spotify.com/user/bg8527p8wb1nrpb6r8xf662r2?si=a32cb6c1e3214d3a" target={"_blank"} rel={"noreferrer"}>
+							<FaSpotify className={styles.streamIcon}/>
+						</a>
+						<a href="https://github.com/maxwellpothier/whats-turning/tree/main" target={"_blank"} rel={"noreferrer"}>
+							<SiApplemusic className={styles.streamIcon}/>
+						</a>
+					</div>
+
+					<WTButton content={"Create Post"} className={styles.createPostButton}/>
+				</div>
 			</div>
-
-			<WTButton content={"Create Post"} className={styles.createPostButton}/>
 			<hr className={styles.bottomLine}/>
 		</div>
 	);

@@ -21,6 +21,12 @@
 	margin-bottom: 20px;
 }
 
+.albumInfoContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .artistName {
 	font-size: 24px;
 	font-family: "Manrope Bold";
@@ -56,4 +62,22 @@
 	border: 1px solid $blackCoffee;
 	margin: 0;
 	width: 100vw;
+}
+
+@media only screen and (min-width: $tabletDeviceWidth) {
+	.variableInformation {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 50px;
+		margin-bottom: 50px;
+	}
+
+	.albumInfoContainer {
+		max-width: 325px;
+	}
+
+	.createPostButton {
+		margin-bottom: 20px;
+	}
 }
