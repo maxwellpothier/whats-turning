@@ -1,4 +1,6 @@
+@import "styles/variables";
+
 .contentContainer {
 	width: 100%;
-	max-width: 1220px;
+	max-width: $siteMaxWidth;
 }

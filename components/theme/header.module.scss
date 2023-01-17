@@ -1,4 +1,4 @@
-@import "styles/colors";
+@import "styles/variables";
 
 .background {
 	background-color: $liberty;
@@ -15,7 +15,7 @@
     justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	max-width: 1220px;
+	max-width: $siteMaxWidth;
 }
 
 // .hamburgerMenu {
@@ -35,7 +35,7 @@
 // 	display: none;
 // }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $mediumDeviceWidth) {
 	.background {
 		justify-content: center;
 	}
