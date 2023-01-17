@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 const Theme = ({children}) => {
 	return (
-		<div>
+		<div className={styles.appContainer}>
 			<Header/>
 			<Container>
 				<div className={styles.contentContainer}>
@@ -14,7 +14,6 @@ const Theme = ({children}) => {
 				</div>
 			</Container>
 			<Footer/>
-			{/* Footer will go here eventually */}
 		</div>
 	);
 };
