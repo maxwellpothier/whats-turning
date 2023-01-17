@@ -6,6 +6,14 @@
     font-family: 'Manrope';
     src: url("../public/fonts/Manrope-SemiBold.ttf") format("truetype");
 }
+@font-face {
+    font-family: 'Manrope Bold';
+    src: url("../public/fonts/Manrope-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Manrope ExtraBold';
+    src: url("../public/fonts/Manrope-ExtraBold.ttf") format("truetype");
+}
 
 html,
 body {
