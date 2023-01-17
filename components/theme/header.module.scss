@@ -18,22 +18,22 @@
 	max-width: 1220px;
 }
 
-.hamburgerMenu {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-}
+// .hamburgerMenu {
+// 	display: flex;
+// 	flex-direction: column;
+// 	gap: 8px;
+// }
 
-.menuLink {
-	width: 35px;
-	height: 5px;
-	background-color: $celeste;
-	border-radius: 20px;
-}
+// .menuLink {
+// 	width: 35px;
+// 	height: 5px;
+// 	background-color: $celeste;
+// 	border-radius: 20px;
+// }
 
-.headerLinks {
-	display: none;
-}
+// .headerLinks {
+// 	display: none;
+// }
 
 @media only screen and (min-width: 768px) {
 	.background {
