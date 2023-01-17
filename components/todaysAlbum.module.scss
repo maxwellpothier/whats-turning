@@ -58,12 +58,6 @@
 	margin-bottom: 50px;
 }
 
-.bottomLine {
-	border: 1px solid $blackCoffee;
-	margin: 0;
-	width: 100vw;
-}
-
 @media only screen and (min-width: $tabletDeviceWidth) {
 	.variableInformation {
 		display: flex;

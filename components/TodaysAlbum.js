@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
+import HorizontalLine from "./HorizontalLine";
 
 const fakeData = {
 	title: "Turn on the Bright Lights",
@@ -41,7 +42,7 @@ const TodaysAlbum = () => {
 					<WTButton content={"Create Post"} className={styles.createPostButton}/>
 				</div>
 			</div>
-			<hr className={styles.bottomLine}/>
+			<HorizontalLine/>
 		</div>
 	);
 };
