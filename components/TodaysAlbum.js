@@ -7,10 +7,10 @@ import WTButton from "../components/WTButton";
 import HorizontalLine from "./HorizontalLine";
 
 const fakeData = {
-	title: "Turn on the Bright Lights",
-	artist: "Interpol",
-	yearReleased: "2001",
-	url: "https://i.discogs.com/gzj7yVP4-r1RTGur7Fqf3v-JgT9UEc1F7OmuhSRLV_E/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYwNDY5/MS0xNDg0NTcwODYy/LTgyNDQuanBlZw.jpeg",
+	title: "Paid In Full",
+	artist: "Eric B. & Rakim",
+	yearReleased: "1987",
+	url: "https://i.discogs.com/aNyP_OKgg0r0dtbMXcxrL6KCDksJTV0ormqvDFhqhyM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNjYx/Ny0xMzg3NTkwODQ2/LTc4MTguanBlZw.jpeg",
 };
 
 const TodaysAlbum = ({className}) => {
