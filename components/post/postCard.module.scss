@@ -1,0 +1,52 @@
+@import "styles/variables";
+
+.postCardContainer {
+	background-color: $white;
+	padding: 12px;
+	border-radius: 10px;
+	border: 2px solid $blackCoffee;
+	font-size: 12px;
+}
+
+.cardHeadSection {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.albumInfo {
+	display: flex;
+	gap: 5px;
+}
+
+.postCardArt {
+	width: 65px;
+	height: 65px;
+}
+
+.albumInfoText {
+	font-size: 11px;
+	display: flex;
+	flex-direction: column;
+}
+
+.albumTitle {
+	margin-bottom: 6px;
+}
+
+.albumArtist {
+	margin-bottom: 10px;
+}
+
+.contentPreview {
+	line-height: 20px;
+	margin-bottom: 15px;
+}
+
+.readMoreButton {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 5px;
+}

@@ -9,7 +9,7 @@ const GA_MEASUREMENT_ID = "G-DZE177VCFL";
 
 const MyApp = ({Component, pageProps}) => {
 	return (
-		<>
+		<div style={{fontFamily: "Manrope Bold"}}>
 			<Component {...pageProps}/>
 			<Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}/>
 			<Script
@@ -25,7 +25,7 @@ const MyApp = ({Component, pageProps}) => {
 				}}
 			/>
 			<ToastContainer/>
-		</>
+		</div>
 	);
 };
 
