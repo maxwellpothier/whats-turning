@@ -11,9 +11,9 @@ const album = {
 	url: "https://i.discogs.com/5SKv2gtuye-VkCP4S7kfq1oyDw1T4X-nHZ8oFunUYto/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNzc4/OTMtMTQ0MDcwMjYz/Ny05NTA2LmpwZWc.jpeg",
 };
 
-const PostCard = () => {
+const PostCard = ({className}) => {
 	return (
-		<div className={styles.postCardContainer}>
+		<div className={`${styles.postCardContainer} ${className}`}>
 			<div className={styles.cardHeadSection}>
 				<div className={styles.albumInfo}>				
 					<Image

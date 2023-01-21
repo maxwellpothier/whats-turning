@@ -7,10 +7,10 @@ import WTButton from "../components/WTButton";
 import HorizontalLine from "./HorizontalLine";
 
 const fakeData = {
-	title: "Paid In Full",
-	artist: "Eric B. & Rakim",
-	yearReleased: "1987",
-	url: "https://i.discogs.com/aNyP_OKgg0r0dtbMXcxrL6KCDksJTV0ormqvDFhqhyM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNjYx/Ny0xMzg3NTkwODQ2/LTc4MTguanBlZw.jpeg",
+	title: "The New Abnormal",
+	artist: "The Strokes",
+	yearReleased: "2020",
+	url: "https://i.discogs.com/JSvoLvGxGluJIZgM6vMO74oLnVcR8W7zFhiHxvz802Q/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2NzM2/NjQ2LTE2MDk1MzI1/MTItMzA5My5qcGVn.jpeg",
 };
 
 const TodaysAlbum = ({className}) => {
@@ -42,7 +42,6 @@ const TodaysAlbum = ({className}) => {
 					<WTButton content={"Create Post"} className={styles.createPostButton}/>
 				</div>
 			</div>
-			<HorizontalLine/>
 		</div>
 	);
 };
