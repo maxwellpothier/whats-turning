@@ -17,6 +17,11 @@ const Home = () => {
 				<PostCard/>
 			</div>
 			<HorizontalLine/>
+			<div className={styles.productDescription}>
+				<div>
+				We aren&apos;t quite finished yet, but here&apos;s how it&apos;ll work:
+				</div>
+			</div>
 		</Theme>
 	);
 };
