@@ -9,12 +9,14 @@ const Home = () => {
 	return (
 		<Theme>
 			<TodaysAlbum className={styles.homepageAotdContainer}/>
+			<HorizontalLine/>
 			<div className={styles.homepageExample}>
 				<div className={styles.homepageCopy}>
 					Find, rate, and review new music, everyday.
 				</div>
 				<PostCard/>
 			</div>
+			<HorizontalLine/>
 		</Theme>
 	);
 };
