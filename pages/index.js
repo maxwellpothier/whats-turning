@@ -18,9 +18,13 @@ const Home = () => {
 			</div>
 			<HorizontalLine/>
 			<div className={styles.productDescription}>
-				<div>
-				We aren&apos;t quite finished yet, but here&apos;s how it&apos;ll work:
-				</div>
+				<h3 className={styles.excuse}>We aren&apos;t quite finished yet, but here&apos;s how it&apos;ll work:</h3>
+				<ul>
+					<li>Listen to the What&apos;s Turning Album of the Day</li>
+					<li>Click “Create Post”</li>
+					<li>Leave a rating and optional short review</li>
+					<li>Watch your profile grow along with your taste and understanding of music!</li>
+				</ul>
 			</div>
 		</Theme>
 	);
