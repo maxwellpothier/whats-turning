@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
-import HorizontalLine from "./HorizontalLine";
+import HorizontalLine from "./theme/HorizontalLine";
 
 const fakeData = {
 	title: "The New Abnormal",
