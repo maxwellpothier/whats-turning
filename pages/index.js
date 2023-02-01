@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import Theme from "../components/theme/Theme";
 import TodaysAlbum from "../components/TodaysAlbum";
 import PostCard from "../components/post/PostCard";
-import HorizontalLine from "../components/HorizontalLine";
+import HorizontalLine from "../components/theme/HorizontalLine";
 import Container from "../components/theme/Container";
 
 const Home = () => {
