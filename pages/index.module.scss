@@ -18,14 +18,23 @@
 	margin-bottom: 70px;
 }
 
-.productDescription {
-	margin: 0 20px;
-}
-
 .excuse {
 	font-size: 30px;
 	line-height: 40px;
 	text-align: center;
+	margin-bottom: 20px;
+	max-width: 600px;
+}
+
+.stepList {
+	list-style-type: disc;
+	margin: 0 20px;
+	line-height: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 500px;
+
 }
 
 @media only screen and (min-width: 658px) {
