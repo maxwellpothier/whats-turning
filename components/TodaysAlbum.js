@@ -4,7 +4,6 @@ import Image from "next/image";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
-import HorizontalLine from "./theme/HorizontalLine";
 
 const fakeData = {
 	title: "The New Abnormal",
@@ -20,8 +19,8 @@ const TodaysAlbum = ({className}) => {
 			<div className={styles.variableInformation}>
 				<Image
 					className={styles.aotdArt}
-					height={"600"}
-					width={"600"}
+					height={"350"}
+					width={"350"}
 					src={fakeData.url}
 					alt={fakeData.title}
 				/>
