@@ -1,0 +1,15 @@
+@import "styles/variables";
+
+.bigLogo {
+	display: none;
+}
+
+@media only screen and (min-width: $mediumDeviceWidth) {
+	.smallLogo {
+		display: none;
+	}
+
+	.bigLogo {
+		display: flex;
+	}
+}

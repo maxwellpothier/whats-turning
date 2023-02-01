@@ -1,6 +1,6 @@
 @import "styles/variables";
 
-.logo {
+.fullLogo {
 	display: flex;
 	font-family: "Liquido";
 	font-size: 48px;
@@ -8,18 +8,4 @@
 	color: $celeste;
 	align-self: center;
 	margin-bottom: 5px;
-}
-
-.fullLogo {
-	display: none;
-}
-
-@media only screen and (min-width: $mediumDeviceWidth) {
-	.smallLogo {
-		display: none;
-	}
-
-	.fullLogo {
-		display: flex;
-	}
 }

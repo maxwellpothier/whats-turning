@@ -5,6 +5,7 @@ import TodaysAlbum from "../components/TodaysAlbum";
 import PostCard from "../components/post/PostCard";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import Container from "../components/theme/Container";
+import SignupForm from "../components/auth/SignupForm";
 
 const Home = () => {
 	return (
@@ -27,6 +28,7 @@ const Home = () => {
 					<li>Watch your profile grow along with your taste and understanding of music!</li>
 				</ul>
 			</Container>
+			<SignupForm/>
 		</Theme>
 	);
 };
