@@ -28,7 +28,14 @@ const Home = () => {
 					<li>Watch your profile grow along with your taste and understanding of music!</li>
 				</ul>
 			</Container>
-			<SignupForm/>
+			<HorizontalLine/>
+			<Container>
+				<div className={styles.waitlistCopy}>
+					<h3 className={styles.waitlistCta}>Signup now to join the waitlist!</h3>
+					<h5 className={styles.singleEmailBit}>(We&apos;ll only send you a single email: When we are ready for you to sign up.)</h5>
+				</div>
+				<SignupForm/>
+			</Container>
 		</Theme>
 	);
 };

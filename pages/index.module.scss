@@ -34,7 +34,26 @@
 	flex-direction: column;
 	gap: 10px;
 	max-width: 500px;
+}
 
+.waitlistCta {
+	font-size: 28px;
+	line-height: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+	max-width: 500px;
+}
+
+.waitlistCopy {
+	margin-bottom: 30px;
+	max-width: 315px;
+}
+
+.singleEmailBit {
+	font-size: 14px;
+	max-width: 500px;
+	text-align: center;
+	line-height: 1.5;
 }
 
 @media only screen and (min-width: 658px) {

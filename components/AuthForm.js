@@ -1,4 +1,4 @@
-import WTLogo from "./WTLogo";
+import WTFullLogo from "./logos/WTFullLogo";
 import styles from "./authForm.module.scss";
 
 const AuthForm = ({onSubmit, hookForm, buttonAreaContent, children}) => {
@@ -7,7 +7,7 @@ const AuthForm = ({onSubmit, hookForm, buttonAreaContent, children}) => {
 	return (
 		<div className={styles.pageWrapper}>
 			<div className={styles.loginFormOuterBox}>
-				<WTLogo/>
+				<WTFullLogo className={styles.formLogo}/>
 				<div className={styles.loginFormInnerBox}>
 					<form onSubmit={hookForm.handleSubmit(onSubmit)} className={styles.loginForm}>
 						{children}

@@ -1,0 +1,32 @@
+@import "styles/variables";
+
+.formContainer {
+	background-color: $liberty;
+	padding: 10px;
+	max-width: 300px;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.logo {
+	font-size: 40px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.authForm {
+	width: 100%;
+}
+
+.authInput {
+	width: 100%;
+	height: 30px;
+	border-radius: 5px;
+	border: 2px solid $blackCoffee;
+	padding: 6px;
+	margin-bottom: 20px;
+
+	&:focus {
+		outline: none;
+	}
+}
