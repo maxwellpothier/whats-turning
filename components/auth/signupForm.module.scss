@@ -30,3 +30,9 @@
 		outline: none;
 	}
 }
+
+@media only screen and (min-width: $tabletDeviceWidth) {
+	.formContainer {
+		margin: 0;
+	}
+}

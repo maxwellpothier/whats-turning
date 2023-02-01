@@ -1,11 +1,12 @@
-import styles from "./index.module.scss";
-
 import Theme from "../components/theme/Theme";
 import TodaysAlbum from "../components/TodaysAlbum";
 import PostCard from "../components/post/PostCard";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import Container from "../components/theme/Container";
 import SignupForm from "../components/auth/SignupForm";
+import WTLogo from "../components/logos/WTLogo";
+
+import styles from "./index.module.scss";
 
 const Home = () => {
 	return (
@@ -29,7 +30,7 @@ const Home = () => {
 				</ul>
 			</Container>
 			<HorizontalLine/>
-			<Container>
+			<Container className={styles.waitlistSection}>
 				<div className={styles.waitlistCopy}>
 					<h3 className={styles.waitlistCta}>Signup now to join the waitlist!</h3>
 					<h5 className={styles.singleEmailBit}>(We&apos;ll only send you a single email: When we are ready for you to sign up.)</h5>

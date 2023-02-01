@@ -1,6 +1,7 @@
 import WTFullLogo from "./WTFullLogo";
-import styles from "./wtLogo.module.scss";
 import WTMobileLogo from "./WTMobileLogo";
+
+import styles from "./wtLogo.module.scss";
 
 const WTLogo = () => {
 	return (

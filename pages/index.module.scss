@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 .homepageAotdContainer {
 	margin-bottom: 50px;
 }
@@ -46,7 +48,7 @@
 
 .waitlistCopy {
 	margin-bottom: 30px;
-	max-width: 315px;
+	max-width: 350px;
 }
 
 .singleEmailBit {
@@ -61,6 +63,14 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: row;
+		gap: 30px;
+	}
+}
+
+@media only screen and (min-width: $tabletDeviceWidth) {
+	.waitlistSection {
+		flex-direction: row-reverse;
+		justify-content: center;
 		gap: 30px;
 	}
 }

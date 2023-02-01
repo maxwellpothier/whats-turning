@@ -1,11 +1,9 @@
 import WTFullLogo from "../logos/WTFullLogo";
 import Container from "../theme/Container";
-import WTInput from "../WTInput";
-import AuthForm from "../AuthForm";
+import WTButton from "../WTButton";
+import { useForm } from "react-hook-form";
 
 import styles from "./signupForm.module.scss";
-import { useForm } from "react-hook-form";
-import WTButton from "../WTButton";
 
 const SignupForm = () => {
 	const hookForm = useForm();
