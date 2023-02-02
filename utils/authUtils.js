@@ -29,7 +29,7 @@ export const establishNewUser = async (formData) => {
 
 		try {
 			const {data} = await signup(formData);
-			toastSuccess("Thanks for signing up!");
+			toastSuccess("Thanks for joining us!");
 		} catch (err) {
 			toastError(err?.response?.data?.message);
 		}
