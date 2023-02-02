@@ -40,9 +40,23 @@
 	margin-bottom: 10px;
 }
 
-.contentPreview {
-	line-height: 20px;
+.blocksWrapper {
 	margin-bottom: 15px;
+}
+
+.contentPreview {
+	height: 15px;
+	background-color: rgb(221, 221, 221);
+	border-radius: 2px;
+	margin-bottom: 10px;
+}
+
+.smallerWidth {
+	width: 190px;
+}
+
+.smallestWidth {
+	width: 160px;
 }
 
 .readMoreButton {
@@ -50,4 +64,10 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: 5px;
+}
+
+@media only screen and (min-width: $mediumDeviceWidth) {
+	.postCardContainer {
+		width: 285px;
+	}
 }

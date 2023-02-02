@@ -5,10 +5,10 @@ import ScoreIcon from "./ScoreIcon";
 import {HiArrowLongRight} from "react-icons/hi2";
 
 const album = {
-	title: "The Powers That B",
-	artist: "Death Grips",
-	yearReleased: "2015",
-	url: "https://i.discogs.com/5SKv2gtuye-VkCP4S7kfq1oyDw1T4X-nHZ8oFunUYto/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNzc4/OTMtMTQ0MDcwMjYz/Ny05NTA2LmpwZWc.jpeg",
+	title: "Physical Graffiti",
+	artist: "Led Zeppelin",
+	yearReleased: "1975",
+	url: "https://i.discogs.com/x3ZpnVYVFbxLgfbyGkI5YJd8ySOeh9uUaHxOHr9uaZ4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1ODkz/OS0xNTg4ODgxMTUx/LTE5OTUuanBlZw.jpeg",
 };
 
 const PostCard = ({className}) => {
@@ -31,9 +31,13 @@ const PostCard = ({className}) => {
 				</div>
 				<ScoreIcon score={8.3}/>
 			</div>
-			<div className={styles.contentPreview}>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+			<div className={styles.blocksWrapper}>
+				<div className={`${styles.contentPreview} ${styles.smallerWidth}`}/>
+				<div className={styles.contentPreview}/>
+				<div className={`${styles.contentPreview} ${styles.smallestWidth}`}/>
 			</div>
+
 			<div className={styles.readMoreButton}>
 				<span>Read More</span>
 				<HiArrowLongRight/>
