@@ -1,10 +1,13 @@
 import styles from "./wtButton.module.scss";
 
-const WTButton = ({content, className}) => {
+const WTButton = ({content, className, type}) => {
 	return (
-		<div className={`${styles.button} ${className}`}>
+		<button
+			className={`${styles.button} ${className}`}
+			type={type}
+		>
 			{content}
-		</div>
+		</button>
 	);
 };
 

@@ -1,5 +1,5 @@
-import { getLoggedInUser, login } from "./endpoints/identityApi";
-import { toastError } from "./toastUtils";
+import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
+import { toastError, toastSuccess } from "./toastUtils";
 
 export const authenticateExistingUser = async (formData) => {
 	try {
@@ -8,6 +8,15 @@ export const authenticateExistingUser = async (formData) => {
 		window.location.replace("/");
 	} catch (err) {
 		toastError(err?.response?.data?.message);
+	}
+};
+
+export const establishNewUser = async (formData) => {
+	try {
+		const {data} = await signup(formData);
+		toastSuccess("Success");
+	} catch (err) {
+		toastError("Error occurred");
 	}
 };
 

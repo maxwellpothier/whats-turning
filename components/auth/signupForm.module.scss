@@ -31,6 +31,15 @@
 	}
 }
 
+.namesInputSection {
+	display: flex;
+	gap: 10px;
+}
+
+.signupButton {
+	width: 100%;
+}
+
 @media only screen and (min-width: $tabletDeviceWidth) {
 	.formContainer {
 		margin: 0;

@@ -4,45 +4,64 @@ import WTButton from "../WTButton";
 import { useForm } from "react-hook-form";
 
 import styles from "./signupForm.module.scss";
+import { establishNewUser } from "../../utils/authUtils";
 
 const SignupForm = () => {
 	const hookForm = useForm();
 
-	const onSubmit = () => {
-		console.log("Hello there");
+	const onSubmit = async (userData) => {
+		await establishNewUser(userData);
 	};
 
 	return (
 		<Container className={styles.formContainer}>
 			<WTFullLogo className={styles.logo}/>
-			<form className={styles.authForm}>
+			<form
+				className={styles.authForm}
+				onSubmit={hookForm.handleSubmit(onSubmit)}
+			>
 				<input
 					className={styles.authInput}
 					placeholder={"Username"}
+					{...hookForm.register("username")}
 					type={"text"}
 				/>
-				<input
-					className={styles.authInput}
-					placeholder={"Full Name"}
-					type={"text"}
-				/>
+				<div className={styles.namesInputSection}>
+					<input
+						className={styles.authInput}
+						placeholder={"First name"}
+						{...hookForm.register("firstName")}
+						type={"text"}
+					/>
+										<input
+						className={styles.authInput}
+						placeholder={"Last name"}
+						{...hookForm.register("LastName")}
+						type={"text"}
+					/>
+				</div>
 				<input
 					className={styles.authInput}
 					placeholder={"Email"}
-					type={"text"}
+					{...hookForm.register("email")}
+					type={"email"}
 				/>
 				<input
 					className={styles.authInput}
 					placeholder={"Password"}
+					{...hookForm.register("password")}
 					type={"password"}
 				/>
 				<input
 					className={styles.authInput}
-					placeholder={"Confirm Password"}
+					placeholder={"Confirm password"}
+					{...hookForm.register("confirmPassword")}
 					type={"password"}
 				/>
 				<WTButton
+					type={"submit"}
 					content={"Sign Up"}
+					className={styles.signupButton}
 				/>
 			</form>
 		</Container>

@@ -9,7 +9,8 @@ export const login = (formData) => {
 };
 
 export const signup = (formData) => {
-	console.log(formData);
+	const config = formData;
+	return console.log(config);
 };
 
 export const getLoggedInUser = () => {
