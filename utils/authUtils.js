@@ -12,11 +12,27 @@ export const authenticateExistingUser = async (formData) => {
 };
 
 export const establishNewUser = async (formData) => {
-	try {
-		const {data} = await signup(formData);
-		toastSuccess("Success");
-	} catch (err) {
-		toastError("Error occurred");
+	if (formData.username.length === 0) {
+		toastError("Username field is required");
+	} else if (formData.firstName.length === 0) {
+		toastError("First name field is required");
+	} else if (formData.lastName.length === 0) {
+		toastError("Last name field is required");
+	} else if (formData.email.length === 0) {
+		toastError("Email field is required");
+	} else if (formData.password !== formData.confirmPassword) {
+		toastError("Passwords don't match");
+	} else if (formData.password.length < 8) {
+		toastError("Password must be at least 8 characters");
+	} else {
+		delete formData.confirmPassword;
+
+		try {
+			const {data} = await signup(formData);
+			toastSuccess("Thanks for signing up!");
+		} catch (err) {
+			toastError(err?.response?.data?.message);
+		}
 	}
 };
 

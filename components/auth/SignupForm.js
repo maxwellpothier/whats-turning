@@ -5,12 +5,17 @@ import { useForm } from "react-hook-form";
 
 import styles from "./signupForm.module.scss";
 import { establishNewUser } from "../../utils/authUtils";
+import { toastError } from "../../utils/toastUtils";
 
 const SignupForm = () => {
 	const hookForm = useForm();
 
 	const onSubmit = async (userData) => {
-		await establishNewUser(userData);
+		try {
+			await establishNewUser(userData);
+		} catch (err) {
+			toastError("Uncaught error");
+		}
 	};
 
 	return (
@@ -33,10 +38,10 @@ const SignupForm = () => {
 						{...hookForm.register("firstName")}
 						type={"text"}
 					/>
-										<input
+					<input
 						className={styles.authInput}
 						placeholder={"Last name"}
-						{...hookForm.register("LastName")}
+						{...hookForm.register("lastName")}
 						type={"text"}
 					/>
 				</div>

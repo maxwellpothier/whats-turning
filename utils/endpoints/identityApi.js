@@ -10,7 +10,8 @@ export const login = (formData) => {
 
 export const signup = (formData) => {
 	const config = formData;
-	return console.log(config);
+
+	return axios.post(`${baseUrl}/create`, config);
 };
 
 export const getLoggedInUser = () => {
