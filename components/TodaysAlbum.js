@@ -4,6 +4,8 @@ import Image from "next/image";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
+import { toastError } from "../utils/toastUtils";
+import { toast } from "react-toastify";
 
 const fakeData = {
 	title: "The New Abnormal",
@@ -38,7 +40,15 @@ const TodaysAlbum = ({className}) => {
 						</a>
 					</div>
 
-					<WTButton content={"Create Post"} className={styles.createPostButton}/>
+					<WTButton
+						content={"Create Post"}
+						className={styles.createPostButton}
+						onClick={() => {
+							toast.info("Coming soon!", {
+								theme: "colored"
+							});
+						}}
+					/>
 				</div>
 			</div>
 		</div>
