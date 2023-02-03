@@ -45,9 +45,7 @@ const TodaysAlbum = ({className}) => {
 						content={"Create Post"}
 						className={styles.createPostButton}
 						onClick={() => {
-							toast.info("Coming soon!", {
-								theme: "colored"
-							});
+							toast.info("Coming soon!");
 						}}
 					/>
 				</div>
