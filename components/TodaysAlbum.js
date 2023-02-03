@@ -21,6 +21,7 @@ const TodaysAlbum = ({className}) => {
 			<div className={styles.variableInformation}>
 				<Image
 					className={styles.aotdArt}
+					priority
 					height={"350"}
 					width={"350"}
 					src={fakeData.url}
