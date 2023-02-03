@@ -4,7 +4,7 @@ import Link from 'next/link';
 import WTLogo from "../logos/WTLogo";
 import WTButton from "../WTButton";
 
-const Header = () => {
+const Header = ({button}) => {
 	return (
 		<div className={styles.background}>
 			<div className={styles.headerContainer}>
@@ -17,7 +17,7 @@ const Header = () => {
 					<div className={styles.menuLink}/>
 				</div>
 				<div className={styles.headerLinks}>
-					<WTButton content={"Join the Waitlist"}/>
+					{button}
 				</div>
 			</div>
 		</div>

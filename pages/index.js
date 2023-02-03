@@ -4,13 +4,19 @@ import PostCard from "../components/post/PostCard";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import Container from "../components/theme/Container";
 import SignupForm from "../components/auth/SignupForm";
+import WTButton from "../components/WTButton";
 
 import styles from "./index.module.scss";
 import Head from "next/head";
+import { useRef } from "react";
 
 const Home = () => {
+	const waitlistRef = useRef(null);
+
+	const executeScroll = () => waitlistRef.current.scrollIntoView({ behavior: 'smooth' });
+
 	return (
-		<Theme>
+		<Theme button={<WTButton content={"Join the Waitlist"} onClick={executeScroll}/>}>
 			<Head>
 				<title>Home / What&apos;s Turning?</title>
 				<link rel={"icon"} href={"/favicon.ico"}/>
@@ -36,7 +42,7 @@ const Home = () => {
 			</Container>
 			<HorizontalLine/>
 			<Container className={styles.waitlistSection}>
-				<div className={styles.waitlistCopy}>
+				<div className={styles.waitlistCopy} ref={waitlistRef}>
 					<h3 className={styles.waitlistCta}>Signup now to join the waitlist!</h3>
 					<h5 className={styles.singleEmailBit}>(We&apos;ll only send you a single email: When we are ready for you to sign up.)</h5>
 				</div>
