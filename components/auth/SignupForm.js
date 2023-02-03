@@ -13,6 +13,9 @@ const SignupForm = () => {
 	const onSubmit = async (userData) => {
 		try {
 			await establishNewUser(userData);
+			gtag("event", "signup", {
+				"email": userData.email,
+			});
 		} catch (err) {
 			toastError("Uncaught error");
 		}
