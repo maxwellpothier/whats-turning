@@ -4,7 +4,7 @@ import Link from 'next/link';
 import WTLogo from "../logos/WTLogo";
 import WTButton from "../WTButton";
 
-const Header = ({button}) => {
+const Header = () => {
 	return (
 		<div className={styles.background}>
 			<div className={styles.headerContainer}>
@@ -17,7 +17,11 @@ const Header = ({button}) => {
 					<div className={styles.menuLink}/>
 				</div>
 				<div className={styles.headerLinks}>
-					{button}
+					<a href={"/login"} className={styles.headerLink}>Log In</a>
+					<WTButton
+						content={"Sign Up"}
+						onClick={() => window.location.href = "/signup"}
+					/>
 				</div>
 			</div>
 		</div>

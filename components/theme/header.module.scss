@@ -18,27 +18,34 @@
 	max-width: $siteMaxWidth;
 }
 
-// .hamburgerMenu {
-// 	display: flex;
-// 	flex-direction: column;
-// 	gap: 8px;
-// }
+.hamburgerMenu {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
 
-// .menuLink {
-// 	width: 35px;
-// 	height: 5px;
-// 	background-color: $celeste;
-// 	border-radius: 20px;
-// }
+.menuLink {
+	width: 35px;
+	height: 5px;
+	background-color: $celeste;
+	border-radius: 20px;
+}
 
-// .headerLinks {
-// 	display: none;
-// }
+.headerLink {
+	font-size: 18px;
+	color: $celeste;
+	letter-spacing: 0.15px;
+	font-family: "Manrope";
+}
+
+.headerLinks {
+	display: none;
+}
 
 @media only screen and (min-width: $mediumDeviceWidth) {
 	.background {
 		justify-content: center;
-	}
+}
 
 	.hamburgerMenu {
 		display: none;
@@ -46,5 +53,7 @@
 
 	.headerLinks {
 		display: flex;
+		align-items: center;
+		gap: 35px;
 	}
 }
