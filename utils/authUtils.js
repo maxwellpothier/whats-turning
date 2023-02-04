@@ -29,7 +29,9 @@ export const establishNewUser = async (formData) => {
 
 		try {
 			const {data} = await signup(formData);
-			toastSuccess("Thanks for joining us!");
+			localStorage.setItem("WT_ACCESS_TOKEN", data.token);
+			toastSuccess("Signed up successfully!");
+			window.location.replace("/");
 		} catch (err) {
 			toastError(err?.response?.data?.message);
 		}

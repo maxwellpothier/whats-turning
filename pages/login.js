@@ -10,7 +10,6 @@ const Login = () => {
 	const onSubmit = async (userData) => {
 		try {
 			await authenticateExistingUser(userData);
-			console.log("Authenticated", response);
 		} catch (err) {
 			toastError(err?.response?.data?.message);
 		}

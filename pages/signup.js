@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
-import { authenticateExistingUser } from "../utils/authUtils";
+import { establishNewUser } from "../utils/authUtils";
 import { toastError } from "../utils/toastUtils";
 
 const Signup = () => {
@@ -9,10 +9,12 @@ const Signup = () => {
 
 	const onSubmit = async (userData) => {
 		try {
-			// await authenticateExistingUser(userData);
-			console.log("Authenticated", userData);
+			await establishNewUser(userData);
+			gtag("event", "signup", {
+				"email": userData.email,
+			});
 		} catch (err) {
-			toastError(err?.response?.data?.message);
+			toastError("Uncaught error");
 		}
 	};
 
