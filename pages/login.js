@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
@@ -7,7 +6,6 @@ import { toastError } from "../utils/toastUtils";
 
 const Login = () => {
 	const hookForm = useForm();
-	const router = useRouter();
 
 	const onSubmit = async (userData) => {
 		try {
