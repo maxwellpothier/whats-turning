@@ -1,13 +1,15 @@
 import styles from "./wtInput.module.scss";
 
-const WTInput = ({type, placeholder, hookForm, name}) => {
+const WTInput = ({type, label, hookForm, name}) => {
 	return (
-		<input
-			className={styles.formInputField}
-			{...hookForm.register(name)}
-			placeholder={placeholder}
-			type={type}
-		/>
+		<>
+			<label className={styles.inputLabel}>{label}</label>
+			<input
+				className={styles.formInputField}
+				{...hookForm.register(name)}
+				type={type}
+			/>
+		</>
 	);
 };
 

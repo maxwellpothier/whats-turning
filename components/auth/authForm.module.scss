@@ -8,13 +8,12 @@
 	background-color: $liberty;
 	border-radius: 10px;
 	padding: 8px;
-	max-width: 400px;
+	max-width: 360px;
 	border: 2px solid $blackCoffee;
 }
 
 .formLogo {
 	font-size: 40px;
-	margin-bottom: 10px;
 }
 
 .authForm {
@@ -51,9 +50,9 @@
 	text-decoration: underline;
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 380px) {
 	.authFormOuterBox {
 		margin: 0 auto;
-		margin-top: 200px;
+		margin-top: 120px;
 	}
 }

@@ -30,13 +30,13 @@ const Login = () => {
 			<WTInput
 				name={"username"}
 				type={"username"}
-				placeholder={"Email"}
+				label={"Username"}
 				hookForm={hookForm}
 			/>
 			<WTInput
 				name={"password"}
 				type={"password"}
-				placeholder={"Password"}
+				label={"Password"}
 				hookForm={hookForm}
 			/>
 		</AuthForm>

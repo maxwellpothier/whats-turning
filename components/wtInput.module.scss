@@ -1,7 +1,18 @@
+@import "styles/variables";
+
+.inputLabel {
+	font-size: 12px;
+	color: $celeste;
+	font-family: "Manrope";
+	margin-bottom: 5px;
+}
+
 .formInputField {
 	width: 100%;
-	margin-bottom: 20px;
-	height: 30px;
+	margin-bottom: 15px;
+	height: 35px;
+	border: 2px solid $blackCoffee;
+	border-radius: 10px;
 	padding: 6px;
 	&:focus {
 		outline: none;
