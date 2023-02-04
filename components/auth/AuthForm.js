@@ -1,4 +1,4 @@
-import WTFullLogo from "./logos/WTFullLogo";
+import WTFullLogo from "../logos/WTFullLogo";
 import styles from "./authForm.module.scss";
 
 const AuthForm = ({onSubmit, hookForm, buttonAreaContent, children}) => {

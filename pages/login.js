@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import AuthForm from "../components/AuthForm";
+import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
 import { authenticateExistingUser } from "../utils/authUtils";
 import { toastError } from "../utils/toastUtils";
