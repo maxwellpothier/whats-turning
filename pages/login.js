@@ -20,8 +20,8 @@ const Login = () => {
 
 	const buttonAreaContent = {
 		ctaText: "Don't have an account?",
-		linkText: "Signup",
-		buttonText: "Login",
+		linkText: "Sign Up",
+		buttonText: "Log In",
 		linkHref: "/signup",
 	};
 
