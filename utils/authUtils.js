@@ -1,10 +1,11 @@
+import Cookies from "js-cookie";
 import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
 import { toastError, toastSuccess } from "./toastUtils";
 
 export const authenticateExistingUser = async (formData) => {
 	try {
 		const {data} = await login(formData);
-		localStorage.setItem("WT_ACCESS_TOKEN", data.token);
+		Cookies.set("WT_ACCESS_TOKEN", data.token);
 		window.location.replace("/");
 	} catch (err) {
 		toastError(err?.response?.data?.message);
@@ -29,7 +30,7 @@ export const establishNewUser = async (formData) => {
 
 		try {
 			const {data} = await signup(formData);
-			localStorage.setItem("WT_ACCESS_TOKEN", data.token);
+			Cookies.set("WT_ACCESS_TOKEN", data.token);
 			toastSuccess("Signed up successfully!");
 			window.location.replace("/");
 		} catch (err) {
@@ -42,3 +43,7 @@ export const getUser = async () => {
 	const {data} = await getLoggedInUser();
 	return data.data;
 };
+
+export const isAuthenticated = () => !!Cookies.get("WT_ACCESS_TOKEN");
+
+export const unauthenticate = () => Cookies.remove("WT_ACCESS_TOKEN");
