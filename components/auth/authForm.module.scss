@@ -1,0 +1,58 @@
+@import "styles/variables";
+
+.authFormOuterBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 100px 10px;
+	background-color: $liberty;
+	border-radius: 10px;
+	padding: 8px;
+	max-width: 360px;
+	border: 2px solid $blackCoffee;
+}
+
+.formLogo {
+	font-size: 40px;
+}
+
+.authForm {
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+}
+
+.formInputField {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 30px;
+	padding: 6px;
+	&:focus {
+		outline: none;
+	}
+}
+
+.buttonAreaContainer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.moreInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 12px;
+	color: $celeste;
+	font-family: "Manrope";
+}
+
+.signupLink {
+	text-decoration: underline;
+}
+
+@media only screen and (min-width: 380px) {
+	.authFormOuterBox {
+		margin: 0 auto;
+		margin-top: 120px;
+	}
+}

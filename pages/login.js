@@ -1,18 +1,15 @@
-import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import AuthForm from "../components/AuthForm";
+import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
 import { authenticateExistingUser } from "../utils/authUtils";
 import { toastError } from "../utils/toastUtils";
 
 const Login = () => {
 	const hookForm = useForm();
-	const router = useRouter();
 
 	const onSubmit = async (userData) => {
 		try {
 			await authenticateExistingUser(userData);
-			console.log("Authenticated", response);
 		} catch (err) {
 			toastError(err?.response?.data?.message);
 		}
@@ -20,8 +17,8 @@ const Login = () => {
 
 	const buttonAreaContent = {
 		ctaText: "Don't have an account?",
-		linkText: "Signup",
-		buttonText: "Login",
+		linkText: "Sign Up",
+		buttonText: "Log In",
 		linkHref: "/signup",
 	};
 
@@ -30,13 +27,13 @@ const Login = () => {
 			<WTInput
 				name={"username"}
 				type={"username"}
-				placeholder={"Email"}
+				label={"Username"}
 				hookForm={hookForm}
 			/>
 			<WTInput
 				name={"password"}
 				type={"password"}
-				placeholder={"Password"}
+				label={"Password"}
 				hookForm={hookForm}
 			/>
 		</AuthForm>
