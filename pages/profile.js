@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { isAuthenticated } from "../utils/authUtils";
+import { getUser } from "../utils/authUtils";
 
 const Profile = () => {
-	const router = useRouter();
 
 	useEffect(() => {
 		(async () => {
-			if (!isAuthenticated()) await router.push("/");
+			const {data} = await getUser();
+			console.log("User here", data);
 		})();
 	});
 
