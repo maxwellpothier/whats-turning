@@ -6,6 +6,7 @@ import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
 import { toastError } from "../utils/toastUtils";
 import { toast } from "react-toastify";
+import { isAuthenticated } from "../utils/authUtils";
 
 const fakeData = {
 	title: "The New Abnormal",
@@ -45,7 +46,7 @@ const TodaysAlbum = ({className}) => {
 						content={"Create Post"}
 						className={styles.createPostButton}
 						onClick={() => {
-							toast.info("Coming soon!");
+							isAuthenticated() ? toast.info("Coming soon") :  window.location.href = "/signup";
 						}}
 					/>
 				</div>
