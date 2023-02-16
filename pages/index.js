@@ -5,12 +5,13 @@ import HorizontalLine from "../components/theme/HorizontalLine";
 import Container from "../components/theme/Container";
 import SignupForm from "../components/auth/SignupForm";
 import WTButton from "../components/WTButton";
+import { getAllAlbums } from "../utils/endpoints/albumsApi";
 
 import styles from "./index.module.scss";
 import Head from "next/head";
 import { useRef } from "react";
 
-const Home = () => {
+const Home = ({aotd}) => {
 	return (
 		<Theme>
 			<Head>
@@ -18,11 +19,29 @@ const Home = () => {
 				<link rel={"icon"} href={"/favicon.ico"}/>
 			</Head>
 
-			<TodaysAlbum className={styles.homepageAotdContainer}/>
+			<TodaysAlbum
+				aotd={aotd}
+				className={styles.homepageAotdContainer}
+			/>
 			<HorizontalLine/>
 		
 		</Theme>
 	);
 };
+
+export async function getServerSideProps() {
+	const {data} = await getAllAlbums();
+	const {title, artist, yearReleased, url} = data.data[data.data.length - 1];
+	return {
+		props: {
+			aotd: {
+				title,
+				artist,
+				yearReleased,
+				url,
+			},
+		},
+	};
+}
 
 export default Home;
