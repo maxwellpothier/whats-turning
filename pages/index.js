@@ -29,7 +29,7 @@ const Home = ({aotd}) => {
 	);
 };
 
-export async function getServerSideProps() {
+export const getServerSideProps = async () => {
 	const {data} = await getAllAlbums();
 	const {title, artist, yearReleased, url} = data.data[data.data.length - 1];
 	return {
