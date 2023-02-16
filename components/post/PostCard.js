@@ -4,7 +4,7 @@ import Image from "next/image";
 import ScoreIcon from "./ScoreIcon";
 import {HiArrowLongRight} from "react-icons/hi2";
 
-const PostCard = ({title, artist, yearReleased, url, className}) => {
+const PostCard = ({title, artist, yearReleased, url, rating, className}) => {
 	return (
 		<div className={`${styles.postCardContainer} ${className}`}>
 			<div className={styles.cardHeadSection}>
@@ -22,7 +22,7 @@ const PostCard = ({title, artist, yearReleased, url, className}) => {
 						<span className={styles.albumYear}>{yearReleased}</span>
 					</div>
 				</div>
-				<ScoreIcon score={8.3}/>
+				<ScoreIcon score={rating}/>
 			</div>
 
 			<div className={styles.blocksWrapper}>

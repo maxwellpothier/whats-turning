@@ -40,9 +40,10 @@ const Profile = () => {
 					<PostCard
 						key={i}
 						className={styles.profilePostCard}
-						title={"I Can Hear The Heart Beating As One"}
-						artist={"Yo La Tengo"}
-						yearReleased={"1997"}
+						title={post.album.title}
+						artist={post.album.artist}
+						yearReleased={post.album.yearReleased}
+						rating={post.rating}
 						url={"https://i.discogs.com/x3ZpnVYVFbxLgfbyGkI5YJd8ySOeh9uUaHxOHr9uaZ4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1ODkz/OS0xNTg4ODgxMTUx/LTE5OTUuanBlZw.jpeg"}
 					/>
 				))}
