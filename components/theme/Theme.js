@@ -9,9 +9,7 @@ const Theme = ({children, button}) => {
 		<div className={styles.appContainer}>
 			<Header/>
 			<Container>
-				<div className={styles.contentContainer}>
-					{children}
-				</div>
+				{children}
 			</Container>
 			<Footer/>
 		</div>

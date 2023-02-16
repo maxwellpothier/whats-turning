@@ -1,0 +1,43 @@
+@import "styles/variables";
+
+.profileSubheading {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.subheadingNameSection {
+	display: flex;
+	gap: 5px;
+	flex-direction: column;
+}
+
+.subheadingTotalPosts {
+	display: flex;
+	gap: 5px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	background-color: $maxYellow;
+	border-radius: 50%;
+	white-space: nowrap;
+	margin-right: 15px;
+}
+
+.subheadingLargerFontSize {
+	font-size: 18px;
+}
+
+.postsSectionTitle {
+	font-size: 28px;
+	font-family: "Manrope ExtraBold";
+	margin-bottom: 30px;
+}
+
+.profilePostCard {
+	margin-bottom: 20px;
+}
