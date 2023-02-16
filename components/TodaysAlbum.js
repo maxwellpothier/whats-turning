@@ -4,9 +4,11 @@ import Image from "next/image";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
-import { toastError } from "../utils/toastUtils";
 import { toast } from "react-toastify";
 import { isAuthenticated } from "../utils/authUtils";
+import { useState, useEffect } from "react";
+import { getAllAlbums } from "../utils/endpoints/albumsApi";
+import { toastError } from "../utils/toastUtils";
 
 const fakeData = {
 	title: "The New Abnormal",
@@ -16,6 +18,25 @@ const fakeData = {
 };
 
 const TodaysAlbum = ({className}) => {
+	const [aotd, setAotd] = useState({});
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const {data} = await getAllAlbums();
+				const {title, artist, yearReleased, url} = data.data[data.data.length - 1]
+				setAotd({
+					title,
+					artist,
+					yearReleased,
+					url,
+				});
+			} catch (err) {
+				toastError(err?.response?.data?.message);
+			}
+		})();
+	}, []);
+
 	return (
 		<div className={`${styles.aotdContainer} ${className}`}>
 			<div className={styles.aotd}>Album of the Day</div>
@@ -25,13 +46,13 @@ const TodaysAlbum = ({className}) => {
 					priority
 					height={"350"}
 					width={"350"}
-					src={fakeData.url}
-					alt={fakeData.title}
+					src={aotd.url}
+					alt={aotd.title}
 				/>
 				<div className={styles.albumInfoContainer}>
-					<span className={styles.artistName}>{fakeData.artist}</span>
-					<span className={styles.albumName}>{fakeData.title}</span>
-					<span className={styles.albumYear}>{fakeData.yearReleased}</span>
+					<span className={styles.artistName}>{aotd.artist}</span>
+					<span className={styles.albumName}>{aotd.title}</span>
+					<span className={styles.albumYear}>{aotd.yearReleased}</span>
 
 					<div className={styles.streamLinks}>
 						<a href="https://open.spotify.com/album/4sW8Eql2e2kdRP1A1R1clG?si=PniMuJaSS9qV5kNXtJ5Z0A" target={"_blank"} rel={"noreferrer"}>
