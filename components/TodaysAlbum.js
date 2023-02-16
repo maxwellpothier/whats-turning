@@ -6,37 +6,8 @@ import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
 import { toast } from "react-toastify";
 import { isAuthenticated } from "../utils/authUtils";
-import { useState, useEffect } from "react";
-import { getAllAlbums } from "../utils/endpoints/albumsApi";
-import { toastError } from "../utils/toastUtils";
 
-const fakeData = {
-	title: "The New Abnormal",
-	artist: "The Strokes",
-	yearReleased: "2020",
-	url: "https://i.discogs.com/JSvoLvGxGluJIZgM6vMO74oLnVcR8W7zFhiHxvz802Q/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2NzM2/NjQ2LTE2MDk1MzI1/MTItMzA5My5qcGVn.jpeg",
-};
-
-const TodaysAlbum = ({className}) => {
-	const [aotd, setAotd] = useState({});
-
-	useEffect(() => {
-		(async () => {
-			try {
-				const {data} = await getAllAlbums();
-				const {title, artist, yearReleased, url} = data.data[data.data.length - 1]
-				setAotd({
-					title,
-					artist,
-					yearReleased,
-					url,
-				});
-			} catch (err) {
-				toastError(err?.response?.data?.message);
-			}
-		})();
-	}, []);
-
+const TodaysAlbum = ({aotd, className}) => {
 	return (
 		<div className={`${styles.aotdContainer} ${className}`}>
 			<div className={styles.aotd}>Album of the Day</div>
