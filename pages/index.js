@@ -11,7 +11,14 @@ import styles from "./index.module.scss";
 import Head from "next/head";
 import { useRef } from "react";
 
-const Home = ({aotd}) => {
+const Home = () => {
+	const aotd = {
+		title: "MM..FOOD",
+		artist: "MF DOOM",
+		yearReleased: 2004,
+		url: "https://i.discogs.com/9st0aNIe6u_nrlWwW4lYywMEHLxNGlmbVPy2ieOs0AE/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0OTIz/Mi0xMjY2NDcyMjI3/LmpwZWc.jpeg",
+	};
+
 	return (
 		<Theme>
 			<Head>
@@ -29,19 +36,19 @@ const Home = ({aotd}) => {
 	);
 };
 
-export const getServerSideProps = async () => {
-	const {data} = await getAllAlbums();
-	const {title, artist, yearReleased, url} = data.data[data.data.length - 1];
-	return {
-		props: {
-			aotd: {
-				title,
-				artist,
-				yearReleased,
-				url,
-			},
-		},
-	};
-}
+// export const getServerSideProps = async () => {
+// 	const {data} = await getAllAlbums();
+// 	const {title, artist, yearReleased, url} = data.data[data.data.length - 1];
+// 	return {
+// 		props: {
+// 			aotd: {
+// 				title,
+// 				artist,
+// 				yearReleased,
+// 				url,
+// 			},
+// 		},
+// 	};
+// }
 
 export default Home;
