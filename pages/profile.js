@@ -14,10 +14,14 @@ const Profile = () => {
 
 	useEffect(() => {
 		(async () => {
-			const data = await getUser();
-			setUsername(data.username);
-			setName(`${data.firstName} ${data.lastName}`);
-			setPosts(data.posts);
+			try {
+				const data = await getUser();
+				setUsername(data.username);
+				setName(`${data.firstName} ${data.lastName}`);
+				setPosts(data.posts);
+			} catch (err) {
+				toastError(err?.response?.data?.message);
+			}
 		})();
 	}, []);
 

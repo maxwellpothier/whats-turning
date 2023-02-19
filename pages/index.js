@@ -9,15 +9,28 @@ import { getAllAlbums } from "../utils/endpoints/albumsApi";
 
 import styles from "./index.module.scss";
 import Head from "next/head";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { toastError } from "../utils/toastUtils";
 
 const Home = () => {
-	const aotd = {
-		title: "MM..FOOD",
-		artist: "MF DOOM",
-		yearReleased: 2004,
-		url: "https://i.discogs.com/9st0aNIe6u_nrlWwW4lYywMEHLxNGlmbVPy2ieOs0AE/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0OTIz/Mi0xMjY2NDcyMjI3/LmpwZWc.jpeg",
-	};
+	const [aotd, setAotd] = useState({});
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const {data} = await getAllAlbums();
+				const {title, artist, yearReleased, url} = data.data[data.data.length - 1];
+				setAotd({
+					title,
+					artist,
+					yearReleased,
+					url
+				});
+			} catch (err) {
+				toastError(err?.response?.data?.message);
+			}
+		})();
+	}, []);
 
 	return (
 		<Theme>
