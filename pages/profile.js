@@ -36,17 +36,19 @@ const Profile = () => {
 			<HorizontalLine/>
 			<Container>
 				<h2 className={styles.postsSectionTitle}>All Posts</h2>
-				{posts.map((post, i) => (
-					<PostCard
-						key={i}
-						className={styles.profilePostCard}
-						title={post.album.title}
-						artist={post.album.artist}
-						yearReleased={post.album.yearReleased}
-						rating={post.rating}
-						url={post.album.url}
-					/>
-				))}
+				<div className={styles.postContainer}>
+					{posts.map((post, i) => (
+						<PostCard
+							key={i}
+							className={styles.profilePostCard}
+							title={post.album.title}
+							artist={post.album.artist}
+							yearReleased={post.album.yearReleased}
+							rating={post.rating}
+							url={post.album.url}
+						/>
+					))}
+				</div>
 			</Container>
 		</Theme>
 	);
