@@ -38,7 +38,7 @@ const TodaysAlbum = ({aotd, className}) => {
 						content={"Create Post"}
 						className={styles.createPostButton}
 						onClick={() => {
-							isAuthenticated() ? toast.info("Coming soon") :  window.location.href = "/signup";
+							isAuthenticated() ? window.location.href = "/create-post" :  window.location.href = "/signup";
 						}}
 					/>
 				</div>
