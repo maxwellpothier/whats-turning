@@ -9,13 +9,18 @@
 .createSubheading {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	align-items: center;
+}
+
+.albumArt {
+	margin-bottom: 20px;
 }
 
 .createQuestion {
 	font-size: 36px;
 	text-align: center;
 	line-height: 1.3;
+	max-width: 300px;
 }
 
 .scoreInput {
@@ -37,6 +42,11 @@
 	}
 }
 
+.reviewButtonSection {
+	width: 80%;
+	max-width: 570px;
+}
+
 .reviewTextArea {
 	width: 100%;
 	height: 150px;
@@ -55,4 +65,12 @@
 	display: flex;
 	width: 100%;
 	justify-content: flex-end;
+}
+
+@media only screen and (min-width: $tabletDeviceWidth) {
+	.createSubheading {
+		flex-direction: row;
+		gap: 30px;
+		// justify-content: space-between;
+	}
 }

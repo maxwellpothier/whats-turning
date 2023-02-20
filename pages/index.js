@@ -27,7 +27,7 @@ const Home = () => {
 					url
 				});
 			} catch (err) {
-				toastError(err?.response?.data?.message);
+				toastError(err.response?.data?.message);
 			}
 		})();
 	}, []);
