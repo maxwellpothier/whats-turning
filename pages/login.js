@@ -2,17 +2,12 @@ import { useForm } from "react-hook-form";
 import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
 import { authenticateExistingUser } from "../utils/authUtils";
-import { toastError } from "../utils/toastUtils";
 
 const Login = () => {
 	const hookForm = useForm();
 
 	const onSubmit = async (userData) => {
-		try {
-			await authenticateExistingUser(userData);
-		} catch (err) {
-			toastError(err?.response?.data?.message);
-		}
+		await authenticateExistingUser(userData);
 	};
 
 	const buttonAreaContent = {

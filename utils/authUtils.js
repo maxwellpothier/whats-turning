@@ -5,7 +5,7 @@ import { toastError, toastSuccess } from "./toastUtils";
 export const authenticateExistingUser = async (formData) => {
 	try {
 		const {data} = await login(formData);
-		Cookies.set("WT_ACCESS_TOKEN", data.token);
+		Cookies.set("WT_ACCESS_TOKEN", data.accessToken);
 		window.location.replace("/");
 	} catch (err) {
 		toastError(err?.response?.data?.message);
