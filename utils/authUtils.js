@@ -19,8 +19,6 @@ export const establishNewUser = async (formData) => {
 		toastError("First name field is required");
 	} else if (formData.lastName.length === 0) {
 		toastError("Last name field is required");
-	} else if (formData.email.length === 0) {
-		toastError("Email field is required");
 	} else if (formData.password !== formData.confirmPassword) {
 		toastError("Passwords don't match");
 	} else if (formData.password.length < 8) {
@@ -30,8 +28,7 @@ export const establishNewUser = async (formData) => {
 
 		try {
 			const {data} = await signup(formData);
-			Cookies.set("WT_ACCESS_TOKEN", data.token);
-			toastSuccess("Signed up successfully!");
+			Cookies.set("WT_ACCESS_TOKEN", data.accessToken);
 			window.location.replace("/");
 		} catch (err) {
 			toastError(err?.response?.data?.message);

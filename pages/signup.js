@@ -2,20 +2,12 @@ import { useForm } from "react-hook-form";
 import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
 import { establishNewUser } from "../utils/authUtils";
-import { toastError } from "../utils/toastUtils";
 
 const Signup = () => {
 	const hookForm = useForm();
 
 	const onSubmit = async (userData) => {
-		try {
-			await establishNewUser(userData);
-			gtag("event", "signup", {
-				"username": userData.username,
-			});
-		} catch (err) {
-			toastError("Uncaught error");
-		}
+		await establishNewUser(userData);
 	};
 
 	const buttonAreaContent = {

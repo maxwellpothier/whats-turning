@@ -22,7 +22,3 @@ export const getLoggedInUser = () => {
 		},
 	});
 };
-
-export const getUser = (userId) => {
-	return axios.get(`${baseUrl}/${userId}`);
-};
