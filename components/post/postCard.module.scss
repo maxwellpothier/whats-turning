@@ -34,10 +34,20 @@
 
 .albumTitle {
 	margin-bottom: 6px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1.3;
+	width: 125px;
 }
 
 .albumArtist {
 	margin-bottom: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1.3;
+	width: 125px;
 }
 
 .blocksWrapper {

@@ -4,14 +4,7 @@ import Image from "next/image";
 import ScoreIcon from "./ScoreIcon";
 import {HiArrowLongRight} from "react-icons/hi2";
 
-const album = {
-	title: "Physical Graffiti",
-	artist: "Led Zeppelin",
-	yearReleased: "1975",
-	url: "https://i.discogs.com/x3ZpnVYVFbxLgfbyGkI5YJd8ySOeh9uUaHxOHr9uaZ4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1ODkz/OS0xNTg4ODgxMTUx/LTE5OTUuanBlZw.jpeg",
-};
-
-const PostCard = ({className}) => {
+const PostCard = ({title, artist, yearReleased, url, rating, className}) => {
 	return (
 		<div className={`${styles.postCardContainer} ${className}`}>
 			<div className={styles.cardHeadSection}>
@@ -20,16 +13,16 @@ const PostCard = ({className}) => {
 						className={styles.postCardArt}
 						height={"600"}
 						width={"600"}
-						src={album.url}
-						alt={album.title}
+						src={url}
+						alt={title}
 					/>
 					<div className={styles.albumInfoText}>
-						<span className={styles.albumTitle}>{album.title}</span>
-						<span className={styles.albumArtist}>{album.artist}</span>
-						<span className={styles.albumYear}>{album.yearReleased}</span>
+						<span className={styles.albumTitle}>{title}</span>
+						<span className={styles.albumArtist}>{artist}</span>
+						<span className={styles.albumYear}>{yearReleased}</span>
 					</div>
 				</div>
-				<ScoreIcon score={8.3}/>
+				<ScoreIcon score={rating}/>
 			</div>
 
 			<div className={styles.blocksWrapper}>

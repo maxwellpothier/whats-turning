@@ -40,8 +40,12 @@ export const establishNewUser = async (formData) => {
 };
 
 export const getUser = async () => {
-	const {data} = await getLoggedInUser();
-	return data.data;
+	try {
+		const {data} = await getLoggedInUser();
+		return data.data;
+	} catch (err) {
+		toastError(err?.response?.data?.message);
+	}
 };
 
 export const isAuthenticated = () => !!Cookies.get("WT_ACCESS_TOKEN");

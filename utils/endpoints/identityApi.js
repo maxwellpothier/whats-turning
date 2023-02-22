@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const baseUrl = "https://wt-backend.onrender.com/identity";
 
@@ -17,7 +18,7 @@ export const signup = (formData) => {
 export const getLoggedInUser = () => {
 	return axios.get(`${baseUrl}/`, {
 		headers: {
-			Authorization: `Bearer ${localStorage.getItem("WT_ACCESS_TOKEN")}`,
+			Authorization: `Bearer ${Cookies.get("WT_ACCESS_TOKEN")}`,
 		},
 	});
 };
