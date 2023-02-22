@@ -11,7 +11,7 @@ const Signup = () => {
 		try {
 			await establishNewUser(userData);
 			gtag("event", "signup", {
-				"email": userData.email,
+				"username": userData.username,
 			});
 		} catch (err) {
 			toastError("Uncaught error");
@@ -47,12 +47,6 @@ const Signup = () => {
 					hookForm={hookForm}
 				/>
 			</div>
-			<WTInput
-				name={"email"}
-				type={"email"}
-				label={"Email"}
-				hookForm={hookForm}
-			/>
 			<WTInput
 				name={"password"}
 				type={"password"}
