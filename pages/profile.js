@@ -33,26 +33,33 @@ const Profile = () => {
 					<h3 className={styles.subheadingLargerFontSize}>{name}</h3>
 				</div>
 				<div className={styles.subheadingTotalPosts}>
-					<h3 className={styles.subheadingLargerFontSize}>{posts.length}</h3>
+					<h3 className={styles.subheadingLargerFontSize}>
+						{posts ? posts.length : "0"}
+						</h3>
 					<h4>Total Posts</h4>
 				</div>
 			</div>
 			<HorizontalLine/>
 			<Container>
-				<h2 className={styles.postsSectionTitle}>All Posts</h2>
-				<div className={styles.postContainer}>
-					{posts.map((post, i) => (
-						<PostCard
-							key={i}
-							className={styles.profilePostCard}
-							title={post.album.title}
-							artist={post.album.artist}
-							yearReleased={post.album.yearReleased}
-							rating={post.rating}
-							url={post.album.url}
-						/>
-					))}
-				</div>
+				{posts
+					? <>
+						<h2 className={styles.postsSectionTitle}>All Posts</h2>
+						<div className={styles.postContainer}>
+							{posts?.map((post, i) => (
+								<PostCard
+									key={i}
+									className={styles.profilePostCard}
+									title={post.album.title}
+									artist={post.album.artist}
+									yearReleased={post.album.yearReleased}
+									rating={post.rating}
+									url={post.album.url}
+								/>
+							))}
+						</div>
+					</>
+					: <h2 className={styles.postsSectionTitle}>No posts yet</h2>
+				}
 			</Container>
 		</Theme>
 	);
