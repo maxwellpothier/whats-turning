@@ -11,9 +11,7 @@ const PostCard = ({post, className}) => {
 	return (
 		<div
 			className={`${styles.postCardContainer} ${className}`}
-			onClick={() => {
-				console.log(post.id);
-			}}
+			onClick={() => window.location.href = `/post/${post.id}`}
 		>
 			<div className={styles.cardHeadSection}>
 				<div className={styles.albumInfo}>				
