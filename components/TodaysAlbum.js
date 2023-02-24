@@ -4,7 +4,6 @@ import Image from "next/image";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
-import { toast } from "react-toastify";
 import { isAuthenticated } from "../utils/authUtils";
 
 const TodaysAlbum = ({aotd, className}) => {
@@ -17,7 +16,7 @@ const TodaysAlbum = ({aotd, className}) => {
 					priority
 					height={"350"}
 					width={"350"}
-					src={aotd.url}
+					src={aotd.artUrl}
 					alt={aotd.title}
 				/>
 				<div className={styles.albumInfoContainer}>
@@ -26,10 +25,10 @@ const TodaysAlbum = ({aotd, className}) => {
 					<span className={styles.albumYear}>{aotd.yearReleased}</span>
 
 					<div className={styles.streamLinks}>
-						<a href="https://open.spotify.com/album/4sW8Eql2e2kdRP1A1R1clG?si=PniMuJaSS9qV5kNXtJ5Z0A" target={"_blank"} rel={"noreferrer"}>
+						<a href={aotd.spotifyUrl} target={"_blank"} rel={"noreferrer"}>
 							<FaSpotify className={styles.streamIcon}/>
 						</a>
-						<a href="https://music.apple.com/us/album/turn-on-the-bright-lights/1589272584" target={"_blank"} rel={"noreferrer"}>
+						<a href={aotd.appleUrl} target={"_blank"} rel={"noreferrer"}>
 							<SiApplemusic className={styles.streamIcon}/>
 						</a>
 					</div>

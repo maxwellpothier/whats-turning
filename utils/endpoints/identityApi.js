@@ -1,12 +1,12 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const baseUrl = "https://wt-backend.onrender.com/identity";
+const baseUrl = "https://wt-v2.onrender.com/identity";
 
 export const login = (formData) => {
 	const config = formData;
 
-	return axios.post(`${baseUrl}/establish`, config);
+	return axios.post(`${baseUrl}/login`, config);
 };
 
 export const signup = (formData) => {
@@ -21,8 +21,4 @@ export const getLoggedInUser = () => {
 			Authorization: `Bearer ${Cookies.get("WT_ACCESS_TOKEN")}`,
 		},
 	});
-};
-
-export const getUser = (userId) => {
-	return axios.get(`${baseUrl}/${userId}`);
 };

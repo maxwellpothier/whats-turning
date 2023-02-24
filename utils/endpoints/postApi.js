@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const baseUrl = "https://wt-backend.onrender.com/api/posts";
+const baseUrl = "https://wt-v2.onrender.com/post";
 
 export const getAllPosts = () => {
 	return axios.get(baseUrl, {
@@ -27,9 +27,9 @@ export const getPost = (userId, postId) => {
 	});
 };
 
-export const createUserPost = ({userId, score, review, albumId}) => {
-	return axios.post(`${baseUrl}/${userId}`, {
-		rating: +score,
+export const createUserPost = (score, review, albumId) => {
+	return axios.post(`${baseUrl}/create`, {
+		rating: score,
 		content: review,
 		albumId: albumId,
 	},

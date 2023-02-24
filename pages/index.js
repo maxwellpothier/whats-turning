@@ -1,34 +1,19 @@
 import Theme from "../components/theme/Theme";
 import TodaysAlbum from "../components/TodaysAlbum";
-import PostCard from "../components/post/PostCard";
 import HorizontalLine from "../components/theme/HorizontalLine";
-import Container from "../components/theme/Container";
-import SignupForm from "../components/auth/SignupForm";
-import WTButton from "../components/WTButton";
-import { getAllAlbums } from "../utils/endpoints/albumsApi";
+import Head from "next/head";
+import { getAotd } from "../utils/albumUtils";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./index.module.scss";
-import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
-import { toastError } from "../utils/toastUtils";
 
 const Home = () => {
 	const [aotd, setAotd] = useState({});
 
 	useEffect(() => {
 		(async () => {
-			try {
-				const {data} = await getAllAlbums();
-				const {title, artist, yearReleased, url} = data.data[data.data.length - 1];
-				setAotd({
-					title,
-					artist,
-					yearReleased,
-					url
-				});
-			} catch (err) {
-				toastError(err.response?.data?.message);
-			}
+			const album = await getAotd();
+			setAotd(album);
 		})();
 	}, []);
 
