@@ -49,11 +49,7 @@ const Profile = () => {
 								<PostCard
 									key={i}
 									className={styles.profilePostCard}
-									title={post.album.title}
-									artist={post.album.artist}
-									yearReleased={post.album.yearReleased}
-									rating={post.rating}
-									url={post.album.artUrl}
+									post={post}
 								/>
 							))}
 						</div>
