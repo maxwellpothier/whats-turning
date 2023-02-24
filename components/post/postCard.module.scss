@@ -7,6 +7,17 @@
 	border: 2px solid $blackCoffee;
 	font-size: 12px;
 	max-width: 285px;
+	cursor: pointer;
+	transition: 0.25s;
+
+	&:hover {
+		transform: translateY(-2px) scale3d(1, 1, 1);
+
+		.readMoreButton {
+			gap: 7px;
+			margin-right: 0;
+		}
+	}
 }
 
 .cardHeadSection {
@@ -74,6 +85,8 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: 5px;
+	margin-right: 2px;
+	transition: 0.25s;
 }
 
 @media only screen and (min-width: $mediumDeviceWidth) {
