@@ -4,7 +4,6 @@ import HorizontalLine from "../components/theme/HorizontalLine";
 import Head from "next/head";
 import { getAotd } from "../utils/albumUtils";
 import { useEffect, useRef, useState } from "react";
-import { toastError } from "../utils/toastUtils";
 
 import styles from "./index.module.scss";
 

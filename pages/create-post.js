@@ -1,36 +1,31 @@
 import Theme from "../components/theme/Theme";
 import Image from "next/image";
 import Container from "../components/theme/Container";
-import { getAllAlbums } from "../utils/endpoints/albumsApi";
-import { useState } from "react";
 import WTButton from "../components/WTButton";
 import { useForm } from "react-hook-form";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import { createUserPost } from "../utils/endpoints/postApi";
 import { getUser } from "../utils/authUtils";
+import { getAotd } from "../utils/albumUtils";
+import { toastError } from "../utils/toastUtils";
+import { useEffect, useState } from "react";
 
 import styles from "./createPost.module.scss";
-import { toastError } from "../utils/toastUtils";
+import { checkPostToCreate } from "../utils/postUtils";
 
 const CreatePost = () => {
 	const hookForm = useForm();
+	const [aotd, setAotd] = useState({});
+
+	useEffect(() => {
+		(async () => {
+			const album = await getAotd();
+			setAotd(album);
+		})();
+	}, []);
 
 	const submitForm = async (userData) => {
-		try {
-			const {id} = await getUser();
-			const {data: albumData} = await getAllAlbums();
-			const {id: albumId} = albumData.data[albumData.data.length - 1];
-
-			const {data} = await createUserPost({
-				userId: id,
-				score: userData.score,
-				review: userData.review,
-				albumId: albumId
-			});
-			window.location.href = "/profile";
-		} catch (err) {
-			toastError(err.response?.data?.message);
-		}
+		await checkPostToCreate(userData, aotd.id);
 	};
 
 	return (
@@ -42,7 +37,7 @@ const CreatePost = () => {
 							priority
 							height={"250"}
 							width={"250"}
-							src={"https://i.discogs.com/hdGhbaRjPSMBPhA52lUkubOw_1m1FbN6edkbqEwy9qo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1NjU5/Mi0xMTg1OTcyMzU0/LmpwZWc.jpeg"}
+							src={aotd.artUrl}
 							alt={""}
 							className={styles.albumArt}
 						/>
