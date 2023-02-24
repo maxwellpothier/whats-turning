@@ -53,7 +53,7 @@ const Profile = () => {
 									artist={post.album.artist}
 									yearReleased={post.album.yearReleased}
 									rating={post.rating}
-									url={post.album.url}
+									url={post.album.artUrl}
 								/>
 							))}
 						</div>
