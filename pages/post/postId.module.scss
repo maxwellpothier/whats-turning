@@ -1,0 +1,42 @@
+.postPageHeader {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: flex-start;
+	margin-top: -15px;
+	margin-bottom: 30px;
+}
+
+.nameDate {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 30px;
+}
+
+.username {
+	font-size: 20px;
+}
+
+.date {
+	font-size: 14px;
+}
+
+.albumInfo {
+	display: flex;
+	gap: 25px;
+}
+
+.albumTitle {
+	font-size: 20px;
+	margin-bottom: 12px;
+}
+
+.albumArtist {
+	font-size: 14px;
+	margin-bottom: 24px;
+}
+
+.albumYear {
+	font-size: 14px;
+}
