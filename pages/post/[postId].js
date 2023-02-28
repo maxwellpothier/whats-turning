@@ -48,6 +48,9 @@ const SinglePost = () => {
 						</div>
 					</div>
 					<HorizontalLine/>
+					<div className={styles.contentContainer}>
+						<p className={styles.content}>{post.content}</p>
+					</div>
 				</>
 			}
 		</Theme>

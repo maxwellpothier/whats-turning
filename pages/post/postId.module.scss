@@ -40,3 +40,13 @@
 .albumYear {
 	font-size: 14px;
 }
+
+.contentContainer {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.content {
+	line-height: 1.5;
+}
