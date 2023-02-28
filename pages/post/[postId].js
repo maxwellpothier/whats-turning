@@ -6,6 +6,7 @@ import HorizontalLine from "../../components/theme/HorizontalLine";
 
 import styles from "./postId.module.scss";
 import Image from "next/image";
+import ArtWithScore from "../../components/post/ArtWithScore";
 
 const SinglePost = () => {
 	const router = useRouter();
@@ -34,11 +35,8 @@ const SinglePost = () => {
 							<p className={styles.date}>{`${date.toLocaleString('default', { month: 'short' })} ${date.getDate()}, ${date.getFullYear()}`}</p>
 						</div>
 						<div className={styles.albumInfo}>
-							<Image
-								src={post.album.artUrl}
-								alt={post.album.title}
-								width={120}
-								height={120}
+							<ArtWithScore
+								album={post.album}
 							/>
 							<div>
 								<p className={styles.albumTitle}>{post.album.title}</p>

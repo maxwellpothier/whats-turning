@@ -50,3 +50,31 @@
 .content {
 	line-height: 1.5;
 }
+
+@media only screen and (min-width: 425px) {
+	.albumArt {
+		width: 200px;
+		height: 200px;
+	}
+
+	.albumTitle {
+		font-size: 24px;
+	}
+}
+
+@media only screen and (min-width: 575px) {
+	.albumArt {
+		width: 300px;
+		height: 300px;
+	}
+
+	.albumTitle {
+		font-size: 32px;
+		margin-bottom: 25px;
+	}
+
+	.albumArtist {
+		font-size: 18px;
+		margin-bottom: 35px;
+	}
+}
