@@ -1,3 +1,5 @@
+@import "styles/variables";
+
 .postPageHeader {
 	display: flex;
 	flex-direction: column;
@@ -5,6 +7,7 @@
 	justify-content: flex-start;
 	margin-top: -15px;
 	margin-bottom: 30px;
+	max-width: $siteMaxWidth;
 }
 
 .nameDate {
@@ -24,7 +27,7 @@
 
 .albumInfo {
 	display: flex;
-	gap: 25px;
+	gap: 15px;
 }
 
 .albumTitle {
@@ -45,6 +48,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: flex-start;
+	max-width: $siteMaxWidth;
 }
 
 .content {
@@ -52,22 +56,12 @@
 }
 
 @media only screen and (min-width: 425px) {
-	.albumArt {
-		width: 200px;
-		height: 200px;
-	}
-
 	.albumTitle {
 		font-size: 24px;
 	}
 }
 
 @media only screen and (min-width: 575px) {
-	.albumArt {
-		width: 300px;
-		height: 300px;
-	}
-
 	.albumTitle {
 		font-size: 32px;
 		margin-bottom: 25px;

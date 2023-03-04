@@ -37,6 +37,7 @@ const SinglePost = () => {
 						<div className={styles.albumInfo}>
 							<ArtWithScore
 								album={post.album}
+								rating={post.rating}
 							/>
 							<div>
 								<p className={styles.albumTitle}>{post.album.title}</p>

@@ -1,0 +1,28 @@
+.linkContainer {
+	position: relative;
+	margin-right: 18px;
+	height: 100px;
+	width: 100px;
+}
+
+.albumArt {
+	position: relative;
+}
+
+.score {
+	position: absolute;
+	bottom: -18px;
+	right: -18px;
+}
+
+@media only screen and (min-width: 575px) {
+	.linkContainer {
+		width: 150px;
+		height: 150px;
+	}
+
+	.albumArt {
+		width: 150px;
+		height: 150px;
+	}
+}
