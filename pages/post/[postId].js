@@ -30,7 +30,6 @@ const SinglePost = () => {
 				<>
 					<div className={styles.postPageHeader}>
 						<div className={styles.nameDate}>
-							{console.log(post.belongsTo.username)}
 							<p className={styles.username}>@{post.belongsTo.username}</p>
 							<p className={styles.date}>{`${date.toLocaleString('default', { month: 'short' })} ${date.getDate()}, ${date.getFullYear()}`}</p>
 						</div>

@@ -7,6 +7,7 @@ const ArtWithScore = ({album, rating}) => {
 	return (
 		<div className={styles.linkContainer}>
 			<Image
+				priority
 				src={album.artUrl}
 				alt={album.title}
 				width={100}
