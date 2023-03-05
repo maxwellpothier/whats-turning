@@ -1,21 +1,21 @@
 @import "styles/variables";
 
-.pageContainer {
-	height: 100%;
-	width: 100%;
+.loader {
+	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+	top: 50%;
+	left: 50%;
+	z-index: 100;
 
-.loader {
 	.loadDot {
 		display: inline-block;
 		width: 20px;
 		height: 20px;
 		border-radius: 100%;
 		background-color: $liberty;
-		margin: 35px 5px;
+		margin: 0 5px;
 	}
 }
   
