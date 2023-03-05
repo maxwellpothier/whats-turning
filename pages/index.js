@@ -16,7 +16,7 @@ const Home = () => {
 		(async () => {
 			const album = await getAotd();
 			setAotd(album);
-			setIsLoading(false);
+			// setIsLoading(false);
 		})();
 	}, []);
 
@@ -26,36 +26,15 @@ const Home = () => {
 				<title>Home / What&apos;s Turning?</title>
 				<link rel={"icon"} href={"/favicon.ico"}/>
 			</Head>
-			{!isLoading &&
-				<>
-					<TodaysAlbum
-						aotd={aotd}
-						className={styles.homepageAotdContainer}
-					/>
-					<HorizontalLine/>
-					Loader
-					<WTLoader/>
-				</>
-			}
-
-		
+			<WTLoader isLoading={isLoading}>
+				<TodaysAlbum
+					aotd={aotd}
+					className={styles.homepageAotdContainer}
+				/>
+			</WTLoader>
+			<HorizontalLine/>
 		</Theme>
 	);
 };
-
-// export const getServerSideProps = async () => {
-// 	const {data} = await getAllAlbums();
-// 	const {title, artist, yearReleased, url} = data.data[data.data.length - 1];
-// 	return {
-// 		props: {
-// 			aotd: {
-// 				title,
-// 				artist,
-// 				yearReleased,
-// 				url,
-// 			},
-// 		},
-// 	};
-// }
 
 export default Home;
