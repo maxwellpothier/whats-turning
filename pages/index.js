@@ -6,6 +6,7 @@ import { getAotd } from "../utils/albumUtils";
 import { useEffect, useRef, useState } from "react";
 
 import styles from "./index.module.scss";
+import WTLoader from "../components/theme/WTLoader";
 
 const Home = () => {
 	const [aotd, setAotd] = useState({});
@@ -32,6 +33,8 @@ const Home = () => {
 						className={styles.homepageAotdContainer}
 					/>
 					<HorizontalLine/>
+					Loader
+					<WTLoader/>
 				</>
 			}
 
