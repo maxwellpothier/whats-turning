@@ -9,16 +9,32 @@ import styles from "./index.module.scss";
 import WTLoader from "../components/theme/WTLoader";
 
 const Home = () => {
+	const [aotd, setAotd] = useState({});
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		(async () => {
+			const album = await getAotd();
+			setAotd(album);
+			setIsLoading(false);
+		})();
+	}, []);
+
 	return (
 		<Theme>
 			<Head>
 				<title>Home / What&apos;s Turning?</title>
 				<link rel={"icon"} href={"/favicon.ico"}/>
 			</Head>
-			<TodaysAlbum
-				className={styles.homepageAotdContainer}
-			/>
-			<HorizontalLine/>
+			{!isLoading &&
+				<>
+					<TodaysAlbum
+						aotd={aotd}
+						className={styles.homepageAotdContainer}
+					/>
+					<HorizontalLine/>
+				</>
+			}
 		</Theme>
 	);
 };
