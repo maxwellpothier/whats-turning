@@ -1,0 +1,74 @@
+@import "styles/variables";
+
+.postPageHeader {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: flex-start;
+	margin-top: -15px;
+	margin-bottom: 30px;
+	max-width: $siteMaxWidth;
+}
+
+.nameDate {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 30px;
+}
+
+.username {
+	font-size: 20px;
+}
+
+.date {
+	font-size: 14px;
+}
+
+.albumInfo {
+	display: flex;
+	gap: 15px;
+}
+
+.albumTitle {
+	font-size: 20px;
+	margin-bottom: 12px;
+}
+
+.albumArtist {
+	font-size: 14px;
+	margin-bottom: 24px;
+}
+
+.albumYear {
+	font-size: 14px;
+}
+
+.contentContainer {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	max-width: $siteMaxWidth;
+}
+
+.content {
+	line-height: 1.5;
+}
+
+@media only screen and (min-width: 425px) {
+	.albumTitle {
+		font-size: 24px;
+	}
+}
+
+@media only screen and (min-width: 575px) {
+	.albumTitle {
+		font-size: 32px;
+		margin-bottom: 25px;
+	}
+
+	.albumArtist {
+		font-size: 18px;
+		margin-bottom: 35px;
+	}
+}

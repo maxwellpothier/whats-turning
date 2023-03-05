@@ -1,10 +1,14 @@
 import styles from "./todaysAlbum.module.scss";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { getAotd } from "../utils/albumUtils";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
 import { isAuthenticated } from "../utils/authUtils";
+import WTLoader from "./theme/WTLoader";
+import LoadMaster from "./theme/LoadMaster";
 
 const TodaysAlbum = ({aotd, className}) => {
 	return (

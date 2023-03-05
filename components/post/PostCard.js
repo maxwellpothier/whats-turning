@@ -4,16 +4,22 @@ import Image from "next/image";
 import ScoreIcon from "./ScoreIcon";
 import {HiArrowLongRight} from "react-icons/hi2";
 
-const PostCard = ({title, artist, yearReleased, url, rating, className}) => {
+const PostCard = ({post, className}) => {
+	const {artUrl, title, artist, yearReleased} = post.album;
+	const {rating} = post;
+
 	return (
-		<div className={`${styles.postCardContainer} ${className}`}>
+		<div
+			className={`${styles.postCardContainer} ${className}`}
+			onClick={() => window.location.href = `/post/${post.id}`}
+		>
 			<div className={styles.cardHeadSection}>
 				<div className={styles.albumInfo}>				
 					<Image
 						className={styles.postCardArt}
 						height={"600"}
 						width={"600"}
-						src={url}
+						src={artUrl}
 						alt={title}
 					/>
 					<div className={styles.albumInfoText}>
