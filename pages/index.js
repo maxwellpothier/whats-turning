@@ -4,9 +4,9 @@ import HorizontalLine from "../components/theme/HorizontalLine";
 import Head from "next/head";
 import { getAotd } from "../utils/albumUtils";
 import { useEffect, useRef, useState } from "react";
+import LoadMaster from "../components/theme/LoadMaster";
 
 import styles from "./index.module.scss";
-import WTLoader from "../components/theme/WTLoader";
 
 const Home = () => {
 	const [aotd, setAotd] = useState({});
@@ -26,15 +26,13 @@ const Home = () => {
 				<title>Home / What&apos;s Turning?</title>
 				<link rel={"icon"} href={"/favicon.ico"}/>
 			</Head>
-			{!isLoading &&
-				<>
-					<TodaysAlbum
-						aotd={aotd}
-						className={styles.homepageAotdContainer}
-					/>
-					<HorizontalLine/>
-				</>
-			}
+			<LoadMaster isLoading={isLoading}>
+				<TodaysAlbum
+					aotd={aotd}
+					className={styles.homepageAotdContainer}
+				/>
+				<HorizontalLine/>
+			</LoadMaster>
 		</Theme>
 	);
 };
