@@ -11,14 +11,17 @@ const TodaysAlbum = ({aotd, className}) => {
 		<div className={`${styles.aotdContainer} ${className}`}>
 			<div className={styles.aotd}>Album of the Day</div>
 			<div className={styles.variableInformation}>
-				<Image
-					className={styles.aotdArt}
-					priority
-					height={"350"}
-					width={"350"}
-					src={aotd.artUrl}
-					alt={aotd.title}
-				/>
+				{aotd.artUrl ?
+					<Image
+						className={styles.aotdArt}
+						priority
+						height={"350"}
+						width={"350"}
+						src={aotd.artUrl}
+						alt={aotd.title}
+					/> :
+					<div className={styles.imgPlaceholder}></div>
+				}
 				<div className={styles.albumInfoContainer}>
 					<span className={styles.artistName}>{aotd.artist}</span>
 					<span className={styles.albumName}>{aotd.title}</span>
