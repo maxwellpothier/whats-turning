@@ -1,5 +1,11 @@
 @import "styles/variables";
 
+.loadContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .postPageHeader {
 	display: flex;
 	flex-direction: column;
