@@ -42,14 +42,17 @@ const CreatePost = () => {
 				<form className={styles.formWrap} onSubmit={hookForm.handleSubmit(submitForm)}>
 					<div className={styles.createSubheading}>
 						<Container>
-							<Image
-								priority
-								height={"250"}
-								width={"250"}
-								src={aotd.artUrl}
-								alt={""}
-								className={styles.albumArt}
-							/>
+							{aotd.artUrl ?
+								<Image
+									priority
+									height={"250"}
+									width={"250"}
+									src={aotd.artUrl}
+									alt={""}
+									className={styles.albumArt}
+								/> :
+								<div className={styles.imgPlaceholder}></div>
+							}
 							<h1 className={styles.createQuestion}>How&apos;d you like the album?</h1>
 						</Container>
 						<input
