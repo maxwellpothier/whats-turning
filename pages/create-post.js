@@ -4,13 +4,11 @@ import Container from "../components/theme/Container";
 import WTButton from "../components/WTButton";
 import { useForm } from "react-hook-form";
 import HorizontalLine from "../components/theme/HorizontalLine";
-import { createUserPost } from "../utils/endpoints/postApi";
-import { getUser } from "../utils/authUtils";
 import { getAotd } from "../utils/albumUtils";
-import { toastError } from "../utils/toastUtils";
 import { useEffect, useState } from "react";
 import { checkPostToCreate } from "../utils/postUtils";
 import LoadMaster from "../components/theme/LoadMaster";
+import { isAuthenticated } from "../utils/authUtils";
 
 import styles from "./createPost.module.scss";
 import { useRouter } from "next/router";
@@ -24,11 +22,16 @@ const CreatePost = () => {
 	useEffect(() => {
 		(async () => {
 			setIsLoading(true);
+			if (!isAuthenticated()) {
+				await router.push("/");
+				return;
+			};
+
 			const album = await getAotd();
 			setAotd(album);
 			setIsLoading(false);
 		})();
-	}, []);
+	}, [router]);
 
 	const submitForm = async (userData) => {
 		setIsLoading(true);
