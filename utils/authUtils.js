@@ -2,17 +2,17 @@ import Cookies from "js-cookie";
 import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
 import { toastError, toastSuccess } from "./toastUtils";
 
-export const authenticateExistingUser = async (formData) => {
+export const authenticateExistingUser = async (formData, router) => {
 	try {
 		const {data} = await login(formData);
 		Cookies.set("WT_ACCESS_TOKEN", data.accessToken);
-		window.location.replace("/");
+		await router.push("/");
 	} catch (err) {
 		toastError(err?.response?.data?.message);
 	}
 };
 
-export const establishNewUser = async (formData) => {
+export const establishNewUser = async (formData, router) => {
 	if (formData.username.length === 0) {
 		toastError("Username field is required");
 	} else if (formData.firstName.length === 0) {
@@ -29,7 +29,7 @@ export const establishNewUser = async (formData) => {
 		try {
 			const {data} = await signup(formData);
 			Cookies.set("WT_ACCESS_TOKEN", data.accessToken);
-			window.location.replace("/");
+			await router.push("/");
 		} catch (err) {
 			toastError(err?.response?.data?.message);
 		}
