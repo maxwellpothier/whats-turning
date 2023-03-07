@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { getUser } from "../utils/authUtils";
+import { getUser, isAuthenticated } from "../utils/authUtils";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import PostCard from "../components/post/PostCard";
 import Theme from "../components/theme/Theme";
 import Container from "../components/theme/Container";
 import LoadMaster from "../components/theme/LoadMaster";
+import { useRouter } from "next/router";
 
 import styles from "./profile.module.scss";
 
 const Profile = () => {
+	const router = useRouter();
 	const [username, setUsername] = useState("");
 	const [name, setName] = useState("");
 	const [posts, setPosts] = useState([]);
@@ -16,13 +18,18 @@ const Profile = () => {
 
 	useEffect(() => {
 		(async () => {
+			if (!isAuthenticated()) {
+				await router.push("/");
+				return;
+			};
+
 			const data = await getUser();
 			setUsername(data.username);
 			setName(`${data.firstName} ${data.lastName}`);
 			setPosts(data.posts);
 			setIsLoading(false);
 		})();
-	}, []);
+	}, [router]);
 
 	return (
 		<Theme>

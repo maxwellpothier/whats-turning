@@ -2,10 +2,14 @@ import Cookies from "js-cookie";
 import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
 import { toastError, toastSuccess } from "./toastUtils";
 
+const setJwtCookie = (accessToken) => {
+	Cookies.set("WT_ACCESS_TOKEN", accessToken, {expires: 1});
+};
+
 export const authenticateExistingUser = async (formData, router) => {
 	try {
 		const {data} = await login(formData);
-		Cookies.set("WT_ACCESS_TOKEN", data.accessToken);
+		setJwtCookie(data.accessToken);
 		await router.push("/");
 	} catch (err) {
 		toastError(err?.response?.data?.message);
@@ -28,7 +32,7 @@ export const establishNewUser = async (formData, router) => {
 
 		try {
 			const {data} = await signup(formData);
-			Cookies.set("WT_ACCESS_TOKEN", data.accessToken);
+			setJwtCookie(data.accessToken);
 			await router.push("/");
 		} catch (err) {
 			toastError(err?.response?.data?.message);
