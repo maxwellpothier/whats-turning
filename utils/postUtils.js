@@ -11,7 +11,7 @@ export const checkPostToCreate = async (formData, albumId, router) => {
 
 		await router.push("/profile");
 	} catch (err) {
-		toastError(err?.response?.data?.message);
+		handleApiErrors(err);;
 	}
 };
 
@@ -20,6 +20,6 @@ export const getPostForId = async (postId) => {
 		const {data} = await getPost(postId);
 		return data.post;
 	} catch (err) {
-		toastError(err?.response?.data?.message);
+		handleApiErrors(err);;
 	}
 };

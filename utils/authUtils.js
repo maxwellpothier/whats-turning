@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
+import { handleApiErrors } from "./errorUtils";
 import { toastError, toastSuccess } from "./toastUtils";
 
 const setJwtCookie = (accessToken) => {
@@ -12,7 +13,7 @@ export const authenticateExistingUser = async (formData, router) => {
 		setJwtCookie(data.accessToken);
 		await router.push("/");
 	} catch (err) {
-		toastError(err?.response?.data?.message);
+		handleApiErrors(err);
 	}
 };
 
@@ -27,7 +28,7 @@ export const establishNewUser = async (formData, router) => {
 		setJwtCookie(data.accessToken);
 		await router.push("/");
 	} catch (err) {
-		toastError(err?.response?.data?.message);
+		handleApiErrors(err);;
 	}
 };
 
@@ -36,7 +37,7 @@ export const getUser = async () => {
 		const {data} = await getLoggedInUser();
 		return data.data;
 	} catch (err) {
-		toastError(err?.response?.data?.message);
+		handleApiErrors(err);;
 	}
 };
 
