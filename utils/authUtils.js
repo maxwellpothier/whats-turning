@@ -17,26 +17,17 @@ export const authenticateExistingUser = async (formData, router) => {
 };
 
 export const establishNewUser = async (formData, router) => {
-	if (formData.username.length === 0) {
-		toastError("Username field is required");
-	} else if (formData.firstName.length === 0) {
-		toastError("First name field is required");
-	} else if (formData.lastName.length === 0) {
-		toastError("Last name field is required");
-	} else if (formData.password !== formData.confirmPassword) {
+	if (formData.password !== formData.confirmPassword) {
 		toastError("Passwords don't match");
-	} else if (formData.password.length < 8) {
-		toastError("Password must be at least 8 characters");
-	} else {
-		delete formData.confirmPassword;
+	}
+	delete formData.confirmPassword;
 
-		try {
-			const {data} = await signup(formData);
-			setJwtCookie(data.accessToken);
-			await router.push("/");
-		} catch (err) {
-			toastError(err?.response?.data?.message);
-		}
+	try {
+		const {data} = await signup(formData);
+		setJwtCookie(data.accessToken);
+		await router.push("/");
+	} catch (err) {
+		toastError(err?.response?.data?.message);
 	}
 };
 
