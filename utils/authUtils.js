@@ -18,11 +18,6 @@ export const authenticateExistingUser = async (formData, router) => {
 };
 
 export const establishNewUser = async (formData, router) => {
-	if (formData.password !== formData.confirmPassword) {
-		toastError("Passwords don't match");
-	}
-	delete formData.confirmPassword;
-
 	try {
 		const {data} = await signup(formData);
 		setJwtCookie(data.accessToken);

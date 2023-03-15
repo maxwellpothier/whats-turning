@@ -1,5 +1,4 @@
 import { createUserPost, getPost } from "./endpoints/postApi";
-import { toastError } from "./toastUtils";
 
 export const checkPostToCreate = async (formData, albumId, router) => {
 	try {
