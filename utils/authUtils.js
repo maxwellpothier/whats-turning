@@ -23,7 +23,7 @@ export const establishNewUser = async (formData, router) => {
 		setJwtCookie(data.accessToken);
 		await router.push("/");
 	} catch (err) {
-		handleApiErrors(err);;
+		handleApiErrors(err);
 	}
 };
 
@@ -32,7 +32,7 @@ export const getUser = async () => {
 		const {data} = await getLoggedInUser();
 		return data.data;
 	} catch (err) {
-		handleApiErrors(err);;
+		handleApiErrors(err);
 	}
 };
 
