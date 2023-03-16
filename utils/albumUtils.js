@@ -5,6 +5,6 @@ export const getAotd = async () => {
 		const {data} = await getTodaysAlbum();
 		return data.todaysAlbum;
 	} catch (err) {
-		handleApiErrors(err);;
+		handleApiErrors(err);
 	};
 };
