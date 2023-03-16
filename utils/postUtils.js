@@ -1,4 +1,5 @@
 import { createUserPost, getPost } from "./endpoints/postApi";
+import { handleApiErrors } from "./errorUtils";
 
 export const checkPostToCreate = async (formData, albumId, router) => {
 	try {
@@ -10,7 +11,7 @@ export const checkPostToCreate = async (formData, albumId, router) => {
 
 		await router.push("/profile");
 	} catch (err) {
-		handleApiErrors(err);;
+		handleApiErrors(err);
 	}
 };
 
@@ -19,6 +20,6 @@ export const getPostForId = async (postId) => {
 		const {data} = await getPost(postId);
 		return data.post;
 	} catch (err) {
-		handleApiErrors(err);;
+		handleApiErrors(err);
 	}
 };
