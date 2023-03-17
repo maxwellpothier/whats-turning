@@ -9,9 +9,9 @@ import { useEffect, useState } from "react";
 import { checkPostToCreate } from "../utils/postUtils";
 import LoadMaster from "../components/theme/LoadMaster";
 import { isAuthenticated } from "../utils/authUtils";
+import { useRouter } from "next/router";
 
 import styles from "./createPost.module.scss";
-import { useRouter } from "next/router";
 
 const CreatePost = () => {
 	const hookForm = useForm();
