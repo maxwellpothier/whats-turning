@@ -1,45 +1,46 @@
-import { useRouter } from "next/router";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import AuthForm from "../components/AuthForm";
+import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
 import { authenticateExistingUser } from "../utils/authUtils";
-import { toastError } from "../utils/toastUtils";
+import LoadMaster from "../components/theme/LoadMaster";
+import { useRouter } from "next/router";
 
 const Login = () => {
 	const hookForm = useForm();
 	const router = useRouter();
+	const [isLoading, setIsLoading] = useState(false);
 
 	const onSubmit = async (userData) => {
-		try {
-			await authenticateExistingUser(userData);
-			console.log("Authenticated", response);
-		} catch (err) {
-			toastError(err?.response?.data?.message);
-		}
+		setIsLoading(true);
+		await authenticateExistingUser(userData, router);
+		setIsLoading(false);
 	};
 
 	const buttonAreaContent = {
 		ctaText: "Don't have an account?",
-		linkText: "Signup",
-		buttonText: "Login",
+		linkText: "Sign Up",
+		buttonText: "Log In",
 		linkHref: "/signup",
 	};
 
 	return (
-		<AuthForm onSubmit={onSubmit} hookForm={hookForm} buttonAreaContent={buttonAreaContent}>
-			<WTInput
-				name={"username"}
-				type={"username"}
-				placeholder={"Email"}
-				hookForm={hookForm}
-			/>
-			<WTInput
-				name={"password"}
-				type={"password"}
-				placeholder={"Password"}
-				hookForm={hookForm}
-			/>
-		</AuthForm>
+		<LoadMaster isLoading={isLoading}>
+			<AuthForm onSubmit={onSubmit} hookForm={hookForm} buttonAreaContent={buttonAreaContent}>
+				<WTInput
+					name={"username"}
+					type={"username"}
+					label={"Username"}
+					hookForm={hookForm}
+				/>
+				<WTInput
+					name={"password"}
+					type={"password"}
+					label={"Password"}
+					hookForm={hookForm}
+				/>
+			</AuthForm>
+		</LoadMaster>
 	);
 };
 

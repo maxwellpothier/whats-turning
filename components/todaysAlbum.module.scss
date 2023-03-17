@@ -19,6 +19,12 @@
 	margin-bottom: 20px;
 }
 
+.imgPlaceholder {
+	height: 250px;
+	width: 250px;
+	background-color: $babyPowder;
+}
+
 .albumInfoContainer {
 	display: flex;
 	flex-direction: column;
@@ -50,7 +56,7 @@
 }
 
 .createPostButton {
-	cursor: not-allowed;
+	width: 150px;
 }
 
 @media only screen and (min-width: $tabletDeviceWidth) {
@@ -70,6 +76,11 @@
 	}
 
 	.aotdArt {
+		height: 350px;
+		width: 350px;
+	}
+
+	.imgPlaceholder {
 		height: 350px;
 		width: 350px;
 	}

@@ -1,42 +1,41 @@
+import Cookies from "js-cookie";
 import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
+import { handleApiErrors } from "./errorUtils";
 import { toastError, toastSuccess } from "./toastUtils";
 
-export const authenticateExistingUser = async (formData) => {
+const setJwtCookie = (accessToken) => {
+	Cookies.set("WT_ACCESS_TOKEN", accessToken, {expires: 1});
+};
+
+export const authenticateExistingUser = async (formData, router) => {
 	try {
 		const {data} = await login(formData);
-		localStorage.setItem("WT_ACCESS_TOKEN", data.token);
-		window.location.replace("/");
+		setJwtCookie(data.accessToken);
+		await router.push("/");
 	} catch (err) {
-		toastError(err?.response?.data?.message);
+		handleApiErrors(err);
 	}
 };
 
-export const establishNewUser = async (formData) => {
-	if (formData.username.length === 0) {
-		toastError("Username field is required");
-	} else if (formData.firstName.length === 0) {
-		toastError("First name field is required");
-	} else if (formData.lastName.length === 0) {
-		toastError("Last name field is required");
-	} else if (formData.email.length === 0) {
-		toastError("Email field is required");
-	} else if (formData.password !== formData.confirmPassword) {
-		toastError("Passwords don't match");
-	} else if (formData.password.length < 8) {
-		toastError("Password must be at least 8 characters");
-	} else {
-		delete formData.confirmPassword;
-
-		try {
-			const {data} = await signup(formData);
-			toastSuccess("Thanks for joining us!");
-		} catch (err) {
-			toastError(err?.response?.data?.message);
-		}
+export const establishNewUser = async (formData, router) => {
+	try {
+		const {data} = await signup(formData);
+		setJwtCookie(data.accessToken);
+		await router.push("/");
+	} catch (err) {
+		handleApiErrors(err);
 	}
 };
 
 export const getUser = async () => {
-	const {data} = await getLoggedInUser();
-	return data.data;
+	try {
+		const {data} = await getLoggedInUser();
+		return data.data;
+	} catch (err) {
+		handleApiErrors(err);
+	}
 };
+
+export const isAuthenticated = () => !!Cookies.get("WT_ACCESS_TOKEN");
+
+export const unauthenticate = () => Cookies.remove("WT_ACCESS_TOKEN");

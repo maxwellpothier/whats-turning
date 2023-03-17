@@ -4,14 +4,12 @@ import Header from "./Header";
 import Container from "./Container";
 import Footer from "./Footer";
 
-const Theme = ({children, button}) => {
+const Theme = ({children}) => {
 	return (
 		<div className={styles.appContainer}>
-			<Header button={button}/>
+			<Header/>
 			<Container>
-				<div className={styles.contentContainer}>
-					{children}
-				</div>
+				{children}
 			</Container>
 			<Footer/>
 		</div>

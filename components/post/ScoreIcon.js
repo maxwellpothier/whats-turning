@@ -1,8 +1,8 @@
 import styles from "./scoreIcon.module.scss";
 
-const ScoreIcon = ({score}) => {
+const ScoreIcon = ({score, className}) => {
 	return (
-		<div className={styles.scoreBorder}>
+		<div className={`${styles.scoreBorder} ${className}`}>
 			<span className={styles.score}>{score}</span>
 		</div>
 	);

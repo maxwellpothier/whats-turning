@@ -4,39 +4,34 @@ import Image from "next/image";
 import { FaSpotify, FaItunes } from "react-icons/fa";
 import {SiApplemusic} from "react-icons/si";
 import WTButton from "../components/WTButton";
-import { toastError } from "../utils/toastUtils";
-import { toast } from "react-toastify";
+import { isAuthenticated } from "../utils/authUtils";
 
-const fakeData = {
-	title: "The New Abnormal",
-	artist: "The Strokes",
-	yearReleased: "2020",
-	url: "https://i.discogs.com/JSvoLvGxGluJIZgM6vMO74oLnVcR8W7zFhiHxvz802Q/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2NzM2/NjQ2LTE2MDk1MzI1/MTItMzA5My5qcGVn.jpeg",
-};
-
-const TodaysAlbum = ({className}) => {
+const TodaysAlbum = ({aotd, className}) => {
 	return (
 		<div className={`${styles.aotdContainer} ${className}`}>
 			<div className={styles.aotd}>Album of the Day</div>
 			<div className={styles.variableInformation}>
-				<Image
-					className={styles.aotdArt}
-					priority
-					height={"350"}
-					width={"350"}
-					src={fakeData.url}
-					alt={fakeData.title}
-				/>
+				{aotd.artUrl ?
+					<Image
+						className={styles.aotdArt}
+						priority
+						height={"350"}
+						width={"350"}
+						src={aotd.artUrl}
+						alt={aotd.title}
+					/> :
+					<div className={styles.imgPlaceholder}></div>
+				}
 				<div className={styles.albumInfoContainer}>
-					<span className={styles.artistName}>{fakeData.artist}</span>
-					<span className={styles.albumName}>{fakeData.title}</span>
-					<span className={styles.albumYear}>{fakeData.yearReleased}</span>
+					<span className={styles.artistName}>{aotd.artist}</span>
+					<span className={styles.albumName}>{aotd.title}</span>
+					<span className={styles.albumYear}>{aotd.yearReleased}</span>
 
 					<div className={styles.streamLinks}>
-						<a href="https://open.spotify.com/album/4sW8Eql2e2kdRP1A1R1clG?si=PniMuJaSS9qV5kNXtJ5Z0A" target={"_blank"} rel={"noreferrer"}>
+						<a href={aotd.spotifyUrl} target={"_blank"} rel={"noreferrer"}>
 							<FaSpotify className={styles.streamIcon}/>
 						</a>
-						<a href="https://music.apple.com/us/album/turn-on-the-bright-lights/1589272584" target={"_blank"} rel={"noreferrer"}>
+						<a href={aotd.appleUrl} target={"_blank"} rel={"noreferrer"}>
 							<SiApplemusic className={styles.streamIcon}/>
 						</a>
 					</div>
@@ -45,7 +40,7 @@ const TodaysAlbum = ({className}) => {
 						content={"Create Post"}
 						className={styles.createPostButton}
 						onClick={() => {
-							toast.info("Coming soon!");
+							isAuthenticated() ? window.location.href = "/create-post" :  window.location.href = "/signup";
 						}}
 					/>
 				</div>
