@@ -36,11 +36,11 @@ const Header = () => {
 				<Link href={"/"} passHref>
 					<WTLogo/>
 				</Link>
-				<div className={styles.hamburgerMenu}>
+				{/* <div className={styles.hamburgerMenu}>
 					<div className={styles.menuLink}/>
 					<div className={styles.menuLink}/>
 					<div className={styles.menuLink}/>
-				</div>
+				</div> */}
 				<div className={styles.headerLinks}>
 					{headerLinks}
 				</div>
