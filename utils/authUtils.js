@@ -1,7 +1,6 @@
 import Cookies from "js-cookie";
 import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
 import { handleApiErrors } from "./errorUtils";
-import { toastError, toastSuccess } from "./toastUtils";
 
 const setJwtCookie = (accessToken) => {
 	Cookies.set("WT_ACCESS_TOKEN", accessToken, {expires: 1});

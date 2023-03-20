@@ -4,6 +4,9 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["upload.wikimedia.org", "i.discogs.com"]
+  },
+  env: {
+	STAGE: process.env.STAGE,
   }
 }
 
