@@ -1,7 +1,8 @@
 import axios from "axios";
 import Cookies from "js-cookie";
+import { getBaseUrl } from "../stageUtils";
 
-const baseUrl = "https://wt-v2.onrender.com/post";
+const baseUrl = `${getBaseUrl()}/post`;
 
 export const getAllPosts = () => {
 	return axios.get(baseUrl, {

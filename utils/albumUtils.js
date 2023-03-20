@@ -1,4 +1,5 @@
 import { getTodaysAlbum } from "./endpoints/albumApi";
+import { handleApiErrors } from "./errorUtils";
 
 export const getAotd = async () => {
 	try {

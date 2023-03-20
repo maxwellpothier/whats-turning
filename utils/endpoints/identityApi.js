@@ -1,7 +1,8 @@
 import axios from "axios";
 import Cookies from "js-cookie";
+import { getBaseUrl } from "../stageUtils";
 
-const baseUrl = "https://wt-v2.onrender.com/identity";
+const baseUrl = `${getBaseUrl()}/identity`;
 
 export const login = (formData) => {
 	const config = formData;
