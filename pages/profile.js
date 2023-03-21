@@ -51,7 +51,7 @@ const Profile = () => {
 					{posts
 						? <>
 							<h2 className={styles.postsSectionTitle}>
-								{posts.length ? <>All Posts</> : <>No Posts Yet!</>}
+								{!isLoading && (posts.length ? <>All Posts</> : <>No Posts Yet!</>)}
 							</h2>
 							<div className={styles.postContainer}>
 								{posts?.map((post, i) => (
