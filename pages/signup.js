@@ -33,6 +33,12 @@ const Signup = () => {
 					label={"Username"}
 					hookForm={hookForm}
 				/>
+				<WTInput
+					name={"email"}
+					type={"email"}
+					label={"Email"}
+					hookForm={hookForm}
+				/>
 				<div style={{display: "flex", gap: "10px"}}>
 					<WTInput
 						name={"firstName"}
