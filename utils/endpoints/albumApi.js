@@ -1,7 +1,6 @@
 import axios from "axios";
-import { getBaseUrl } from "../stageUtils";
 
-const baseUrl = `${getBaseUrl()}/album`;
+const baseUrl = `${process.env.BASE_API_URL}/album`;
 
 export const getTodaysAlbum = () => {
 	return axios.get(`${baseUrl}/today`);

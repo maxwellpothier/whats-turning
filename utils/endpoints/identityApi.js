@@ -1,8 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { getBaseUrl } from "../stageUtils";
 
-const baseUrl = `${getBaseUrl()}/identity`;
+const baseUrl = `${process.env.BASE_API_URL}/identity`;
 
 export const login = (formData) => {
 	const config = formData;

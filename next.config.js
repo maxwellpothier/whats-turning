@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ["upload.wikimedia.org", "i.discogs.com"]
   },
   env: {
-	STAGE: process.env.STAGE,
+	BASE_API_URL: process.env.BASE_API_URL,
   }
 }
 

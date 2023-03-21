@@ -1,8 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { getBaseUrl } from "../stageUtils";
 
-const baseUrl = `${getBaseUrl()}/post`;
+const baseUrl = `${process.env.BASE_API_URL}/post`;
 
 export const getAllPosts = () => {
 	return axios.get(baseUrl, {
