@@ -22,6 +22,7 @@ const Login = () => {
 		linkText: "Sign Up",
 		buttonText: "Log In",
 		linkHref: "/signup",
+		forgotHref: "/forgot-password",
 	};
 
 	return (

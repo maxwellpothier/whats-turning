@@ -22,3 +22,9 @@ export const getLoggedInUser = () => {
 		},
 	});
 };
+
+export const sendResetPasswordEmail = (formData) => {
+	const config = formData;
+
+    return axios.post(`${baseUrl}/forgot-password`, config);
+}

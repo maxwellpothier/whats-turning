@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { getLoggedInUser, login, signup } from "./endpoints/identityApi";
+import { getLoggedInUser, login, signup, sendResetPasswordEmail } from "./endpoints/identityApi";
 import { handleApiErrors } from "./errorUtils";
 
 const setJwtCookie = (accessToken) => {
@@ -34,6 +34,17 @@ export const getUser = async () => {
 		handleApiErrors(err);
 	}
 };
+
+export const sendForgotPasswordEmail = async (formData) => {
+	try {
+        const data = await sendResetPasswordEmail(formData);
+		console.log("api response", data);
+        // return data.data;
+    } catch (err) {
+        handleApiErrors(err);
+		console.log("Error in utils");
+    }
+}
 
 export const isAuthenticated = () => !!Cookies.get("WT_ACCESS_TOKEN");
 
