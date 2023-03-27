@@ -2,6 +2,7 @@ import AuthForm from "../components/auth/AuthForm";
 import { useForm } from "react-hook-form";
 import WTInput from "../components/WTInput";
 import { sendForgotPasswordEmail } from "../utils/authUtils";
+import { toastSuccess } from "../utils/toastUtils";
 
 const ForgotPassword = () => {
 	const hookForm = useForm();

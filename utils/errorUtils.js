@@ -4,7 +4,6 @@ export const handleApiErrors = (err) => {
 	const errorFromDb = !!err?.response?.data?.message;
 
 	if (errorFromDb) {
-		console.log("related");
 		toastError(err.response.data.message);
 		return;
 	}

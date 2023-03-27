@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
-import { getLoggedInUser, login, signup, sendResetPasswordEmail } from "./endpoints/identityApi";
+import { getLoggedInUser, login, signup, sendResetPasswordEmail, sendPasswordReset } from "./endpoints/identityApi";
 import { handleApiErrors } from "./errorUtils";
+import { toastSuccess } from "./toastUtils";
 
 const setJwtCookie = (accessToken) => {
 	Cookies.set("WT_ACCESS_TOKEN", accessToken, {expires: 1});
@@ -37,14 +38,26 @@ export const getUser = async () => {
 
 export const sendForgotPasswordEmail = async (formData) => {
 	try {
-        const data = await sendResetPasswordEmail(formData);
-		console.log("api response", data);
-        // return data.data;
+        const {data} = await sendResetPasswordEmail(formData);
+		console.log(data.data);
+		// TODO: send email to user
+
+		toastSuccess("Password reset email sent");
     } catch (err) {
         handleApiErrors(err);
-		console.log("Error in utils");
     }
 }
+
+export const resetPassword = async (formData, accessToken, router) => {
+	try {
+		const {data} = await sendPasswordReset(formData, accessToken);
+		toastSuccess("Password has been reset");
+		setJwtCookie(data.accessToken);
+		await router.push("/");
+	} catch (err) {
+		handleApiErrors(err);
+	}
+};
 
 export const isAuthenticated = () => !!Cookies.get("WT_ACCESS_TOKEN");
 
