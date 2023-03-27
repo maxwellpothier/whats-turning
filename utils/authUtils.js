@@ -38,10 +38,7 @@ export const getUser = async () => {
 
 export const sendForgotPasswordEmail = async (formData) => {
 	try {
-        const {data} = await sendResetPasswordEmail(formData);
-		console.log(data.data);
-		// TODO: send email to user
-
+        await sendResetPasswordEmail(formData);
 		toastSuccess("Password reset email sent");
     } catch (err) {
         handleApiErrors(err);
