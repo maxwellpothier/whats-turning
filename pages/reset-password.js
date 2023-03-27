@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
 import {resetPassword} from "../utils/authUtils";
+import LoadMaster from "../components/theme/LoadMaster";
 
 const ResetPassword = () => {
 	const hookForm = useForm();
 	const router = useRouter();
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		if (!router.isReady) return;
@@ -19,6 +21,7 @@ const ResetPassword = () => {
 	}, [router]);
 
 	const onSubmit = async (data) => {
+		setIsLoading(true);
 		await resetPassword(data, router.query.token, router);
 	}
 
@@ -30,20 +33,22 @@ const ResetPassword = () => {
 	};
 
 	return (
-		<AuthForm onSubmit={onSubmit} hookForm={hookForm} buttonAreaContent={buttonAreaContent}>
-			<WTInput
-				label={"New Password"}
-				name={"password"}
-				hookForm={hookForm}
-				type={"password"}
-			/>
-			<WTInput
-				label={"Confirm New Password"}
-				name={"confirmPassword"}
-				hookForm={hookForm}
-				type={"password"}
-			/>
-		</AuthForm>
+		<LoadMaster isLoading={isLoading}>
+			<AuthForm onSubmit={onSubmit} hookForm={hookForm} buttonAreaContent={buttonAreaContent}>
+				<WTInput
+					label={"New Password"}
+					name={"password"}
+					hookForm={hookForm}
+					type={"password"}
+				/>
+				<WTInput
+					label={"Confirm New Password"}
+					name={"confirmPassword"}
+					hookForm={hookForm}
+					type={"password"}
+				/>
+			</AuthForm>
+		</LoadMaster>
 	);
 };
 
