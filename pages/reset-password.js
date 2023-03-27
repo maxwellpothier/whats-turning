@@ -14,6 +14,8 @@ const ResetPassword = () => {
 		if (!router.query.token) {
             router.push("/login");
         }
+
+
 	}, [router]);
 
 	const onSubmit = async (data) => {
@@ -30,7 +32,7 @@ const ResetPassword = () => {
 	return (
 		<AuthForm onSubmit={onSubmit} hookForm={hookForm} buttonAreaContent={buttonAreaContent}>
 			<WTInput
-				label={"New Password for maxpothier"}
+				label={"New Password"}
 				name={"password"}
 				hookForm={hookForm}
 				type={"password"}
