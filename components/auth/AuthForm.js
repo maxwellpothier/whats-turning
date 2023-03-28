@@ -3,7 +3,7 @@ import WTButton from "../WTButton";
 import styles from "./authForm.module.scss";
 
 const AuthForm = ({onSubmit, hookForm, buttonAreaContent, children}) => {
-	const {ctaText, linkText, buttonText, linkHref} = buttonAreaContent;
+	const {ctaText, linkText, buttonText, linkHref, forgotHref} = buttonAreaContent;
 
 	return (
 		<div className={styles.authFormOuterBox}>
@@ -14,7 +14,7 @@ const AuthForm = ({onSubmit, hookForm, buttonAreaContent, children}) => {
 					<div className={styles.moreInfo}>
 						<div>{ctaText}</div>
 						<a className={styles.signupLink} href={linkHref}>{linkText}</a>
-						{/* <div>Forgot Password</div> */}
+						{forgotHref && <a className={styles.signupLink} href={forgotHref}>Forgot Password?</a>}
 					</div>
 					<WTButton
 						type={"submit"}
