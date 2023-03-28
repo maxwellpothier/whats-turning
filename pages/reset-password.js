@@ -21,6 +21,7 @@ const ResetPassword = () => {
 	const onSubmit = async (data) => {
 		setIsLoading(true);
 		await resetPassword(data, router.query.token, router);
+		setIsLoading(false);
 	}
 
 	const buttonAreaContent = {
