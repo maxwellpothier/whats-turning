@@ -81,11 +81,11 @@ const CreatePost = ({aotd}) => {
 };
 
 export const getStaticProps = async () => {
-	const album = await getAotd();
-	return {
+	const data = await (getAotd())?.data;
+    return {
         props: {
-			aotd: album,
-		},
+            aotd: data.todaysAlbum,
+        },
     };
 };
 

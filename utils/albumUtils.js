@@ -3,8 +3,8 @@ import { handleApiErrors } from "./errorUtils";
 
 export const getAotd = async () => {
 	try {
-		const {data} = await getTodaysAlbum();
-		return data.todaysAlbum;
+		const data = await getTodaysAlbum();
+		return data;
 	} catch (err) {
 		handleApiErrors(err);
 	};
