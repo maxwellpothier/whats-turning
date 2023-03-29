@@ -6,7 +6,6 @@ import {HiArrowLongRight} from "react-icons/hi2";
 
 const PostCard = ({post, className}) => {
 	const {artUrl, title, artist, yearReleased} = post.album;
-	console.log(post.album);
 	const {rating} = post;
 
 	return (
