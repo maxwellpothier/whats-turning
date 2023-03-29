@@ -3,5 +3,9 @@ import axios from "axios";
 const baseUrl = `${process.env.BASE_API_URL}/album`;
 
 export const getTodaysAlbum = () => {
-	return axios.get(`${baseUrl}/today`);
+	return axios.get(`${baseUrl}/today`, {
+		headers: {
+			"Accept-Encoding": "gzip,deflate,compress",
+		}
+	});
 };
