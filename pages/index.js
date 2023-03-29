@@ -18,10 +18,6 @@ const Home = ({aotd}) => {
 				className={styles.homepageAotdContainer}
 			/>
 			<HorizontalLine/>
-			<button onClick={async () => {
-				const album = await getAotd();
-				console.log("ALBUMMMM YAOOO", album);
-			}}>Make API Call</button>
 		</Theme>
 	);
 };
