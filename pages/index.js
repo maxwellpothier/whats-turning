@@ -18,15 +18,19 @@ const Home = ({aotd}) => {
 				className={styles.homepageAotdContainer}
 			/>
 			<HorizontalLine/>
+			<button onClick={async () => {
+				const album = await getAotd();
+				console.log("ALBUMMMM YAOOO", album);
+			}}>Make API Call</button>
 		</Theme>
 	);
 };
 
 export const getStaticProps = async () => {
-	const data = await (getAotd())?.data;
+	const album = await getAotd();
     return {
         props: {
-            aotd: data.todaysAlbum,
+            aotd: album,
         },
     };
 };
