@@ -3,38 +3,32 @@ import TodaysAlbum from "../components/TodaysAlbum";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import Head from "next/head";
 import { getAotd } from "../utils/albumUtils";
-import { useEffect, useRef, useState } from "react";
-import LoadMaster from "../components/theme/LoadMaster";
 
 import styles from "./index.module.scss";
 
-const Home = () => {
-	const [aotd, setAotd] = useState({});
-	const [isLoading, setIsLoading] = useState(true);
-
-	useEffect(() => {
-		(async () => {
-			const album = await getAotd();
-			setAotd(album);
-			setIsLoading(false);
-		})();
-	}, []);
-
+const Home = ({aotd}) => {
 	return (
 		<Theme>
 			<Head>
 				<title>Home / What&apos;s Turning?</title>
 				<link rel={"icon"} href={"/favicon.ico"}/>
 			</Head>
-			<LoadMaster isLoading={isLoading}>
-				<TodaysAlbum
-					aotd={aotd}
-					className={styles.homepageAotdContainer}
-				/>
-				<HorizontalLine/>
-			</LoadMaster>
+			<TodaysAlbum
+				aotd={aotd}
+				className={styles.homepageAotdContainer}
+			/>
+			<HorizontalLine/>
 		</Theme>
 	);
+};
+
+export const getStaticProps = async () => {
+	const album = await getAotd();
+    return {
+        props: {
+            aotd: album,
+        },
+    };
 };
 
 export default Home;
