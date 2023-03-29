@@ -82,6 +82,7 @@ const CreatePost = ({aotd}) => {
 
 export const getStaticProps = async () => {
 	const album = await getAotd();
+	console.log("HEREEEEE", album);
 	return {
         props: {
 			aotd: album,
