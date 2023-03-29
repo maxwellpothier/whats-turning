@@ -24,6 +24,7 @@ const Home = ({aotd}) => {
 
 export const getStaticProps = async () => {
 	const album = await getAotd();
+	console.log("HEREEEEEEEE", album);
     return {
         props: {
             aotd: album,
