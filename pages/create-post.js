@@ -13,23 +13,17 @@ import { useRouter } from "next/router";
 
 import styles from "./createPost.module.scss";
 
-const CreatePost = () => {
+const CreatePost = ({aotd}) => {
 	const hookForm = useForm();
 	const router = useRouter();
-	const [aotd, setAotd] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		(async () => {
-			setIsLoading(true);
 			if (!isAuthenticated()) {
 				await router.push("/");
 				return;
 			};
-
-			const album = await getAotd();
-			setAotd(album);
-			setIsLoading(false);
 		})();
 	}, [router]);
 
@@ -84,6 +78,15 @@ const CreatePost = () => {
 			</LoadMaster>
 		</Theme>
 	);
+};
+
+export const getStaticProps = async () => {
+	const album = await getAotd();
+	return {
+        props: {
+			aotd: album,
+		},
+    };
 };
 
 export default CreatePost;
