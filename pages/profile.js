@@ -36,8 +36,8 @@ const Profile = () => {
 			<LoadMaster isLoading={isLoading} className={styles.loadContainer}>
 				<div className={styles.profileSubheading}>
 					<div className={styles.subheadingNameSection}>
-						<h4>@{username}</h4>
 						<h3 className={styles.subheadingLargerFontSize}>{name}</h3>
+						<h4>@{username}</h4>
 					</div>
 					<div className={styles.subheadingTotalPosts}>
 						<h3 className={styles.subheadingLargerFontSize}>

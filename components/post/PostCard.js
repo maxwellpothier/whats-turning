@@ -6,6 +6,7 @@ import {HiArrowLongRight} from "react-icons/hi2";
 
 const PostCard = ({post, className}) => {
 	const {artUrl, title, artist, yearReleased} = post.album;
+	console.log(post.album);
 	const {rating} = post;
 
 	return (
@@ -30,13 +31,7 @@ const PostCard = ({post, className}) => {
 				</div>
 				<ScoreIcon score={rating}/>
 			</div>
-
-			<div className={styles.blocksWrapper}>
-				<div className={`${styles.contentPreview} ${styles.smallerWidth}`}/>
-				<div className={styles.contentPreview}/>
-				<div className={`${styles.contentPreview} ${styles.smallestWidth}`}/>
-			</div>
-
+			
 			<div className={styles.readMoreButton}>
 				<span>Read More</span>
 				<HiArrowLongRight/>
