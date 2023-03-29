@@ -13,17 +13,23 @@ import { useRouter } from "next/router";
 
 import styles from "./createPost.module.scss";
 
-const CreatePost = ({aotd}) => {
+const CreatePost = () => {
 	const hookForm = useForm();
 	const router = useRouter();
+	const [aotd, setAotd] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		(async () => {
+			setIsLoading(true);
 			if (!isAuthenticated()) {
 				await router.push("/");
 				return;
 			};
+
+			const album = await getAotd();
+			setAotd(album);
+			setIsLoading(false);
 		})();
 	}, [router]);
 
@@ -80,13 +86,13 @@ const CreatePost = ({aotd}) => {
 	);
 };
 
-export const getStaticProps = async () => {
-	const data = await (getAotd())?.data;
-    return {
-        props: {
-            aotd: data.todaysAlbum,
-        },
-    };
-};
+// export async function getStaticProps() {
+// 	const data = await getAotd();
+//     return {
+//         props: {
+//             aotd: data.todaysAlbum,
+//         },
+//     };
+// };
 
 export default CreatePost;
