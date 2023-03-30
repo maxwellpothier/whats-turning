@@ -6,6 +6,6 @@ export const getTodaysAlbum = () => {
 	return axios.get(`${baseUrl}/today`, {
 		headers: {
 			"Accept-Encoding": "gzip,deflate,compress",
-		}
+		},
 	});
 };

@@ -11,28 +11,30 @@ export const getAllPosts = () => {
 	});
 };
 
-export const getUserPosts = (userId) => {
+export const getUserPosts = userId => {
 	return axios.get(`${baseUrl}/${userId}`, {
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem("WT_ACCESS_TOKEN")}`,
 		},
-	})
+	});
 };
 
-export const getPost = (postId) => {
+export const getPost = postId => {
 	return axios.get(`${baseUrl}/${postId}`);
 };
 
 export const createUserPost = (score, review, albumId) => {
-	return axios.post(`${baseUrl}/create`, {
-		rating: score,
-		content: review,
-		albumId: albumId,
-	},
-	{
-		headers: {
-			Authorization: `Bearer ${Cookies.get("WT_ACCESS_TOKEN")}`,
+	return axios.post(
+		`${baseUrl}/create`,
+		{
+			rating: score,
+			content: review,
+			albumId: albumId,
 		},
-	}
+		{
+			headers: {
+				Authorization: `Bearer ${Cookies.get("WT_ACCESS_TOKEN")}`,
+			},
+		}
 	);
 };

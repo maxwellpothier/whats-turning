@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
 import {useForm} from "react-hook-form";
@@ -14,15 +14,15 @@ const ResetPassword = () => {
 	useEffect(() => {
 		if (!router.isReady) return;
 		if (!router.query.token) {
-            router.push("/login");
-        }
+			router.push("/login");
+		}
 	}, [router]);
 
-	const onSubmit = async (data) => {
+	const onSubmit = async data => {
 		setIsLoading(true);
 		await resetPassword(data, router.query.token, router);
 		setIsLoading(false);
-	}
+	};
 
 	const buttonAreaContent = {
 		ctaText: "Remember your password?",
@@ -33,7 +33,10 @@ const ResetPassword = () => {
 
 	return (
 		<LoadMaster isLoading={isLoading}>
-			<AuthForm onSubmit={onSubmit} hookForm={hookForm} buttonAreaContent={buttonAreaContent}>
+			<AuthForm
+				onSubmit={onSubmit}
+				hookForm={hookForm}
+				buttonAreaContent={buttonAreaContent}>
 				<WTInput
 					label={`New Password for ${router.query.user}`}
 					name={"password"}

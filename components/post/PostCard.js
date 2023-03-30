@@ -11,10 +11,9 @@ const PostCard = ({post, className}) => {
 	return (
 		<div
 			className={`${styles.postCardContainer} ${className}`}
-			onClick={() => window.location.href = `/post/${post.id}`}
-		>
+			onClick={() => (window.location.href = `/post/${post.id}`)}>
 			<div className={styles.cardHeadSection}>
-				<div className={styles.albumInfo}>				
+				<div className={styles.albumInfo}>
 					<Image
 						className={styles.postCardArt}
 						height={"600"}
@@ -28,12 +27,12 @@ const PostCard = ({post, className}) => {
 						<span className={styles.albumYear}>{yearReleased}</span>
 					</div>
 				</div>
-				<ScoreIcon score={rating}/>
+				<ScoreIcon score={rating} />
 			</div>
-			
+
 			<div className={styles.readMoreButton}>
 				<span>Read More</span>
-				<HiArrowLongRight/>
+				<HiArrowLongRight />
 			</div>
 		</div>
 	);

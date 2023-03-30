@@ -14,10 +14,7 @@ const ArtWithScore = ({album, rating}) => {
 				height={100}
 				className={styles.albumArt}
 			/>
-			<ScoreIcon
-				score={rating}
-				className={styles.score}
-			/>
+			<ScoreIcon score={rating} className={styles.score} />
 		</div>
 	);
 };

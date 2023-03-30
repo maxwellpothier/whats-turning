@@ -1,6 +1,6 @@
-import { toastError } from "./toastUtils";
+import {toastError} from "./toastUtils";
 
-export const handleApiErrors = (err) => {
+export const handleApiErrors = err => {
 	const errorFromDb = !!err?.response?.data?.message;
 
 	if (errorFromDb) {
@@ -10,5 +10,5 @@ export const handleApiErrors = (err) => {
 
 	err.response?.data?.errors.forEach(error => {
 		toastError(error.msg);
-	})
+	});
 };

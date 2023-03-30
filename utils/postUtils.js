@@ -1,13 +1,9 @@
-import { createUserPost, getPost } from "./endpoints/postApi";
-import { handleApiErrors } from "./errorUtils";
+import {createUserPost, getPost} from "./endpoints/postApi";
+import {handleApiErrors} from "./errorUtils";
 
 export const checkPostToCreate = async (formData, albumId, router) => {
 	try {
-		await createUserPost(
-			formData.score,
-			formData.review,
-			albumId,
-		);
+		await createUserPost(formData.score, formData.review, albumId);
 
 		await router.push("/profile");
 	} catch (err) {
@@ -15,7 +11,7 @@ export const checkPostToCreate = async (formData, albumId, router) => {
 	}
 };
 
-export const getPostForId = async (postId) => {
+export const getPostForId = async postId => {
 	try {
 		const {data} = await getPost(postId);
 		return data.post;

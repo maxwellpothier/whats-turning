@@ -2,7 +2,7 @@
 
 .background {
 	background-color: $liberty;
-    height: 70px;
+	height: 70px;
 	border-bottom: 3px solid $celeste;
 	padding: 0 15px;
 	display: flex;
@@ -11,8 +11,8 @@
 }
 
 .headerContainer {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	max-width: $siteMaxWidth;
@@ -47,7 +47,7 @@
 @media only screen and (min-width: $mediumDeviceWidth) {
 	.background {
 		justify-content: center;
-}
+	}
 
 	.hamburgerMenu {
 		display: none;

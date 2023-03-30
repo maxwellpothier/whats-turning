@@ -5,8 +5,7 @@ const WTButton = ({content, className, type, onClick}) => {
 		<button
 			onClick={onClick}
 			className={`${styles.button} ${className}`}
-			type={type}
-		>
+			type={type}>
 			{content}
 		</button>
 	);

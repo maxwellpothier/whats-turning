@@ -1,5 +1,5 @@
-import { getTodaysAlbum } from "./endpoints/albumApi";
-import { handleApiErrors } from "./errorUtils";
+import {getTodaysAlbum} from "./endpoints/albumApi";
+import {handleApiErrors} from "./errorUtils";
 
 export const getAotd = async () => {
 	try {
@@ -7,5 +7,5 @@ export const getAotd = async () => {
 		return data.todaysAlbum;
 	} catch (err) {
 		handleApiErrors(err);
-	};
+	}
 };

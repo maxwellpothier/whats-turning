@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import {useState} from "react";
+import {useForm} from "react-hook-form";
 import AuthForm from "../components/auth/AuthForm";
 import WTInput from "../components/WTInput";
-import { authenticateExistingUser } from "../utils/authUtils";
+import {authenticateExistingUser} from "../utils/authUtils";
 import LoadMaster from "../components/theme/LoadMaster";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 
 const Login = () => {
 	const hookForm = useForm();
 	const router = useRouter();
 	const [isLoading, setIsLoading] = useState(false);
 
-	const onSubmit = async (userData) => {
+	const onSubmit = async userData => {
 		setIsLoading(true);
 		await authenticateExistingUser(userData, router);
 		setIsLoading(false);
@@ -27,7 +27,10 @@ const Login = () => {
 
 	return (
 		<LoadMaster isLoading={isLoading}>
-			<AuthForm onSubmit={onSubmit} hookForm={hookForm} buttonAreaContent={buttonAreaContent}>
+			<AuthForm
+				onSubmit={onSubmit}
+				hookForm={hookForm}
+				buttonAreaContent={buttonAreaContent}>
 				<WTInput
 					name={"username"}
 					type={"username"}

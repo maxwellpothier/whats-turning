@@ -1,9 +1,15 @@
 import Cookies from "js-cookie";
-import { getLoggedInUser, login, signup, sendResetPasswordEmail, sendPasswordReset } from "./endpoints/identityApi";
-import { handleApiErrors } from "./errorUtils";
-import { toastSuccess } from "./toastUtils";
+import {
+	getLoggedInUser,
+	login,
+	signup,
+	sendResetPasswordEmail,
+	sendPasswordReset,
+} from "./endpoints/identityApi";
+import {handleApiErrors} from "./errorUtils";
+import {toastSuccess} from "./toastUtils";
 
-const setJwtCookie = (accessToken) => {
+const setJwtCookie = accessToken => {
 	Cookies.set("WT_ACCESS_TOKEN", accessToken, {expires: 1});
 };
 
@@ -36,14 +42,14 @@ export const getUser = async () => {
 	}
 };
 
-export const sendForgotPasswordEmail = async (formData) => {
+export const sendForgotPasswordEmail = async formData => {
 	try {
-        await sendResetPasswordEmail(formData);
+		await sendResetPasswordEmail(formData);
 		toastSuccess("Password reset email sent");
-    } catch (err) {
-        handleApiErrors(err);
-    }
-}
+	} catch (err) {
+		handleApiErrors(err);
+	}
+};
 
 export const resetPassword = async (formData, accessToken, router) => {
 	try {

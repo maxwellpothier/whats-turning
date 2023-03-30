@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { getPostForId } from "../../utils/postUtils";
+import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
+import {getPostForId} from "../../utils/postUtils";
 import Theme from "../../components/theme/Theme";
 import HorizontalLine from "../../components/theme/HorizontalLine";
 import ArtWithScore from "../../components/post/ArtWithScore";
@@ -27,12 +27,19 @@ const SinglePost = () => {
 	return (
 		<Theme>
 			<LoadMaster className={styles.loadContainer} isLoading={isLoading}>
-				{!isLoading &&
+				{!isLoading && (
 					<>
 						<div className={styles.postPageHeader}>
 							<div className={styles.nameDate}>
-								<p className={styles.username}>@{post.belongsTo.username}</p>
-								<p className={styles.date}>{`${date.toLocaleString('default', { month: 'short' })} ${date.getDate()}, ${date.getFullYear()}`}</p>
+								<p className={styles.username}>
+									@{post.belongsTo.username}
+								</p>
+								<p
+									className={
+										styles.date
+									}>{`${date.toLocaleString("default", {
+									month: "short",
+								})} ${date.getDate()}, ${date.getFullYear()}`}</p>
 							</div>
 							<div className={styles.albumInfo}>
 								<ArtWithScore
@@ -40,18 +47,24 @@ const SinglePost = () => {
 									rating={post.rating}
 								/>
 								<div>
-									<p className={styles.albumTitle}>{post.album.title}</p>
-									<p className={styles.albumArtist}>{post.album.artist}</p>
-									<p className={styles.albumYear}>{post.album.yearReleased}</p>
+									<p className={styles.albumTitle}>
+										{post.album.title}
+									</p>
+									<p className={styles.albumArtist}>
+										{post.album.artist}
+									</p>
+									<p className={styles.albumYear}>
+										{post.album.yearReleased}
+									</p>
 								</div>
 							</div>
 						</div>
-						<HorizontalLine/>
+						<HorizontalLine />
 						<div className={styles.contentContainer}>
 							<p className={styles.content}>{post.content}</p>
 						</div>
 					</>
-				}
+				)}
 			</LoadMaster>
 		</Theme>
 	);

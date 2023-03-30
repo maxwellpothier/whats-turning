@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { getUser, isAuthenticated } from "../utils/authUtils";
+import {useEffect, useState} from "react";
+import {getUser, isAuthenticated} from "../utils/authUtils";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import PostCard from "../components/post/PostCard";
 import Theme from "../components/theme/Theme";
 import Container from "../components/theme/Container";
 import LoadMaster from "../components/theme/LoadMaster";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 
 import styles from "./profile.module.scss";
 
@@ -21,7 +21,7 @@ const Profile = () => {
 			if (!isAuthenticated()) {
 				await router.push("/");
 				return;
-			};
+			}
 
 			const data = await getUser();
 			setUsername(data.username);
@@ -36,22 +36,29 @@ const Profile = () => {
 			<LoadMaster isLoading={isLoading} className={styles.loadContainer}>
 				<div className={styles.profileSubheading}>
 					<div className={styles.subheadingNameSection}>
-						<h3 className={styles.subheadingLargerFontSize}>{name}</h3>
+						<h3 className={styles.subheadingLargerFontSize}>
+							{name}
+						</h3>
 						<h4>@{username}</h4>
 					</div>
 					<div className={styles.subheadingTotalPosts}>
 						<h3 className={styles.subheadingLargerFontSize}>
 							{posts ? posts.length : "0"}
-							</h3>
+						</h3>
 						<h4>Total Posts</h4>
 					</div>
 				</div>
-				<HorizontalLine/>
+				<HorizontalLine />
 				<Container>
-					{posts
-						? <>
+					{posts ? (
+						<>
 							<h2 className={styles.postsSectionTitle}>
-								{!isLoading && (posts.length ? <>All Posts</> : <>No Posts Yet!</>)}
+								{!isLoading &&
+									(posts.length ? (
+										<>All Posts</>
+									) : (
+										<>No Posts Yet!</>
+									))}
 							</h2>
 							<div className={styles.postContainer}>
 								{posts?.map((post, i) => (
@@ -63,8 +70,11 @@ const Profile = () => {
 								))}
 							</div>
 						</>
-						: <h2 className={styles.postsSectionTitle}>No posts yet</h2>
-					}
+					) : (
+						<h2 className={styles.postsSectionTitle}>
+							No posts yet
+						</h2>
+					)}
 				</Container>
 			</LoadMaster>
 		</Theme>
