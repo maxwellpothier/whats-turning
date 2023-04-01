@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Theme from "../components/theme/Theme";
 import Image from "next/image";
 import Container from "../components/theme/Container";
@@ -35,6 +36,22 @@ const CreatePost = ({aotd}) => {
 
 	return (
 		<Theme>
+			<Head>
+				<title>Create Post / What&apos;s Turning?</title>
+				<meta
+					property="og:title"
+					content="Create Post / What's Turning?"
+				/>
+				<meta
+					property="og:description"
+					content="Add today's album to your collection of posts"
+				/>
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/create-post"
+				/>
+			</Head>
 			<LoadMaster isLoading={isLoading}>
 				<form
 					className={styles.formWrap}

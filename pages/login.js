@@ -1,3 +1,4 @@
+import Head from "next/head";
 import {useState} from "react";
 import {useForm} from "react-hook-form";
 import AuthForm from "../components/auth/AuthForm";
@@ -27,6 +28,19 @@ const Login = () => {
 
 	return (
 		<LoadMaster isLoading={isLoading}>
+			<Head>
+				<title>Log In / WT?</title>
+				<meta property="og:title" content="Log In / WT?" />
+				<meta
+					property="og:description"
+					content="Log in to your account"
+				/>
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/login"
+				/>
+			</Head>
 			<AuthForm
 				onSubmit={onSubmit}
 				hookForm={hookForm}

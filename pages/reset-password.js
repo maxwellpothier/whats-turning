@@ -5,6 +5,7 @@ import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
 import {resetPassword} from "../utils/authUtils";
 import LoadMaster from "../components/theme/LoadMaster";
+import Head from "next/head";
 
 const ResetPassword = () => {
 	const hookForm = useForm();
@@ -33,6 +34,16 @@ const ResetPassword = () => {
 
 	return (
 		<LoadMaster isLoading={isLoading}>
+			<Head>
+				<title>Reset Password / WT?</title>
+				<meta property="og:title" content="Reset Password / WT?" />
+				<meta property="og:description" content="Reset your password" />
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/reset-password"
+				/>
+			</Head>
 			<AuthForm
 				onSubmit={onSubmit}
 				hookForm={hookForm}

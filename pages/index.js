@@ -19,7 +19,7 @@ const Home = ({aotd}) => {
 				<meta
 					property={"og:description"}
 					content={
-						"What's Turning? is a music discovery community that focuses on the latest releases from the world of rock and metal."
+						"What's Turning? is a music discovery community where you review an album of the day, every day."
 					}
 				/>
 				<meta property={"og:image"} content={"/favicon.ico"} />

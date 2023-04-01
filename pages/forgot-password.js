@@ -4,6 +4,7 @@ import {useState} from "react";
 import WTInput from "../components/WTInput";
 import {sendForgotPasswordEmail} from "../utils/authUtils";
 import LoadMaster from "../components/theme/LoadMaster";
+import Head from "next/head";
 
 const ForgotPassword = () => {
 	const hookForm = useForm();
@@ -24,6 +25,19 @@ const ForgotPassword = () => {
 
 	return (
 		<LoadMaster isLoading={isLoading}>
+			<Head>
+				<title>Forgot Password / WT?</title>
+				<meta property="og:title" content="Forgot Password / WT?" />
+				<meta
+					property="og:description"
+					content="Send yourself a link to reset your password"
+				/>
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/forgot-password"
+				/>
+			</Head>
 			<AuthForm
 				onSubmit={onSubmit}
 				hookForm={hookForm}

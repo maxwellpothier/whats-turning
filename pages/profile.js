@@ -8,6 +8,7 @@ import LoadMaster from "../components/theme/LoadMaster";
 import {useRouter} from "next/router";
 
 import styles from "./profile.module.scss";
+import Head from "next/head";
 
 const Profile = () => {
 	const router = useRouter();
@@ -33,6 +34,19 @@ const Profile = () => {
 
 	return (
 		<Theme>
+			<Head>
+				<title>Profile / What&apos;s Turning?</title>
+				<meta property="og:title" content="Profile / What's Turning?" />
+				<meta
+					property="og:description"
+					content="Profile page for What's Turning?"
+				/>
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/profile"
+				/>
+			</Head>
 			<LoadMaster isLoading={isLoading} className={styles.loadContainer}>
 				<div className={styles.profileSubheading}>
 					<div className={styles.subheadingNameSection}>
