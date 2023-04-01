@@ -1,3 +1,4 @@
+import Head from "next/head";
 import {useRouter} from "next/router";
 import {useState} from "react";
 import {useForm} from "react-hook-form";
@@ -26,6 +27,19 @@ const Signup = () => {
 
 	return (
 		<LoadMaster isLoading={isLoading}>
+			<Head>
+				<title>Sign Up / WT?</title>
+				<meta property="og:title" content="Sign Up / WT?" />
+				<meta
+					property="og:description"
+					content="Sign up for an account with What's Turning"
+				/>
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/signup"
+				/>
+			</Head>
 			<AuthForm
 				onSubmit={onSubmit}
 				hookForm={hookForm}
