@@ -29,7 +29,8 @@ const Signup = () => {
 			<AuthForm
 				onSubmit={onSubmit}
 				hookForm={hookForm}
-				buttonAreaContent={buttonAreaContent}>
+				buttonAreaContent={buttonAreaContent}
+			>
 				<WTInput
 					name={"username"}
 					type={"username"}

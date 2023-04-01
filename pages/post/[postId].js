@@ -35,9 +35,8 @@ const SinglePost = () => {
 									@{post.belongsTo.username}
 								</p>
 								<p
-									className={
-										styles.date
-									}>{`${date.toLocaleString("default", {
+									className={styles.date}
+								>{`${date.toLocaleString("default", {
 									month: "short",
 								})} ${date.getDate()}, ${date.getFullYear()}`}</p>
 							</div>

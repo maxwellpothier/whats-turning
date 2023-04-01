@@ -38,7 +38,8 @@ const CreatePost = ({aotd}) => {
 			<LoadMaster isLoading={isLoading}>
 				<form
 					className={styles.formWrap}
-					onSubmit={hookForm.handleSubmit(submitForm)}>
+					onSubmit={hookForm.handleSubmit(submitForm)}
+				>
 					<div className={styles.createSubheading}>
 						<Container>
 							{aotd.artUrl ? (

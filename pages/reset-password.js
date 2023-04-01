@@ -36,7 +36,8 @@ const ResetPassword = () => {
 			<AuthForm
 				onSubmit={onSubmit}
 				hookForm={hookForm}
-				buttonAreaContent={buttonAreaContent}>
+				buttonAreaContent={buttonAreaContent}
+			>
 				<WTInput
 					label={`New Password for ${router.query.user}`}
 					name={"password"}

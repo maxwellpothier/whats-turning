@@ -34,13 +34,15 @@ const TodaysAlbum = ({aotd, className}) => {
 						<a
 							href={aotd.spotifyUrl}
 							target={"_blank"}
-							rel={"noreferrer"}>
+							rel={"noreferrer"}
+						>
 							<FaSpotify className={styles.streamIcon} />
 						</a>
 						<a
 							href={aotd.appleUrl}
 							target={"_blank"}
-							rel={"noreferrer"}>
+							rel={"noreferrer"}
+						>
 							<SiApplemusic className={styles.streamIcon} />
 						</a>
 					</div>

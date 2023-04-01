@@ -11,7 +11,8 @@ const AuthForm = ({onSubmit, hookForm, buttonAreaContent, children}) => {
 			<WTFullLogo className={styles.formLogo} />
 			<form
 				onSubmit={hookForm.handleSubmit(onSubmit)}
-				className={styles.authForm}>
+				className={styles.authForm}
+			>
 				{children}
 				<div className={styles.buttonAreaContainer}>
 					<div className={styles.moreInfo}>

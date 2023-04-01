@@ -27,7 +27,8 @@ const ForgotPassword = () => {
 			<AuthForm
 				onSubmit={onSubmit}
 				hookForm={hookForm}
-				buttonAreaContent={buttonAreaContent}>
+				buttonAreaContent={buttonAreaContent}
+			>
 				<WTInput
 					label={"Email associated with account"}
 					name={"email"}
