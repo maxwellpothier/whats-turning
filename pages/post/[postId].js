@@ -1,3 +1,4 @@
+import Head from "next/head";
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
 import {getPostForId} from "../../utils/postUtils";
@@ -26,6 +27,19 @@ const SinglePost = () => {
 
 	return (
 		<Theme>
+			<Head>
+				<title>User Post / What&apos;s Turning?</title>
+				<meta
+					property="og:title"
+					content="User Post / What's Turning?"
+				/>
+				<meta property="og:description" content="View a user's post" />
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/post"
+				/>
+			</Head>
 			<LoadMaster className={styles.loadContainer} isLoading={isLoading}>
 				{!isLoading && (
 					<>

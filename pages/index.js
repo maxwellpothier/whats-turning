@@ -12,6 +12,21 @@ const Home = ({aotd}) => {
 			<Head>
 				<title>Home / What&apos;s Turning?</title>
 				<link rel={"icon"} href={"/favicon.ico"} />
+				<meta
+					property={"og:title"}
+					content={"Home / What's Turning?"}
+				/>
+				<meta
+					property={"og:description"}
+					content={
+						"What's Turning? is a music discovery community where you review an album of the day, every day."
+					}
+				/>
+				<meta property={"og:image"} content={"/favicon.ico"} />
+				<meta
+					property={"og:url"}
+					content={"https://www.whatsturning.com"}
+				/>
 			</Head>
 			<TodaysAlbum aotd={aotd} className={styles.homepageAotdContainer} />
 			<HorizontalLine />
