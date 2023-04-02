@@ -15,5 +15,9 @@ export const getAlbumDescription = albumName => {
 		albumName: albumName,
 	};
 
-	return axios.post(`${baseUrl}/description`, config);
+	return axios.post(`${baseUrl}/description`, config, {
+		headers: {
+			"Accept-Encoding": "gzip,deflate,compress",
+		},
+	});
 };
