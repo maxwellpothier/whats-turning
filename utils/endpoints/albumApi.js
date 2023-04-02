@@ -9,3 +9,11 @@ export const getTodaysAlbum = () => {
 		},
 	});
 };
+
+export const getAlbumDescription = albumName => {
+	const config = {
+		albumName: albumName,
+	};
+
+	return axios.post(`${baseUrl}/description`, config);
+};
