@@ -15,6 +15,7 @@ export const getAiDescription = async (albumName, artistName) => {
 		const {data} = await getAlbumDescription(albumName, artistName);
 		return data.gptResponse;
 	} catch (err) {
+		console.log("ERROR", err);
 		handleApiErrors(err);
 	}
 };
