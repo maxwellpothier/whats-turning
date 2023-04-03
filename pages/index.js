@@ -3,8 +3,7 @@ import Theme from "../components/theme/Theme";
 import TodaysAlbum from "../components/TodaysAlbum";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import AIDescription from "../components/AIDescription";
-import {getAotd} from "../utils/albumUtils";
-import {getAlbumDescription} from "../utils/endpoints/albumApi";
+import {getAotd, getAiDescription} from "../utils/albumUtils";
 
 import styles from "./index.module.scss";
 
@@ -39,10 +38,7 @@ const Home = ({aotd, description}) => {
 
 export const getStaticProps = async () => {
 	const album = await getAotd();
-
-	const {data} = await getAlbumDescription(album.title, album.artist);
-	const description = data.gptResponse;
-
+	const description = await getAiDescription(album.title, album.artist);
 	return {
 		props: {
 			aotd: album,
