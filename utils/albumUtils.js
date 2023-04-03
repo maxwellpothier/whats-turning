@@ -10,9 +10,9 @@ export const getAotd = async () => {
 	}
 };
 
-export const getAiDescription = async albumName => {
+export const getAiDescription = async (albumName, artistName) => {
 	try {
-		const {data} = await getAlbumDescription(albumName);
+		const {data} = await getAlbumDescription(albumName, artistName);
 		return data.gptResponse;
 	} catch (err) {
 		handleApiErrors(err);

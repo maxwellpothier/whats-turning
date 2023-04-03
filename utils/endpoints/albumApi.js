@@ -10,9 +10,10 @@ export const getTodaysAlbum = () => {
 	});
 };
 
-export const getAlbumDescription = albumName => {
+export const getAlbumDescription = (albumName, artistName) => {
 	const config = {
-		albumName: albumName,
+		albumName,
+		artistName,
 	};
 
 	return axios.post(`${baseUrl}/description`, config, {
