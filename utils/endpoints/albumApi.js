@@ -9,3 +9,16 @@ export const getTodaysAlbum = () => {
 		},
 	});
 };
+
+export const getAlbumDescription = (albumName, artistName) => {
+	const config = {
+		albumName,
+		artistName,
+	};
+
+	return axios.post(`${baseUrl}/description`, config, {
+		headers: {
+			"Accept-Encoding": "gzip,deflate,compress",
+		},
+	});
+};
