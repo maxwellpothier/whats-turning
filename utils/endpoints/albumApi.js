@@ -11,6 +11,7 @@ export const getTodaysAlbum = () => {
 };
 
 export const getAlbumDescription = (albumName, artistName) => {
+	console.log("IN THE API CALL");
 	const config = {
 		albumName,
 		artistName,

@@ -38,6 +38,7 @@ const Home = ({aotd, description}) => {
 
 export const getStaticProps = async () => {
 	const album = await getAotd();
+	console.log("Album", album);
 	const description = await getAiDescription(album.title, album.artist);
 	return {
 		props: {
