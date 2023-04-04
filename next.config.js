@@ -7,6 +7,7 @@ const nextConfig = {
 	},
 	env: {
 		BASE_API_URL: process.env.BASE_API_URL,
+		STAGE: process.env.STAGE,
 	},
 };
 
