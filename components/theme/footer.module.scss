@@ -32,6 +32,7 @@
 }
 
 .emailLink {
+	font-size: 14px;
 	text-decoration: underline;
 }
 
@@ -56,5 +57,11 @@
 		align-items: center;
 		width: 100%;
 		max-width: $siteMaxWidth;
+	}
+
+	.socialLinks {
+		max-width: 150px;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 }

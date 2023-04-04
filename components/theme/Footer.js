@@ -1,6 +1,7 @@
 import styles from "./footer.module.scss";
 import WTMobileLogo from "../logos/WTMobileLogo";
-import {FaSpotify, FaGithub, FaTwitter} from "react-icons/fa";
+import {FaSpotify, FaGithub, FaTwitter, FaInstagram} from "react-icons/fa";
+import {SiNotion} from "react-icons/si";
 
 const Footer = () => {
 	return (
@@ -10,7 +11,12 @@ const Footer = () => {
 					<WTMobileLogo className={styles.footerLogo} />
 					<div>
 						<span className={styles.contactText}>Contact Us!</span>
-						<a className={styles.emailLink}>max@whatsturning.com</a>
+						<a
+							className={styles.emailLink}
+							href={"mailto: whatsturning@outlook.com"}
+						>
+							whatsturning@outlook.com
+						</a>
 					</div>
 					<div className={styles.contactText}>
 						We would love to hear any feedback!
@@ -37,6 +43,20 @@ const Footer = () => {
 						rel={"noreferrer"}
 					>
 						<FaTwitter className={styles.footerIcon} />
+					</a>
+					<a
+						href="https://www.instagram.com/whatsturning/"
+						target={"_blank"}
+						rel={"noreferrer"}
+					>
+						<FaInstagram className={styles.footerIcon} />
+					</a>
+					<a
+						href="https://suave-feast-3f3.notion.site/Memo-f80780b6d4c7437085f23c0dd382c0e9"
+						target={"_blank"}
+						rel={"noreferrer"}
+					>
+						<SiNotion className={styles.footerIcon} />
 					</a>
 				</ul>
 			</div>
