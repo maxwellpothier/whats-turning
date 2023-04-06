@@ -32,7 +32,7 @@ const Home = ({aotd, description}) => {
 			<TodaysAlbum aotd={aotd} className={styles.homepageAotdContainer} />
 			<HorizontalLine />
 			<AIDescription albumTitle={aotd.title} description={description} />
-			<button
+			{/* <button
 				onClick={() => {
 					gtag("event", "weird_button_clicked", {
 						app_name: "WT",
@@ -41,7 +41,7 @@ const Home = ({aotd, description}) => {
 				}}
 			>
 				Click Me
-			</button>
+			</button> */}
 		</Theme>
 	);
 };
