@@ -27,6 +27,10 @@ export const authenticateExistingUser = async (formData, router) => {
 export const establishNewUser = async (formData, router) => {
 	try {
 		const {data} = await signup(formData);
+		gtag("event", "signup", {
+			username: formData.username,
+			timestamp: new Date().toISOString(),
+		});
 		setJwtCookie(data.accessToken);
 		await router.push("/");
 	} catch (err) {
