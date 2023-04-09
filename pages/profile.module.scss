@@ -22,6 +22,14 @@
 	flex-direction: column;
 }
 
+.editLink {
+	font-size: 12px;
+	margin-top: 5px;
+	text-decoration: underline;
+	cursor: pointer;
+	color: $liberty;
+}
+
 .subheadingTotalPosts {
 	display: flex;
 	gap: 5px;

@@ -6,9 +6,9 @@ import Theme from "../components/theme/Theme";
 import Container from "../components/theme/Container";
 import LoadMaster from "../components/theme/LoadMaster";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 import styles from "./profile.module.scss";
-import Head from "next/head";
 
 const Profile = () => {
 	const router = useRouter();
@@ -54,6 +54,12 @@ const Profile = () => {
 							{name}
 						</h3>
 						<h4>@{username}</h4>
+						<a
+							className={styles.editLink}
+							href={"/profile/settings"}
+						>
+							Edit Profile
+						</a>
 					</div>
 					<div className={styles.subheadingTotalPosts}>
 						<h3 className={styles.subheadingLargerFontSize}>
