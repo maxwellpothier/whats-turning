@@ -12,7 +12,6 @@ const Settings = () => {
 	const router = useRouter();
 	const hookForm = useForm();
 
-	const [userData, setUserData] = useState({});
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
@@ -23,10 +22,14 @@ const Settings = () => {
 			}
 
 			const data = await getUser();
-			setUserData(data);
+			hookForm.setValue("username", data.username);
+			hookForm.setValue("firstName", data.firstName);
+			hookForm.setValue("lastName", data.lastName);
+			hookForm.setValue("bio", data.bio);
+			hookForm.setValue("email", data.email);
 			setIsLoading(false);
 		})();
-	}, [router]);
+	}, [hookForm, router]);
 
 	const saveEdits = async data => {
 		console.log(data);
@@ -45,7 +48,6 @@ const Settings = () => {
 						<input
 							className={styles.formInputField}
 							{...hookForm.register("username")}
-							defaultValue={userData.username}
 						/>
 					</div>
 					<div className={styles.formEntry}>
@@ -53,7 +55,6 @@ const Settings = () => {
 						<input
 							className={styles.formInputField}
 							{...hookForm.register("firstName")}
-							defaultValue={userData.firstName}
 						/>
 					</div>
 					<div className={styles.formEntry}>
@@ -61,7 +62,6 @@ const Settings = () => {
 						<input
 							className={styles.formInputField}
 							{...hookForm.register("lastName")}
-							defaultValue={userData.lastName}
 						/>
 					</div>
 					<div className={styles.formEntry}>
@@ -69,7 +69,6 @@ const Settings = () => {
 						<input
 							className={styles.formInputField}
 							{...hookForm.register("bio")}
-							defaultValue={userData.bio}
 						/>
 					</div>
 					<div className={styles.formEntry}>
@@ -78,7 +77,6 @@ const Settings = () => {
 							className={styles.formInputField}
 							{...hookForm.register("email")}
 							type={"email"}
-							defaultValue={userData.email}
 						/>
 					</div>
 					<div className={styles.formEntry}>
