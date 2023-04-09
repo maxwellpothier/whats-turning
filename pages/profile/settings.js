@@ -1,9 +1,105 @@
 import Theme from "../../components/theme/Theme";
+import {useEffect, useState} from "react";
+import {getUser, isAuthenticated} from "../../utils/authUtils";
+import {useForm} from "react-hook-form";
+import {useRouter} from "next/router";
+
+import styles from "./settings.module.scss";
+import LoadMaster from "../../components/theme/LoadMaster";
+import WTButton from "../../components/WTButton";
 
 const Settings = () => {
+	const router = useRouter();
+	const hookForm = useForm();
+
+	const [userData, setUserData] = useState({});
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		(async () => {
+			if (!isAuthenticated()) {
+				await router.push("/");
+				return;
+			}
+
+			const data = await getUser();
+			setUserData(data);
+			setIsLoading(false);
+		})();
+	}, [router]);
+
+	const saveEdits = async data => {
+		console.log(data);
+	};
+
 	return (
 		<Theme>
-			<h1>Settings</h1>
+			<h1 className={styles.editProfileTitle}>Edit Profile</h1>
+			<LoadMaster className={styles.loadMaster} isLoading={isLoading}>
+				<form
+					className={styles.editForm}
+					onSubmit={hookForm.handleSubmit(saveEdits)}
+				>
+					<div className={styles.formEntry}>
+						<label>Username</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("username")}
+							defaultValue={userData.username}
+						/>
+					</div>
+					<div className={styles.formEntry}>
+						<label>First name</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("firstName")}
+							defaultValue={userData.firstName}
+						/>
+					</div>
+					<div className={styles.formEntry}>
+						<label>Last name</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("lastName")}
+							defaultValue={userData.lastName}
+						/>
+					</div>
+					<div className={styles.formEntry}>
+						<label>Bio</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("bio")}
+							defaultValue={userData.bio}
+						/>
+					</div>
+					<div className={styles.formEntry}>
+						<label>Email</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("email")}
+							type={"email"}
+							defaultValue={userData.email}
+						/>
+					</div>
+					<div className={styles.formEntry}>
+						<label>New password</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("password")}
+							type={"password"}
+						/>
+					</div>
+					<div className={styles.formEntry}>
+						<label>Confirm new password</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("confirmPassword")}
+							type={"password"}
+						/>
+					</div>
+					<WTButton content={"Save"} type={"submit"} />
+				</form>
+			</LoadMaster>
 		</Theme>
 	);
 };
