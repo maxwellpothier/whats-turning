@@ -5,6 +5,7 @@ import {
 	signup,
 	sendResetPasswordEmail,
 	sendPasswordReset,
+	sendEditInfo,
 } from "./endpoints/identityApi";
 import {handleApiErrors} from "./errorUtils";
 import {toastSuccess} from "./toastUtils";
@@ -57,6 +58,16 @@ export const resetPassword = async (formData, accessToken, router) => {
 		toastSuccess("Password has been reset");
 		setJwtCookie(data.accessToken);
 		await router.push("/");
+	} catch (err) {
+		handleApiErrors(err);
+	}
+};
+
+export const updateUserInfo = async (formData, router) => {
+	try {
+		await sendEditInfo(formData);
+		toastSuccess("User info saved");
+		await router.push("/profile");
 	} catch (err) {
 		handleApiErrors(err);
 	}

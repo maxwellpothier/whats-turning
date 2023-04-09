@@ -1,12 +1,13 @@
 import Theme from "../../components/theme/Theme";
+import WTButton from "../../components/WTButton";
+import LoadMaster from "../../components/theme/LoadMaster";
+import Head from "next/head";
 import {useEffect, useState} from "react";
-import {getUser, isAuthenticated} from "../../utils/authUtils";
+import {getUser, isAuthenticated, updateUserInfo} from "../../utils/authUtils";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
 
 import styles from "./settings.module.scss";
-import LoadMaster from "../../components/theme/LoadMaster";
-import WTButton from "../../components/WTButton";
 
 const Settings = () => {
 	const router = useRouter();
@@ -21,22 +22,39 @@ const Settings = () => {
 				return;
 			}
 
-			const data = await getUser();
-			hookForm.setValue("username", data.username);
-			hookForm.setValue("firstName", data.firstName);
-			hookForm.setValue("lastName", data.lastName);
-			hookForm.setValue("bio", data.bio);
-			hookForm.setValue("email", data.email);
+			const userData = await getUser();
+			hookForm.setValue("username", userData.username);
+			hookForm.setValue("firstName", userData.firstName);
+			hookForm.setValue("lastName", userData.lastName);
+			hookForm.setValue("bio", userData.bio);
+			hookForm.setValue("musicProfile", userData.musicProfile);
+			hookForm.setValue("email", userData.email);
 			setIsLoading(false);
 		})();
 	}, [hookForm, router]);
 
-	const saveEdits = async data => {
-		console.log(data);
+	const saveEdits = async formData => {
+		console.log(formData);
+		setIsLoading(true);
+		await updateUserInfo(formData, router);
+		setIsLoading(false);
 	};
 
 	return (
 		<Theme>
+			<Head>
+				<title>Profile Settings / WT?</title>
+				<meta property="og:title" content="Profile Settings / WT?" />
+				<meta
+					property="og:description"
+					content="Edit your profile settings"
+				/>
+				<meta property="og:image" content="/favicon.ico" />
+				<meta
+					property="og:url"
+					content="https://www.whatsturning.com/signup"
+				/>
+			</Head>
 			<h1 className={styles.editProfileTitle}>Edit Profile</h1>
 			<LoadMaster className={styles.loadMaster} isLoading={isLoading}>
 				<form
@@ -72,27 +90,18 @@ const Settings = () => {
 						/>
 					</div>
 					<div className={styles.formEntry}>
+						<label>Music streaming profile</label>
+						<input
+							className={styles.formInputField}
+							{...hookForm.register("musicProfile")}
+						/>
+					</div>
+					<div className={styles.formEntry}>
 						<label>Email</label>
 						<input
 							className={styles.formInputField}
 							{...hookForm.register("email")}
 							type={"email"}
-						/>
-					</div>
-					<div className={styles.formEntry}>
-						<label>New password</label>
-						<input
-							className={styles.formInputField}
-							{...hookForm.register("password")}
-							type={"password"}
-						/>
-					</div>
-					<div className={styles.formEntry}>
-						<label>Confirm new password</label>
-						<input
-							className={styles.formInputField}
-							{...hookForm.register("confirmPassword")}
-							type={"password"}
 						/>
 					</div>
 					<WTButton content={"Save"} type={"submit"} />

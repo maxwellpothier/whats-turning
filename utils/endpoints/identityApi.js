@@ -38,3 +38,13 @@ export const sendPasswordReset = (formData, token) => {
 		},
 	});
 };
+
+export const sendEditInfo = formData => {
+	const config = formData;
+
+	return axios.post(`${baseUrl}/edit`, config, {
+		headers: {
+			Authorization: `Bearer ${Cookies.get("WT_ACCESS_TOKEN")}`,
+		},
+	});
+};
