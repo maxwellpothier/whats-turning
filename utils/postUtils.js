@@ -4,6 +4,9 @@ import {handleApiErrors} from "./errorUtils";
 export const checkPostToCreate = async (formData, albumId, router) => {
 	try {
 		await createUserPost(formData.score, formData.review, albumId);
+		gtag("event", "create_post", {
+			albumId: albumId,
+		});
 
 		await router.push("/profile");
 	} catch (err) {
