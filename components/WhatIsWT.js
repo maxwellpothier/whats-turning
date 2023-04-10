@@ -3,9 +3,7 @@ import styles from "./whatIsWT.module.scss";
 const WhatIsWT = () => {
 	return (
 		<div className={styles.whatIsWTContainer}>
-			<h2 className={styles.whatIsWTHeader}>
-				What is What&apos;s Turning?
-			</h2>
+			<h2 className={styles.whatIsWTHeader}>Explore. Rate. Repeat.</h2>
 			<p className={styles.whatIsWTParagraph}>
 				What&apos;s Turning? is a music discovery community where you
 				review an album of the day, every day.
