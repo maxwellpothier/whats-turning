@@ -1,0 +1,19 @@
+@import "styles/variables";
+
+.descriptionContainer {
+	padding: 0 20px;
+	max-width: $siteMaxWidth;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.whatIsWTHeader {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+.whatIsWTParagraph {
+	line-height: 1.5;
+	text-indent: 20px;
+}
