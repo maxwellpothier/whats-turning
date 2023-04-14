@@ -1,0 +1,27 @@
+@import "styles/variables";
+
+.descriptionContainer {
+	padding: 0 20px;
+	max-width: $siteMaxWidth;
+	display: flex;
+	flex-direction: column;
+}
+
+.whatIsWTHeader {
+	font-size: 24px;
+	margin-bottom: 50px;
+}
+
+.steps {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	margin-bottom: 30px;
+}
+
+@media only screen and (min-width: $tabletDeviceWidth) {
+	.steps {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}

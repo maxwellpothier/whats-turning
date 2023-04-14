@@ -3,6 +3,7 @@ import Theme from "../components/theme/Theme";
 import TodaysAlbum from "../components/TodaysAlbum";
 import HorizontalLine from "../components/theme/HorizontalLine";
 import AIDescription from "../components/AIDescription";
+import WhatIsWT from "../components/WhatIsWT";
 import {getAotd, getAiDescription} from "../utils/albumUtils";
 
 import styles from "./index.module.scss";
@@ -32,16 +33,9 @@ const Home = ({aotd, description}) => {
 			<TodaysAlbum aotd={aotd} className={styles.homepageAotdContainer} />
 			<HorizontalLine />
 			<AIDescription albumTitle={aotd.title} description={description} />
-			{/* <button
-				onClick={() => {
-					gtag("event", "weird_button_clicked", {
-						app_name: "WT",
-						screen_name: "Home",
-					});
-				}}
-			>
-				Click Me
-			</button> */}
+			<HorizontalLine />
+
+			<WhatIsWT />
 		</Theme>
 	);
 };
