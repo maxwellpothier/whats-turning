@@ -11,7 +11,7 @@ const AIDescription = ({albumTitle, description}) => {
 				</h2>
 				<span className={styles.aiShoutout}>Powered by Open AI</span>
 			</Container>
-			<p className={styles.moreAboutText}>{description}</p>
+			<p className={styles.moreAboutText}>{description.trimStart()}</p>
 		</Container>
 	);
 };
