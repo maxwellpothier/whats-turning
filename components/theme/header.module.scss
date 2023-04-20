@@ -22,6 +22,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+	color: $celeste;
 }
 
 .menuLink {
@@ -39,17 +40,17 @@
 }
 
 .headerLinks {
-	display: flex;
+	display: none;
 	align-items: center;
 	gap: 35px;
 }
 
-@media only screen and (min-width: $mediumDeviceWidth) {
-	.background {
-		justify-content: center;
-	}
-
+@media only screen and (min-width: 626px) {
 	.hamburgerMenu {
 		display: none;
+	}
+
+	.headerLinks {
+		display: flex;
 	}
 }
