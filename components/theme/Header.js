@@ -20,6 +20,9 @@ const loggedOutLinks = (
 
 const loggedInLinks = (
 	<>
+		<a href={"/explore"} className={styles.headerLink}>
+			Explore
+		</a>
 		<a href={"/profile"} className={styles.headerLink}>
 			Profile
 		</a>
@@ -42,11 +45,11 @@ const Header = () => {
 				<Link href={"/"} passHref>
 					<WTLogo />
 				</Link>
-				{/* <div className={styles.hamburgerMenu}>
-					<div className={styles.menuLink}/>
-					<div className={styles.menuLink}/>
-					<div className={styles.menuLink}/>
-				</div> */}
+				<div className={styles.hamburgerMenu}>
+					<div className={styles.menuLink} />
+					<div className={styles.menuLink} />
+					<div className={styles.menuLink} />
+				</div>
 				<div className={styles.headerLinks}>{headerLinks}</div>
 			</div>
 		</div>
