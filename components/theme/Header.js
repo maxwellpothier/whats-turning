@@ -5,7 +5,7 @@ import WTLogo from "../logos/WTLogo";
 import WTButton from "../WTButton";
 import {isAuthenticated, unauthenticate} from "../../utils/authUtils";
 import {useEffect, useState} from "react";
-import {Squeeze as Hamburger, Squeeze} from "hamburger-react";
+import {Squeeze} from "hamburger-react";
 
 const loggedOutLinks = (
 	<>
@@ -51,6 +51,9 @@ const Header = () => {
 					<Squeeze toggled={isOpen} toggle={setOpen} />
 				</div>
 				<div className={styles.headerLinks}>{headerLinks}</div>
+				{isOpen && (
+					<ul className={styles.headerLinksMobile}>{headerLinks}</ul>
+				)}
 			</div>
 		</div>
 	);
