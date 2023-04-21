@@ -1,8 +1,10 @@
+import Theme from "../components/theme/Theme";
+
 const Explore = () => {
 	return (
-		<div>
+		<Theme>
 			<h1>Explore</h1>
-		</div>
+		</Theme>
 	);
 };
 

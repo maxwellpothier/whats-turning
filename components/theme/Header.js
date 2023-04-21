@@ -6,6 +6,8 @@ import WTButton from "../WTButton";
 import {isAuthenticated, unauthenticate} from "../../utils/authUtils";
 import {useEffect, useState} from "react";
 import {Squeeze} from "hamburger-react";
+import {disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
+import {useRouter} from "next/router";
 
 const loggedOutLinks = (
 	<>
@@ -34,12 +36,22 @@ const loggedInLinks = (
 );
 
 const Header = () => {
+	const router = useRouter();
 	const [headerLinks, setHeaderLinks] = useState(null);
 	const [isOpen, setOpen] = useState(false);
+	const [routerIsReady, setRouterIsReady] = useState(false);
 
 	useEffect(() => {
 		setHeaderLinks(isAuthenticated() ? loggedInLinks : loggedOutLinks);
 	}, []);
+
+	useEffect(() => {
+		if (!router.isReady) return;
+		setRouterIsReady(true);
+	}, [router]);
+
+	if (routerIsReady && isOpen) disableBodyScroll(document.body);
+	if (routerIsReady && !isOpen) enableBodyScroll(document.body);
 
 	return (
 		<div className={styles.background}>
