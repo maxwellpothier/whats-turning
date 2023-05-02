@@ -11,7 +11,7 @@ import {handleApiErrors} from "./errorUtils";
 import {toastSuccess} from "./toastUtils";
 
 const setJwtCookie = accessToken => {
-	Cookies.set("WT_ACCESS_TOKEN", accessToken, {expires: 1});
+	Cookies.set("WT_ACCESS_TOKEN", accessToken, {expires: 7});
 };
 
 export const authenticateExistingUser = async (formData, router) => {
