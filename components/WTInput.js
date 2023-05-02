@@ -8,6 +8,7 @@ const WTInput = ({type, label, hookForm, name}) => {
 				className={styles.formInputField}
 				{...hookForm.register(name)}
 				type={type}
+				autoCapitalize={"none"}
 			/>
 		</div>
 	);

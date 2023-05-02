@@ -46,6 +46,10 @@ const CreatePost = ({aotd}) => {
 					property="og:description"
 					content="Add today's album to your collection of posts"
 				/>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+				/>
 				<meta property="og:image" content="/favicon.ico" />
 				<meta
 					property="og:url"
