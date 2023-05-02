@@ -22,7 +22,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	color: $celeste;
 }
 
 .menuLink {
@@ -40,36 +39,17 @@
 }
 
 .headerLinks {
-	display: none;
+	display: flex;
 	align-items: center;
 	gap: 35px;
 }
 
-.headerLinksMobile {
-	display: flex;
-	flex-direction: column;
-	position: fixed;
-	top: 0;
-	right: 0;
-	margin-top: 50px;
-	padding: 20px;
-	background-color: $liberty;
-	border-radius: 10px;
-	gap: 15px;
-	align-items: flex-end;
-	z-index: 100;
-}
+@media only screen and (min-width: $mediumDeviceWidth) {
+	.background {
+		justify-content: center;
+	}
 
-@media only screen and (min-width: 626px) {
 	.hamburgerMenu {
 		display: none;
-	}
-
-	.headerLinksMobile {
-		display: none;
-	}
-
-	.headerLinks {
-		display: flex;
 	}
 }
