@@ -1,13 +1,15 @@
 @import "styles/variables";
 
 .bigLogo {
-	font-size: 40px;
-	letter-spacing: 3px;
+	display: none;
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 530px) {
+	.smallLogo {
+		display: none;
+	}
+
 	.bigLogo {
-		font-size: 48px;
-		letter-spacing: 5px;
+		display: flex;
 	}
 }

@@ -5,9 +5,6 @@ import WTLogo from "../logos/WTLogo";
 import WTButton from "../WTButton";
 import {isAuthenticated, unauthenticate} from "../../utils/authUtils";
 import {useEffect, useState} from "react";
-import {Squeeze} from "hamburger-react";
-import {disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
-import {useRouter} from "next/router";
 
 const loggedOutLinks = (
 	<>
@@ -23,9 +20,6 @@ const loggedOutLinks = (
 
 const loggedInLinks = (
 	<>
-		<a href={"/explore"} className={styles.headerLink}>
-			Explore
-		</a>
 		<a href={"/profile"} className={styles.headerLink}>
 			Profile
 		</a>
@@ -36,22 +30,11 @@ const loggedInLinks = (
 );
 
 const Header = () => {
-	const router = useRouter();
 	const [headerLinks, setHeaderLinks] = useState(null);
-	const [isOpen, setOpen] = useState(false);
-	const [routerIsReady, setRouterIsReady] = useState(false);
 
 	useEffect(() => {
 		setHeaderLinks(isAuthenticated() ? loggedInLinks : loggedOutLinks);
 	}, []);
-
-	useEffect(() => {
-		if (!router.isReady) return;
-		setRouterIsReady(true);
-	}, [router]);
-
-	if (routerIsReady && isOpen) disableBodyScroll(document.body);
-	if (routerIsReady && !isOpen) enableBodyScroll(document.body);
 
 	return (
 		<div className={styles.background}>
@@ -59,13 +42,7 @@ const Header = () => {
 				<Link href={"/"} passHref>
 					<WTLogo />
 				</Link>
-				<div className={styles.hamburgerMenu}>
-					<Squeeze toggled={isOpen} toggle={setOpen} />
-				</div>
 				<div className={styles.headerLinks}>{headerLinks}</div>
-				{isOpen && (
-					<ul className={styles.headerLinksMobile}>{headerLinks}</ul>
-				)}
 			</div>
 		</div>
 	);
