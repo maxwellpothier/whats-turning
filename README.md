@@ -1,6 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## What's Turning?
 
-## Getting Started
+What's Turning is a open source community platform for music lovers. 
+
+Here's how it works:
+1. Listen to the What's Turning AOTD (Album of the Day) any way you'd like.
+2. Click “Create Post” on the homepage to leave a rating and optional short review.
+3. Watch your profile grow along with your music taste and knowledge!
+
+# Purpose
+
 
 First, run the development server:
 
