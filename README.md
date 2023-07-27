@@ -26,4 +26,9 @@ While the current functionality is simply a journal of your music journey, here'
   - Users can follow friends, family, and others and gain a following for themselves. The people they are following will take first priority on the "Explore" page.
 - Top rated albums on each user's page, highlighting their favorite projects
 - Dedicated album pages
-  - When selecting a certain album, from the Explore page
+  - When selecting a certain album, from the Explore page or the home page, a page will render to give an AI generated description of the album along with posts rating the album, sorted by the amount of followers the author has.
+
+
+
+## Contact
+Send me any feedback on [Twitter](https://twitter.com/MaxPothier), would be **much** appreciated. 
